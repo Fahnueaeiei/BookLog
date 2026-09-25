@@ -1,0 +1,1 @@
+"""BookLog Sprint 1 source package (CLI front-end with mock data)."""

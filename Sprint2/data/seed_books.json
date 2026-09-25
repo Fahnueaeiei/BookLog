@@ -1,0 +1,4375 @@
+[
+  {
+    "book_id": "seed-0001",
+    "title": "The Distant Garden",
+    "authors": [
+      "Grace Lindqvist"
+    ],
+    "description": "This romance novel explores family, memory, and the choices that define a life.",
+    "published_date": "1995-01",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0001.jpg",
+    "page_count": 110
+  },
+  {
+    "book_id": "seed-0002",
+    "title": "A Quiet Kingdom",
+    "authors": [
+      "Liam Kim"
+    ],
+    "description": "A tightly plotted history tale set across three generations of one household.",
+    "published_date": "1995-01",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0002.jpg",
+    "page_count": 857
+  },
+  {
+    "book_id": "seed-0003",
+    "title": "The Golden Horizon",
+    "authors": [
+      "Elena Lindqvist",
+      "James Rossi"
+    ],
+    "description": null,
+    "published_date": "2023",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": null,
+    "page_count": 827
+  },
+  {
+    "book_id": "seed-0004",
+    "title": "Shadows of Ocean",
+    "authors": [
+      "Ivan Kowalski"
+    ],
+    "description": "A story about history that follows one character's search for meaning against the odds.",
+    "published_date": "1944-02-02",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0004.jpg",
+    "page_count": 757
+  },
+  {
+    "book_id": "seed-0005",
+    "title": "Beyond the Journey",
+    "authors": [
+      "Maria Petrov"
+    ],
+    "description": "This non-fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1967-04",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0005.jpg",
+    "page_count": 766
+  },
+  {
+    "book_id": "seed-0006",
+    "title": "The Hidden Promise",
+    "authors": [
+      "Sofia Novak"
+    ],
+    "description": "A tightly plotted history tale set across three generations of one household.",
+    "published_date": "2001-09-08",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0006.jpg",
+    "page_count": 781
+  },
+  {
+    "book_id": "seed-0007",
+    "title": "Whispers of Mirror",
+    "authors": [
+      "Priya Petrov"
+    ],
+    "description": "Part fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2011-04",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0007.jpg",
+    "page_count": 751
+  },
+  {
+    "book_id": "seed-0008",
+    "title": "Shadows of Mountain",
+    "authors": [
+      "James Lindqvist",
+      "James Rossi"
+    ],
+    "description": "A story about history that follows one character's search for meaning against the odds.",
+    "published_date": "1948",
+    "categories": [
+      "History",
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0008.jpg",
+    "page_count": 601
+  },
+  {
+    "book_id": "seed-0009",
+    "title": "Shadows of Garden",
+    "authors": [
+      "Amara Nguyen"
+    ],
+    "description": "This poetry novel explores family, memory, and the choices that define a life.",
+    "published_date": "1996-09",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0009.jpg",
+    "page_count": 337
+  },
+  {
+    "book_id": "seed-0010",
+    "title": "The Forgotten Mirror",
+    "authors": [
+      "Omar Andersen"
+    ],
+    "description": "A tightly plotted poetry tale set across three generations of one household.",
+    "published_date": "1957-03",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0010.jpg",
+    "page_count": 544
+  },
+  {
+    "book_id": "seed-0011",
+    "title": "The Silent Promise",
+    "authors": [
+      "Liam Mensah"
+    ],
+    "description": "Part history, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1997",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0011.jpg",
+    "page_count": 236
+  },
+  {
+    "book_id": "seed-0012",
+    "title": "Whispers of Journey",
+    "authors": [
+      "Liam Mensah"
+    ],
+    "description": "A story about adventure that follows one character's search for meaning against the odds.",
+    "published_date": "2023-04",
+    "categories": [
+      "Adventure",
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0012.jpg",
+    "page_count": 139
+  },
+  {
+    "book_id": "seed-0013",
+    "title": "Beyond the Road",
+    "authors": [
+      "Maria Andersen"
+    ],
+    "description": null,
+    "published_date": "1980-03-09",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0013.jpg",
+    "page_count": 620
+  },
+  {
+    "book_id": "seed-0014",
+    "title": "Fragments of Forest",
+    "authors": [
+      "Priya Ahmed",
+      "Liam Mensah"
+    ],
+    "description": "A tightly plotted young adult tale set across three generations of one household.",
+    "published_date": "1986-02",
+    "categories": [
+      "Young Adult",
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0014.jpg",
+    "page_count": 333
+  },
+  {
+    "book_id": "seed-0015",
+    "title": "Beyond the Garden",
+    "authors": [
+      "Alex Kim"
+    ],
+    "description": "Part romance, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1924-02",
+    "categories": [
+      "Romance",
+      "Self-Help"
+    ],
+    "cover_url": null,
+    "page_count": 606
+  },
+  {
+    "book_id": "seed-0016",
+    "title": "Beyond the Letter",
+    "authors": [
+      "Priya Torres",
+      "James Andersen"
+    ],
+    "description": "A story about self-help that follows one character's search for meaning against the odds.",
+    "published_date": "2004-06",
+    "categories": [
+      "Self-Help",
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0016.jpg",
+    "page_count": 513
+  },
+  {
+    "book_id": "seed-0017",
+    "title": "The Broken City",
+    "authors": [
+      "Omar Novak"
+    ],
+    "description": "This fantasy novel explores family, memory, and the choices that define a life.",
+    "published_date": "1944-08-05",
+    "categories": [
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0017.jpg",
+    "page_count": 512
+  },
+  {
+    "book_id": "seed-0018",
+    "title": "The Last Letter",
+    "authors": [
+      "Priya Petrov",
+      "Ivan Nguyen"
+    ],
+    "description": "A tightly plotted fiction tale set across three generations of one household.",
+    "published_date": "1921",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0018.jpg",
+    "page_count": 851
+  },
+  {
+    "book_id": "seed-0019",
+    "title": "Fragments of Kingdom",
+    "authors": [
+      "Kenji Haddad"
+    ],
+    "description": "Part romance, part meditation on loss, this book lingers long after the last page.",
+    "published_date": null,
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0019.jpg",
+    "page_count": 479
+  },
+  {
+    "book_id": "seed-0020",
+    "title": "The Hidden Road",
+    "authors": [
+      "Noah Kowalski",
+      "Grace Andersen"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "2014-01-24",
+    "categories": [
+      "Poetry",
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0020.jpg",
+    "page_count": 401
+  },
+  {
+    "book_id": "seed-0021",
+    "title": "The Silent River",
+    "authors": [
+      "Liam Ahmed",
+      "Amara Torres"
+    ],
+    "description": "This science fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "2006",
+    "categories": [
+      "Science Fiction"
+    ],
+    "cover_url": null,
+    "page_count": 493
+  },
+  {
+    "book_id": "seed-0022",
+    "title": "A Quiet Road",
+    "authors": [
+      "Sofia Kim"
+    ],
+    "description": null,
+    "published_date": "1953",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0022.jpg",
+    "page_count": 765
+  },
+  {
+    "book_id": "seed-0023",
+    "title": "A Winter's Storm",
+    "authors": [
+      "Noah Kowalski"
+    ],
+    "description": "Part poetry, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1921-10",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0023.jpg",
+    "page_count": 656
+  },
+  {
+    "book_id": "seed-0024",
+    "title": "A Quiet Garden",
+    "authors": [
+      "Liam Lindqvist"
+    ],
+    "description": "A story about adventure that follows one character's search for meaning against the odds.",
+    "published_date": "1976-12-10",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": null,
+    "page_count": 706
+  },
+  {
+    "book_id": "seed-0025",
+    "title": "The Golden Star",
+    "authors": [
+      "Omar Petrov"
+    ],
+    "description": "This thriller novel explores family, memory, and the choices that define a life.",
+    "published_date": "2015-03-09",
+    "categories": [
+      "Thriller",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0025.jpg",
+    "page_count": 368
+  },
+  {
+    "book_id": "seed-0026",
+    "title": "Echoes of Kingdom",
+    "authors": [
+      "Priya Novak"
+    ],
+    "description": "A tightly plotted non-fiction tale set across three generations of one household.",
+    "published_date": "2001-05",
+    "categories": [
+      "Non-Fiction",
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0026.jpg",
+    "page_count": 125
+  },
+  {
+    "book_id": "seed-0027",
+    "title": "The Silent Storm",
+    "authors": [
+      "Omar Lindqvist"
+    ],
+    "description": "Part young adult, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2008",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0027.jpg",
+    "page_count": 638
+  },
+  {
+    "book_id": "seed-0028",
+    "title": "The Silent Mirror",
+    "authors": [
+      "Sofia Torres"
+    ],
+    "description": "A story about classics that follows one character's search for meaning against the odds.",
+    "published_date": "1925-04",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0028.jpg",
+    "page_count": 778
+  },
+  {
+    "book_id": "seed-0029",
+    "title": "Beyond the Star",
+    "authors": [
+      "Elena Mensah"
+    ],
+    "description": "This adventure novel explores family, memory, and the choices that define a life.",
+    "published_date": "1940",
+    "categories": [
+      "Adventure",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0029.jpg",
+    "page_count": 502
+  },
+  {
+    "book_id": "seed-0030",
+    "title": "The Silent Horizon",
+    "authors": [
+      "Lucas Ahmed"
+    ],
+    "description": "A tightly plotted fiction tale set across three generations of one household.",
+    "published_date": "2009",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0030.jpg",
+    "page_count": 471
+  },
+  {
+    "book_id": "seed-0031",
+    "title": "Fragments of River",
+    "authors": [
+      "Priya Rossi",
+      "Amara Ahmed"
+    ],
+    "description": "Part horror, part meditation on loss, this book lingers long after the last page.",
+    "published_date": null,
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0031.jpg",
+    "page_count": 277
+  },
+  {
+    "book_id": "seed-0032",
+    "title": "The Broken Storm",
+    "authors": [
+      "Amara Nguyen"
+    ],
+    "description": "A story about horror that follows one character's search for meaning against the odds.",
+    "published_date": "1923",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0032.jpg",
+    "page_count": 347
+  },
+  {
+    "book_id": "seed-0033",
+    "title": "The Last Forest",
+    "authors": [
+      "Alex Nguyen"
+    ],
+    "description": "This classics novel explores family, memory, and the choices that define a life.",
+    "published_date": "1969-04-09",
+    "categories": [
+      "Classics",
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0033.jpg",
+    "page_count": 125
+  },
+  {
+    "book_id": "seed-0034",
+    "title": "A Winter's Mountain",
+    "authors": [
+      "Liam Ahmed"
+    ],
+    "description": "A tightly plotted poetry tale set across three generations of one household.",
+    "published_date": "2005-10",
+    "categories": [
+      "Poetry",
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0034.jpg",
+    "page_count": 401
+  },
+  {
+    "book_id": "seed-0035",
+    "title": "The Distant Mirror",
+    "authors": [
+      "Grace Ahmed"
+    ],
+    "description": "Part history, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1936",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0035.jpg",
+    "page_count": 510
+  },
+  {
+    "book_id": "seed-0036",
+    "title": "The Distant Mountain",
+    "authors": [
+      "Sofia Kim"
+    ],
+    "description": "A story about classics that follows one character's search for meaning against the odds.",
+    "published_date": "1994-11-11",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": null,
+    "page_count": 556
+  },
+  {
+    "book_id": "seed-0037",
+    "title": "Shadows of City",
+    "authors": [
+      "Liam Haddad"
+    ],
+    "description": null,
+    "published_date": "2024",
+    "categories": [
+      "Mystery",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0037.jpg",
+    "page_count": 768
+  },
+  {
+    "book_id": "seed-0038",
+    "title": "The Hidden Kingdom",
+    "authors": [
+      "James Carter"
+    ],
+    "description": "A tightly plotted romance tale set across three generations of one household.",
+    "published_date": "2000-04-23",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0038.jpg",
+    "page_count": 793
+  },
+  {
+    "book_id": "seed-0039",
+    "title": "The Broken City",
+    "authors": [
+      "Priya Okafor",
+      "Omar Andersen"
+    ],
+    "description": "Part adventure, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1942-09-15",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0039.jpg",
+    "page_count": 131
+  },
+  {
+    "book_id": "seed-0040",
+    "title": "The Forgotten Kingdom",
+    "authors": [
+      "Fatima Okafor"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "1976-12-17",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0040.jpg",
+    "page_count": 516
+  },
+  {
+    "book_id": "seed-0041",
+    "title": "Fragments of Road",
+    "authors": [
+      "Ivan Okafor",
+      "Grace Petrov"
+    ],
+    "description": "This biography novel explores family, memory, and the choices that define a life.",
+    "published_date": "1986-11",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0041.jpg",
+    "page_count": 324
+  },
+  {
+    "book_id": "seed-0042",
+    "title": "The Hidden City",
+    "authors": [
+      "Grace Lindqvist"
+    ],
+    "description": "A tightly plotted thriller tale set across three generations of one household.",
+    "published_date": "1969-03-23",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0042.jpg",
+    "page_count": 299
+  },
+  {
+    "book_id": "seed-0043",
+    "title": "A Quiet Mountain",
+    "authors": [
+      "Elena Torres",
+      "Fatima Kowalski"
+    ],
+    "description": "Part romance, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1922-07-16",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0043.jpg",
+    "page_count": 86
+  },
+  {
+    "book_id": "seed-0044",
+    "title": "Whispers of Letter",
+    "authors": [
+      "Amara Ahmed",
+      "Amara Kowalski"
+    ],
+    "description": "A story about young adult that follows one character's search for meaning against the odds.",
+    "published_date": "1975-01",
+    "categories": [
+      "Young Adult",
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0044.jpg",
+    "page_count": 478
+  },
+  {
+    "book_id": "seed-0045",
+    "title": "Whispers of Star",
+    "authors": [
+      "Grace Okafor",
+      "Amara Haddad"
+    ],
+    "description": "This self-help novel explores family, memory, and the choices that define a life.",
+    "published_date": "1930-07-05",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0045.jpg",
+    "page_count": 552
+  },
+  {
+    "book_id": "seed-0046",
+    "title": "The Last River",
+    "authors": [
+      "Kenji Silva"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "1973-02",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0046.jpg",
+    "page_count": 561
+  },
+  {
+    "book_id": "seed-0047",
+    "title": "The Silent Promise",
+    "authors": [
+      "Elena Rossi"
+    ],
+    "description": "Part fantasy, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1922-03-08",
+    "categories": [
+      "Fantasy",
+      "Fiction"
+    ],
+    "cover_url": null,
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0048",
+    "title": "The Last City",
+    "authors": [
+      "Sofia Rossi"
+    ],
+    "description": "A story about young adult that follows one character's search for meaning against the odds.",
+    "published_date": "2011",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0048.jpg",
+    "page_count": 876
+  },
+  {
+    "book_id": "seed-0049",
+    "title": "Fragments of Horizon",
+    "authors": [
+      "Maria Kim"
+    ],
+    "description": "This adventure novel explores family, memory, and the choices that define a life.",
+    "published_date": "2011",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0049.jpg",
+    "page_count": 157
+  },
+  {
+    "book_id": "seed-0050",
+    "title": "Echoes of Promise",
+    "authors": [
+      "Maria Andersen"
+    ],
+    "description": "A tightly plotted non-fiction tale set across three generations of one household.",
+    "published_date": "1925-09",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0050.jpg",
+    "page_count": 518
+  },
+  {
+    "book_id": "seed-0051",
+    "title": "The Distant Storm",
+    "authors": [
+      "Liam Novak"
+    ],
+    "description": "Part science fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2001-12",
+    "categories": [
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0051.jpg",
+    "page_count": 236
+  },
+  {
+    "book_id": "seed-0052",
+    "title": "The Broken Horizon",
+    "authors": [
+      "Sofia Mensah"
+    ],
+    "description": "A story about fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1951",
+    "categories": [
+      "Fiction",
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0052.jpg",
+    "page_count": 365
+  },
+  {
+    "book_id": "seed-0053",
+    "title": "The Long City",
+    "authors": [
+      "Lucas Haddad"
+    ],
+    "description": "This self-help novel explores family, memory, and the choices that define a life.",
+    "published_date": "1947-05",
+    "categories": [
+      "Self-Help",
+      "Poetry"
+    ],
+    "cover_url": null,
+    "page_count": 428
+  },
+  {
+    "book_id": "seed-0054",
+    "title": "The Hidden Road",
+    "authors": [
+      "Liam Carter"
+    ],
+    "description": "A tightly plotted romance tale set across three generations of one household.",
+    "published_date": "1980-12-16",
+    "categories": [
+      "Romance",
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0054.jpg",
+    "page_count": 538
+  },
+  {
+    "book_id": "seed-0055",
+    "title": "The Golden River",
+    "authors": [
+      "Noah Rossi"
+    ],
+    "description": "Part young adult, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1964-12",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0055.jpg",
+    "page_count": 643
+  },
+  {
+    "book_id": "seed-0056",
+    "title": "Whispers of Storm",
+    "authors": [
+      "Noah Lindqvist",
+      "Noah Rossi"
+    ],
+    "description": "A story about young adult that follows one character's search for meaning against the odds.",
+    "published_date": "1943",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0056.jpg",
+    "page_count": 301
+  },
+  {
+    "book_id": "seed-0057",
+    "title": "A Winter's City",
+    "authors": [
+      "Grace Kim"
+    ],
+    "description": "This self-help novel explores family, memory, and the choices that define a life.",
+    "published_date": "1958",
+    "categories": [
+      "Self-Help",
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0057.jpg",
+    "page_count": 805
+  },
+  {
+    "book_id": "seed-0058",
+    "title": "The Forgotten Horizon",
+    "authors": [
+      "Alex Carter"
+    ],
+    "description": "A tightly plotted thriller tale set across three generations of one household.",
+    "published_date": "1921-05-16",
+    "categories": [
+      "Thriller",
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0058.jpg",
+    "page_count": 570
+  },
+  {
+    "book_id": "seed-0059",
+    "title": "Shadows of Storm",
+    "authors": [
+      "Alex Lindqvist"
+    ],
+    "description": "Part fantasy, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1926",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0059.jpg",
+    "page_count": 232
+  },
+  {
+    "book_id": "seed-0060",
+    "title": "The Golden Forest",
+    "authors": [
+      "Maria Rossi"
+    ],
+    "description": "A story about history that follows one character's search for meaning against the odds.",
+    "published_date": "1986-08",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0060.jpg",
+    "page_count": 533
+  },
+  {
+    "book_id": "seed-0061",
+    "title": "The Hidden Mirror",
+    "authors": [
+      "Noah Kim",
+      "Sofia Carter"
+    ],
+    "description": "This young adult novel explores family, memory, and the choices that define a life.",
+    "published_date": "1940",
+    "categories": [
+      "Young Adult",
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0061.jpg",
+    "page_count": 257
+  },
+  {
+    "book_id": "seed-0062",
+    "title": "The Forgotten Garden",
+    "authors": [
+      "Alex Kowalski"
+    ],
+    "description": "A tightly plotted young adult tale set across three generations of one household.",
+    "published_date": "2009-02",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0062.jpg",
+    "page_count": 783
+  },
+  {
+    "book_id": "seed-0063",
+    "title": "Beyond the Road",
+    "authors": [
+      "Lucas Mensah"
+    ],
+    "description": "Part self-help, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1939-03",
+    "categories": [
+      "Self-Help",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0063.jpg",
+    "page_count": 153
+  },
+  {
+    "book_id": "seed-0064",
+    "title": "The Silent Horizon",
+    "authors": [
+      "Sofia Andersen"
+    ],
+    "description": "A story about adventure that follows one character's search for meaning against the odds.",
+    "published_date": "1954-09-16",
+    "categories": [
+      "Adventure",
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0064.jpg",
+    "page_count": 528
+  },
+  {
+    "book_id": "seed-0065",
+    "title": "A Quiet Forest",
+    "authors": [
+      "Ivan Kowalski"
+    ],
+    "description": "This horror novel explores family, memory, and the choices that define a life.",
+    "published_date": "1993-01-25",
+    "categories": [
+      "Horror",
+      "Self-Help"
+    ],
+    "cover_url": null,
+    "page_count": 768
+  },
+  {
+    "book_id": "seed-0066",
+    "title": "Fragments of Letter",
+    "authors": [
+      "Lucas Mensah"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "1975-08-03",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0066.jpg",
+    "page_count": 561
+  },
+  {
+    "book_id": "seed-0067",
+    "title": "Whispers of Mountain",
+    "authors": [
+      "Elena Novak"
+    ],
+    "description": "Part non-fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1971-01-15",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0067.jpg",
+    "page_count": 170
+  },
+  {
+    "book_id": "seed-0068",
+    "title": "Whispers of Letter",
+    "authors": [
+      "Maria Mensah"
+    ],
+    "description": "A story about non-fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1972",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0068.jpg",
+    "page_count": 272
+  },
+  {
+    "book_id": "seed-0069",
+    "title": "The Forgotten Storm",
+    "authors": [
+      "Omar Haddad",
+      "Lucas Carter"
+    ],
+    "description": "This thriller novel explores family, memory, and the choices that define a life.",
+    "published_date": "1935",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0069.jpg",
+    "page_count": 725
+  },
+  {
+    "book_id": "seed-0070",
+    "title": "Echoes of Journey",
+    "authors": [
+      "Grace Okafor"
+    ],
+    "description": null,
+    "published_date": "1934-02",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0070.jpg",
+    "page_count": 743
+  },
+  {
+    "book_id": "seed-0071",
+    "title": "Fragments of Horizon",
+    "authors": [
+      "Ivan Andersen",
+      "Noah Torres"
+    ],
+    "description": "Part thriller, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1969",
+    "categories": [
+      "Thriller",
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0071.jpg",
+    "page_count": 693
+  },
+  {
+    "book_id": "seed-0072",
+    "title": "The Forgotten Promise",
+    "authors": [
+      "Amara Nguyen"
+    ],
+    "description": "A story about fiction that follows one character's search for meaning against the odds.",
+    "published_date": "2025",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0072.jpg",
+    "page_count": 369
+  },
+  {
+    "book_id": "seed-0073",
+    "title": "A Winter's Letter",
+    "authors": [
+      "Amara Okafor",
+      "Fatima Torres"
+    ],
+    "description": "This horror novel explores family, memory, and the choices that define a life.",
+    "published_date": "1944-04-19",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0073.jpg",
+    "page_count": 472
+  },
+  {
+    "book_id": "seed-0074",
+    "title": "Beyond the Mirror",
+    "authors": [
+      "Alex Silva",
+      "Grace Haddad"
+    ],
+    "description": "A tightly plotted adventure tale set across three generations of one household.",
+    "published_date": "1939-01",
+    "categories": [
+      "Adventure",
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0074.jpg",
+    "page_count": 209
+  },
+  {
+    "book_id": "seed-0075",
+    "title": "The Forgotten Forest",
+    "authors": [
+      "Amara Nguyen"
+    ],
+    "description": "Part fantasy, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2003",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0075.jpg",
+    "page_count": 156
+  },
+  {
+    "book_id": "seed-0076",
+    "title": "Shadows of Journey",
+    "authors": [
+      "Elena Kim"
+    ],
+    "description": null,
+    "published_date": "1960-12-25",
+    "categories": [
+      "Classics",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0076.jpg",
+    "page_count": 579
+  },
+  {
+    "book_id": "seed-0077",
+    "title": "Fragments of Ocean",
+    "authors": [
+      "Sofia Nguyen"
+    ],
+    "description": "This poetry novel explores family, memory, and the choices that define a life.",
+    "published_date": "1932-12-28",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0077.jpg",
+    "page_count": 182
+  },
+  {
+    "book_id": "seed-0078",
+    "title": "Shadows of Horizon",
+    "authors": [
+      "Ivan Carter"
+    ],
+    "description": "A tightly plotted horror tale set across three generations of one household.",
+    "published_date": "1987-10",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0078.jpg",
+    "page_count": 778
+  },
+  {
+    "book_id": "seed-0079",
+    "title": "The Golden Horizon",
+    "authors": [
+      "James Nguyen"
+    ],
+    "description": "Part non-fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1979-05-15",
+    "categories": [
+      "Non-Fiction",
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0079.jpg",
+    "page_count": 341
+  },
+  {
+    "book_id": "seed-0080",
+    "title": "The Distant River",
+    "authors": [
+      "Ivan Lindqvist",
+      "Omar Torres"
+    ],
+    "description": "A story about fantasy that follows one character's search for meaning against the odds.",
+    "published_date": "1974-05-15",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0080.jpg",
+    "page_count": 389
+  },
+  {
+    "book_id": "seed-0081",
+    "title": "Beyond the Mountain",
+    "authors": [
+      "Maria Rossi",
+      "Kenji Kim"
+    ],
+    "description": "This self-help novel explores family, memory, and the choices that define a life.",
+    "published_date": "1970-01",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0081.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0082",
+    "title": "Echoes of Mirror",
+    "authors": [
+      "Ivan Kim"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "1965",
+    "categories": [
+      "Biography",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0082.jpg",
+    "page_count": 731
+  },
+  {
+    "book_id": "seed-0083",
+    "title": "Beyond the Forest",
+    "authors": [
+      "Omar Mensah"
+    ],
+    "description": "Part fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1925-08",
+    "categories": [
+      "Fiction",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0083.jpg",
+    "page_count": 114
+  },
+  {
+    "book_id": "seed-0084",
+    "title": "Echoes of Storm",
+    "authors": [
+      "Maria Ahmed"
+    ],
+    "description": "A story about horror that follows one character's search for meaning against the odds.",
+    "published_date": "1966-09-09",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0084.jpg",
+    "page_count": 248
+  },
+  {
+    "book_id": "seed-0085",
+    "title": "The Hidden Road",
+    "authors": [
+      "Lucas Lindqvist",
+      "Grace Petrov"
+    ],
+    "description": "This fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "2006-11-13",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0085.jpg",
+    "page_count": 650
+  },
+  {
+    "book_id": "seed-0086",
+    "title": "Whispers of Garden",
+    "authors": [
+      "Alex Lindqvist",
+      "Liam Nguyen"
+    ],
+    "description": "A tightly plotted horror tale set across three generations of one household.",
+    "published_date": "1967",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0086.jpg",
+    "page_count": 771
+  },
+  {
+    "book_id": "seed-0087",
+    "title": "Beyond the City",
+    "authors": [
+      "Sofia Ahmed"
+    ],
+    "description": "Part horror, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1958-07-04",
+    "categories": [
+      "Horror",
+      "Self-Help"
+    ],
+    "cover_url": null,
+    "page_count": 223
+  },
+  {
+    "book_id": "seed-0088",
+    "title": "The Silent River",
+    "authors": [
+      "Fatima Nguyen"
+    ],
+    "description": "A story about romance that follows one character's search for meaning against the odds.",
+    "published_date": "2015-09-14",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0088.jpg",
+    "page_count": 681
+  },
+  {
+    "book_id": "seed-0089",
+    "title": "A Winter's Promise",
+    "authors": [
+      "Ivan Kowalski"
+    ],
+    "description": "This fantasy novel explores family, memory, and the choices that define a life.",
+    "published_date": null,
+    "categories": [
+      "Fantasy",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0089.jpg",
+    "page_count": 459
+  },
+  {
+    "book_id": "seed-0090",
+    "title": "Beyond the City",
+    "authors": [
+      "Priya Petrov",
+      "Elena Nguyen"
+    ],
+    "description": "A tightly plotted horror tale set across three generations of one household.",
+    "published_date": "1935-02",
+    "categories": [
+      "Horror",
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0090.jpg",
+    "page_count": 758
+  },
+  {
+    "book_id": "seed-0091",
+    "title": "Beyond the Star",
+    "authors": [
+      "Alex Mensah"
+    ],
+    "description": "Part romance, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1990",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0091.jpg",
+    "page_count": 680
+  },
+  {
+    "book_id": "seed-0092",
+    "title": "Beyond the Mirror",
+    "authors": [
+      "Elena Mensah"
+    ],
+    "description": "A story about fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1936-05-26",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": null,
+    "page_count": 258
+  },
+  {
+    "book_id": "seed-0093",
+    "title": "A Quiet Star",
+    "authors": [
+      "James Carter"
+    ],
+    "description": "This fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1936-07-17",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0093.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0094",
+    "title": "A Quiet Promise",
+    "authors": [
+      "Fatima Haddad"
+    ],
+    "description": "A tightly plotted history tale set across three generations of one household.",
+    "published_date": "2013-09-10",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0094.jpg",
+    "page_count": 549
+  },
+  {
+    "book_id": "seed-0095",
+    "title": "The Distant River",
+    "authors": [
+      "Fatima Petrov"
+    ],
+    "description": "Part classics, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1930-10",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0095.jpg",
+    "page_count": 231
+  },
+  {
+    "book_id": "seed-0096",
+    "title": "A Quiet Horizon",
+    "authors": [
+      "Sofia Novak"
+    ],
+    "description": "A story about history that follows one character's search for meaning against the odds.",
+    "published_date": "1997-02",
+    "categories": [
+      "History",
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0096.jpg",
+    "page_count": 892
+  },
+  {
+    "book_id": "seed-0097",
+    "title": "A Winter's Garden",
+    "authors": [
+      "Kenji Haddad"
+    ],
+    "description": "This classics novel explores family, memory, and the choices that define a life.",
+    "published_date": "1974-11",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0097.jpg",
+    "page_count": 341
+  },
+  {
+    "book_id": "seed-0098",
+    "title": "Whispers of Horizon",
+    "authors": [
+      "Maria Nguyen",
+      "Amara Nguyen"
+    ],
+    "description": null,
+    "published_date": "1995-09-11",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0098.jpg",
+    "page_count": 766
+  },
+  {
+    "book_id": "seed-0099",
+    "title": "A Quiet Mountain",
+    "authors": [
+      "Amara Novak"
+    ],
+    "description": "Part non-fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1933-09-07",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": null,
+    "page_count": 238
+  },
+  {
+    "book_id": "seed-0100",
+    "title": "The Distant City",
+    "authors": [
+      "Amara Nguyen"
+    ],
+    "description": "A story about non-fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1974-10-20",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0100.jpg",
+    "page_count": 771
+  },
+  {
+    "book_id": "seed-0101",
+    "title": "The Distant Ocean",
+    "authors": [
+      "Sofia Ahmed"
+    ],
+    "description": "This non-fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1963-01",
+    "categories": [
+      "Non-Fiction",
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0101.jpg",
+    "page_count": 265
+  },
+  {
+    "book_id": "seed-0102",
+    "title": "Fragments of Horizon",
+    "authors": [
+      "Maria Okafor",
+      "Grace Novak"
+    ],
+    "description": "A tightly plotted fantasy tale set across three generations of one household.",
+    "published_date": "1967-12",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0102.jpg",
+    "page_count": 412
+  },
+  {
+    "book_id": "seed-0103",
+    "title": "The Golden Forest",
+    "authors": [
+      "Ivan Carter"
+    ],
+    "description": "Part mystery, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1974-10",
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": null,
+    "page_count": 532
+  },
+  {
+    "book_id": "seed-0104",
+    "title": "The Broken Letter",
+    "authors": [
+      "Lucas Torres"
+    ],
+    "description": "A story about horror that follows one character's search for meaning against the odds.",
+    "published_date": "2005-01",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0104.jpg",
+    "page_count": 305
+  },
+  {
+    "book_id": "seed-0105",
+    "title": "The Broken Forest",
+    "authors": [
+      "Alex Rossi"
+    ],
+    "description": "This romance novel explores family, memory, and the choices that define a life.",
+    "published_date": "1983-07-06",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0105.jpg",
+    "page_count": 212
+  },
+  {
+    "book_id": "seed-0106",
+    "title": "The Broken Ocean",
+    "authors": [
+      "Liam Torres"
+    ],
+    "description": null,
+    "published_date": null,
+    "categories": [
+      "Fiction",
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0106.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0107",
+    "title": "The Long Garden",
+    "authors": [
+      "Sofia Kowalski"
+    ],
+    "description": "Part classics, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1941-08-27",
+    "categories": [
+      "Classics",
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0107.jpg",
+    "page_count": 786
+  },
+  {
+    "book_id": "seed-0108",
+    "title": "The Long Storm",
+    "authors": [
+      "Kenji Petrov"
+    ],
+    "description": "A story about romance that follows one character's search for meaning against the odds.",
+    "published_date": "2015-04",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0108.jpg",
+    "page_count": 421
+  },
+  {
+    "book_id": "seed-0109",
+    "title": "The Golden Horizon",
+    "authors": [
+      "Liam Novak"
+    ],
+    "description": "This history novel explores family, memory, and the choices that define a life.",
+    "published_date": "2024-03-08",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0109.jpg",
+    "page_count": 185
+  },
+  {
+    "book_id": "seed-0110",
+    "title": "The Last Letter",
+    "authors": [
+      "James Kim"
+    ],
+    "description": "A tightly plotted fiction tale set across three generations of one household.",
+    "published_date": "1979-10-15",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": null,
+    "page_count": 777
+  },
+  {
+    "book_id": "seed-0111",
+    "title": "The Long Road",
+    "authors": [
+      "Amara Novak"
+    ],
+    "description": "Part mystery, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1995",
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0111.jpg",
+    "page_count": 440
+  },
+  {
+    "book_id": "seed-0112",
+    "title": "The Forgotten Garden",
+    "authors": [
+      "Fatima Haddad"
+    ],
+    "description": "A story about science fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1931-10-17",
+    "categories": [
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0112.jpg",
+    "page_count": 473
+  },
+  {
+    "book_id": "seed-0113",
+    "title": "Shadows of Forest",
+    "authors": [
+      "Fatima Ahmed"
+    ],
+    "description": "This poetry novel explores family, memory, and the choices that define a life.",
+    "published_date": "1933-12",
+    "categories": [
+      "Poetry",
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0113.jpg",
+    "page_count": 166
+  },
+  {
+    "book_id": "seed-0114",
+    "title": "The Forgotten Star",
+    "authors": [
+      "Alex Rossi"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "1969-06",
+    "categories": [
+      "Biography",
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0114.jpg",
+    "page_count": 775
+  },
+  {
+    "book_id": "seed-0115",
+    "title": "Echoes of River",
+    "authors": [
+      "Maria Silva"
+    ],
+    "description": "Part history, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1997",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0115.jpg",
+    "page_count": 421
+  },
+  {
+    "book_id": "seed-0116",
+    "title": "A Quiet Forest",
+    "authors": [
+      "Ivan Silva"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "1959-07-21",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0116.jpg",
+    "page_count": 890
+  },
+  {
+    "book_id": "seed-0117",
+    "title": "Whispers of Mirror",
+    "authors": [
+      "Omar Andersen"
+    ],
+    "description": null,
+    "published_date": null,
+    "categories": [
+      "Poetry",
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0117.jpg",
+    "page_count": 396
+  },
+  {
+    "book_id": "seed-0118",
+    "title": "The Last Kingdom",
+    "authors": [
+      "Lucas Haddad"
+    ],
+    "description": "A tightly plotted romance tale set across three generations of one household.",
+    "published_date": "1984-12-17",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0118.jpg",
+    "page_count": 118
+  },
+  {
+    "book_id": "seed-0119",
+    "title": "The Distant Storm",
+    "authors": [
+      "Sofia Kowalski"
+    ],
+    "description": "Part mystery, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2012-01",
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0119.jpg",
+    "page_count": 500
+  },
+  {
+    "book_id": "seed-0120",
+    "title": "Whispers of Star",
+    "authors": [
+      "Fatima Kim"
+    ],
+    "description": "A story about fiction that follows one character's search for meaning against the odds.",
+    "published_date": "2023-04",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0120.jpg",
+    "page_count": 456
+  },
+  {
+    "book_id": "seed-0121",
+    "title": "The Distant Forest",
+    "authors": [
+      "Fatima Mensah",
+      "Noah Mensah"
+    ],
+    "description": "This history novel explores family, memory, and the choices that define a life.",
+    "published_date": "1937-01",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0121.jpg",
+    "page_count": 736
+  },
+  {
+    "book_id": "seed-0122",
+    "title": "Shadows of Mirror",
+    "authors": [
+      "Liam Ahmed"
+    ],
+    "description": "A tightly plotted young adult tale set across three generations of one household.",
+    "published_date": "1954-09",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0122.jpg",
+    "page_count": 230
+  },
+  {
+    "book_id": "seed-0123",
+    "title": "Fragments of Mountain",
+    "authors": [
+      "Ivan Rossi"
+    ],
+    "description": "Part adventure, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1950-02",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": null,
+    "page_count": 463
+  },
+  {
+    "book_id": "seed-0124",
+    "title": "Beyond the River",
+    "authors": [
+      "Ivan Nguyen"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "2009",
+    "categories": [
+      "Poetry",
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0124.jpg",
+    "page_count": 857
+  },
+  {
+    "book_id": "seed-0125",
+    "title": "A Winter's City",
+    "authors": [
+      "Sofia Carter",
+      "Ivan Nguyen"
+    ],
+    "description": "This thriller novel explores family, memory, and the choices that define a life.",
+    "published_date": "1974",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0125.jpg",
+    "page_count": 874
+  },
+  {
+    "book_id": "seed-0126",
+    "title": "The Hidden Kingdom",
+    "authors": [
+      "Maria Carter"
+    ],
+    "description": "A tightly plotted classics tale set across three generations of one household.",
+    "published_date": "1983-09-01",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0126.jpg",
+    "page_count": 727
+  },
+  {
+    "book_id": "seed-0127",
+    "title": "The Forgotten Forest",
+    "authors": [
+      "Grace Okafor"
+    ],
+    "description": null,
+    "published_date": "2005",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0127.jpg",
+    "page_count": 616
+  },
+  {
+    "book_id": "seed-0128",
+    "title": "Whispers of Garden",
+    "authors": [
+      "Kenji Petrov"
+    ],
+    "description": "A story about science fiction that follows one character's search for meaning against the odds.",
+    "published_date": null,
+    "categories": [
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0128.jpg",
+    "page_count": 887
+  },
+  {
+    "book_id": "seed-0129",
+    "title": "A Quiet Storm",
+    "authors": [
+      "Grace Novak"
+    ],
+    "description": "This fantasy novel explores family, memory, and the choices that define a life.",
+    "published_date": "1963-03-27",
+    "categories": [
+      "Fantasy",
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0129.jpg",
+    "page_count": 877
+  },
+  {
+    "book_id": "seed-0130",
+    "title": "The Distant City",
+    "authors": [
+      "Omar Okafor",
+      "Lucas Okafor"
+    ],
+    "description": "A tightly plotted young adult tale set across three generations of one household.",
+    "published_date": null,
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0130.jpg",
+    "page_count": 284
+  },
+  {
+    "book_id": "seed-0131",
+    "title": "The Long River",
+    "authors": [
+      "Ivan Lindqvist"
+    ],
+    "description": "Part classics, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1965",
+    "categories": [
+      "Classics",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0131.jpg",
+    "page_count": 751
+  },
+  {
+    "book_id": "seed-0132",
+    "title": "Whispers of Letter",
+    "authors": [
+      "Lucas Silva"
+    ],
+    "description": "A story about adventure that follows one character's search for meaning against the odds.",
+    "published_date": "1943-12",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0132.jpg",
+    "page_count": 589
+  },
+  {
+    "book_id": "seed-0133",
+    "title": "Whispers of Road",
+    "authors": [
+      "Lucas Nguyen"
+    ],
+    "description": "This classics novel explores family, memory, and the choices that define a life.",
+    "published_date": "1933",
+    "categories": [
+      "Classics",
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0133.jpg",
+    "page_count": 415
+  },
+  {
+    "book_id": "seed-0134",
+    "title": "The Distant Letter",
+    "authors": [
+      "Fatima Kim"
+    ],
+    "description": "A tightly plotted classics tale set across three generations of one household.",
+    "published_date": "1965-07-09",
+    "categories": [
+      "Classics",
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0134.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0135",
+    "title": "The Distant Journey",
+    "authors": [
+      "Maria Novak"
+    ],
+    "description": "Part classics, part meditation on loss, this book lingers long after the last page.",
+    "published_date": null,
+    "categories": [
+      "Classics",
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0135.jpg",
+    "page_count": 702
+  },
+  {
+    "book_id": "seed-0136",
+    "title": "The Distant Journey",
+    "authors": [
+      "Alex Okafor",
+      "Maria Rossi"
+    ],
+    "description": "A story about horror that follows one character's search for meaning against the odds.",
+    "published_date": "1967-08",
+    "categories": [
+      "Horror",
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0136.jpg",
+    "page_count": 861
+  },
+  {
+    "book_id": "seed-0137",
+    "title": "A Quiet Forest",
+    "authors": [
+      "Liam Silva"
+    ],
+    "description": "This horror novel explores family, memory, and the choices that define a life.",
+    "published_date": "1983-07-18",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0137.jpg",
+    "page_count": 200
+  },
+  {
+    "book_id": "seed-0138",
+    "title": "The Hidden Journey",
+    "authors": [
+      "Grace Haddad"
+    ],
+    "description": "A tightly plotted self-help tale set across three generations of one household.",
+    "published_date": "1929-03",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0138.jpg",
+    "page_count": 810
+  },
+  {
+    "book_id": "seed-0139",
+    "title": "Shadows of Garden",
+    "authors": [
+      "Omar Silva"
+    ],
+    "description": "Part fantasy, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2009-03-26",
+    "categories": [
+      "Fantasy",
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0139.jpg",
+    "page_count": 450
+  },
+  {
+    "book_id": "seed-0140",
+    "title": "The Forgotten Kingdom",
+    "authors": [
+      "Priya Mensah"
+    ],
+    "description": "A story about romance that follows one character's search for meaning against the odds.",
+    "published_date": "2022-03-20",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": null,
+    "page_count": 168
+  },
+  {
+    "book_id": "seed-0141",
+    "title": "A Quiet Letter",
+    "authors": [
+      "Grace Andersen",
+      "Fatima Torres"
+    ],
+    "description": "This fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1929-08",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0141.jpg",
+    "page_count": 776
+  },
+  {
+    "book_id": "seed-0142",
+    "title": "The Forgotten Storm",
+    "authors": [
+      "Ivan Petrov"
+    ],
+    "description": "A tightly plotted poetry tale set across three generations of one household.",
+    "published_date": "1927",
+    "categories": [
+      "Poetry",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0142.jpg",
+    "page_count": 610
+  },
+  {
+    "book_id": "seed-0143",
+    "title": "The Last Letter",
+    "authors": [
+      "James Silva"
+    ],
+    "description": "Part romance, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1945-09-09",
+    "categories": [
+      "Romance",
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0143.jpg",
+    "page_count": 208
+  },
+  {
+    "book_id": "seed-0144",
+    "title": "The Distant Letter",
+    "authors": [
+      "Liam Novak"
+    ],
+    "description": "A story about self-help that follows one character's search for meaning against the odds.",
+    "published_date": "1997-10",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0144.jpg",
+    "page_count": 122
+  },
+  {
+    "book_id": "seed-0145",
+    "title": "Fragments of Mirror",
+    "authors": [
+      "Maria Carter"
+    ],
+    "description": "This fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1923-11",
+    "categories": [
+      "Fiction",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0145.jpg",
+    "page_count": 638
+  },
+  {
+    "book_id": "seed-0146",
+    "title": "The Hidden Star",
+    "authors": [
+      "Fatima Rossi"
+    ],
+    "description": "A tightly plotted classics tale set across three generations of one household.",
+    "published_date": "1979",
+    "categories": [
+      "Classics",
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0146.jpg",
+    "page_count": 428
+  },
+  {
+    "book_id": "seed-0147",
+    "title": "Echoes of Horizon",
+    "authors": [
+      "Amara Andersen"
+    ],
+    "description": "Part young adult, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1985-02-11",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0147.jpg",
+    "page_count": 327
+  },
+  {
+    "book_id": "seed-0148",
+    "title": "Shadows of Garden",
+    "authors": [
+      "Fatima Rossi"
+    ],
+    "description": null,
+    "published_date": "1940-10",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0148.jpg",
+    "page_count": 818
+  },
+  {
+    "book_id": "seed-0149",
+    "title": "Whispers of Kingdom",
+    "authors": [
+      "Fatima Torres"
+    ],
+    "description": "This biography novel explores family, memory, and the choices that define a life.",
+    "published_date": "1978",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0149.jpg",
+    "page_count": 300
+  },
+  {
+    "book_id": "seed-0150",
+    "title": "Echoes of Storm",
+    "authors": [
+      "Alex Lindqvist"
+    ],
+    "description": "A tightly plotted self-help tale set across three generations of one household.",
+    "published_date": "1933-03",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0150.jpg",
+    "page_count": 350
+  },
+  {
+    "book_id": "seed-0151",
+    "title": "A Winter's Storm",
+    "authors": [
+      "Elena Carter",
+      "Kenji Carter"
+    ],
+    "description": "Part history, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1990-10",
+    "categories": [
+      "History",
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0151.jpg",
+    "page_count": 776
+  },
+  {
+    "book_id": "seed-0152",
+    "title": "Echoes of Garden",
+    "authors": [
+      "Maria Kowalski"
+    ],
+    "description": "A story about fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1997-07-17",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0152.jpg",
+    "page_count": 121
+  },
+  {
+    "book_id": "seed-0153",
+    "title": "The Silent River",
+    "authors": [
+      "Grace Silva"
+    ],
+    "description": "This history novel explores family, memory, and the choices that define a life.",
+    "published_date": "1998-03",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0153.jpg",
+    "page_count": 482
+  },
+  {
+    "book_id": "seed-0154",
+    "title": "Echoes of Promise",
+    "authors": [
+      "Sofia Silva"
+    ],
+    "description": "A tightly plotted non-fiction tale set across three generations of one household.",
+    "published_date": "1967-11",
+    "categories": [
+      "Non-Fiction",
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0154.jpg",
+    "page_count": 192
+  },
+  {
+    "book_id": "seed-0155",
+    "title": "The Broken Forest",
+    "authors": [
+      "Lucas Ahmed"
+    ],
+    "description": "Part non-fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2019-10-08",
+    "categories": [
+      "Non-Fiction",
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0155.jpg",
+    "page_count": 818
+  },
+  {
+    "book_id": "seed-0156",
+    "title": "The Silent Forest",
+    "authors": [
+      "James Torres",
+      "Omar Andersen"
+    ],
+    "description": "A story about fiction that follows one character's search for meaning against the odds.",
+    "published_date": "2009",
+    "categories": [
+      "Fiction",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0156.jpg",
+    "page_count": 275
+  },
+  {
+    "book_id": "seed-0157",
+    "title": "The Silent City",
+    "authors": [
+      "Kenji Okafor"
+    ],
+    "description": "This young adult novel explores family, memory, and the choices that define a life.",
+    "published_date": "2014-01-23",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0157.jpg",
+    "page_count": 221
+  },
+  {
+    "book_id": "seed-0158",
+    "title": "The Forgotten Kingdom",
+    "authors": [
+      "Omar Haddad"
+    ],
+    "description": "A tightly plotted classics tale set across three generations of one household.",
+    "published_date": "2006-11-21",
+    "categories": [
+      "Classics",
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0158.jpg",
+    "page_count": 789
+  },
+  {
+    "book_id": "seed-0159",
+    "title": "The Hidden Forest",
+    "authors": [
+      "Priya Rossi",
+      "Noah Torres"
+    ],
+    "description": "Part romance, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2008-08-11",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0159.jpg",
+    "page_count": 571
+  },
+  {
+    "book_id": "seed-0160",
+    "title": "Whispers of Ocean",
+    "authors": [
+      "Noah Nguyen"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "2022",
+    "categories": [
+      "Poetry",
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0160.jpg",
+    "page_count": 377
+  },
+  {
+    "book_id": "seed-0161",
+    "title": "The Silent Letter",
+    "authors": [
+      "Elena Ahmed"
+    ],
+    "description": "This poetry novel explores family, memory, and the choices that define a life.",
+    "published_date": "1991-05-05",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0161.jpg",
+    "page_count": 191
+  },
+  {
+    "book_id": "seed-0162",
+    "title": "Echoes of Promise",
+    "authors": [
+      "Priya Carter"
+    ],
+    "description": "A tightly plotted adventure tale set across three generations of one household.",
+    "published_date": "1980",
+    "categories": [
+      "Adventure",
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0162.jpg",
+    "page_count": 777
+  },
+  {
+    "book_id": "seed-0163",
+    "title": "The Golden Horizon",
+    "authors": [
+      "Liam Ahmed"
+    ],
+    "description": "Part classics, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2016-06",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0163.jpg",
+    "page_count": 372
+  },
+  {
+    "book_id": "seed-0164",
+    "title": "The Distant River",
+    "authors": [
+      "Omar Kim"
+    ],
+    "description": "A story about history that follows one character's search for meaning against the odds.",
+    "published_date": "1973",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0164.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0165",
+    "title": "The Long Road",
+    "authors": [
+      "Amara Kowalski"
+    ],
+    "description": "This mystery novel explores family, memory, and the choices that define a life.",
+    "published_date": "1921-10",
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0165.jpg",
+    "page_count": 697
+  },
+  {
+    "book_id": "seed-0166",
+    "title": "A Quiet Road",
+    "authors": [
+      "Noah Haddad"
+    ],
+    "description": "A tightly plotted history tale set across three generations of one household.",
+    "published_date": "1944",
+    "categories": [
+      "History",
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0166.jpg",
+    "page_count": 418
+  },
+  {
+    "book_id": "seed-0167",
+    "title": "The Last Promise",
+    "authors": [
+      "Omar Lindqvist",
+      "Grace Okafor"
+    ],
+    "description": "Part young adult, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1998-07-27",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0167.jpg",
+    "page_count": 517
+  },
+  {
+    "book_id": "seed-0168",
+    "title": "The Forgotten Storm",
+    "authors": [
+      "Kenji Novak"
+    ],
+    "description": "A story about mystery that follows one character's search for meaning against the odds.",
+    "published_date": null,
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0168.jpg",
+    "page_count": 472
+  },
+  {
+    "book_id": "seed-0169",
+    "title": "Beyond the City",
+    "authors": [
+      "Elena Lindqvist"
+    ],
+    "description": null,
+    "published_date": "1935-05",
+    "categories": [
+      "Young Adult",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0169.jpg",
+    "page_count": 243
+  },
+  {
+    "book_id": "seed-0170",
+    "title": "The Broken Star",
+    "authors": [
+      "Grace Nguyen"
+    ],
+    "description": "A tightly plotted adventure tale set across three generations of one household.",
+    "published_date": "1978-10-12",
+    "categories": [
+      "Adventure",
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0170.jpg",
+    "page_count": 505
+  },
+  {
+    "book_id": "seed-0171",
+    "title": "A Winter's Ocean",
+    "authors": [
+      "Lucas Torres",
+      "Lucas Novak"
+    ],
+    "description": "Part fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1977-12-12",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0171.jpg",
+    "page_count": 159
+  },
+  {
+    "book_id": "seed-0172",
+    "title": "The Long Forest",
+    "authors": [
+      "Alex Petrov"
+    ],
+    "description": "A story about adventure that follows one character's search for meaning against the odds.",
+    "published_date": "1976",
+    "categories": [
+      "Adventure",
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0172.jpg",
+    "page_count": 776
+  },
+  {
+    "book_id": "seed-0173",
+    "title": "Beyond the Promise",
+    "authors": [
+      "Maria Ahmed",
+      "Liam Haddad"
+    ],
+    "description": "This biography novel explores family, memory, and the choices that define a life.",
+    "published_date": "2006-12",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0173.jpg",
+    "page_count": 102
+  },
+  {
+    "book_id": "seed-0174",
+    "title": "The Broken Letter",
+    "authors": [
+      "Grace Rossi"
+    ],
+    "description": "A tightly plotted fantasy tale set across three generations of one household.",
+    "published_date": "1928-01",
+    "categories": [
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0174.jpg",
+    "page_count": 373
+  },
+  {
+    "book_id": "seed-0175",
+    "title": "The Broken Horizon",
+    "authors": [
+      "Lucas Novak"
+    ],
+    "description": "Part poetry, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1968-02",
+    "categories": [
+      "Poetry",
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0175.jpg",
+    "page_count": 779
+  },
+  {
+    "book_id": "seed-0176",
+    "title": "The Distant Mirror",
+    "authors": [
+      "Omar Petrov"
+    ],
+    "description": "A story about fantasy that follows one character's search for meaning against the odds.",
+    "published_date": "1948",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0176.jpg",
+    "page_count": 854
+  },
+  {
+    "book_id": "seed-0177",
+    "title": "The Silent Letter",
+    "authors": [
+      "Omar Andersen",
+      "Liam Kowalski"
+    ],
+    "description": "This classics novel explores family, memory, and the choices that define a life.",
+    "published_date": "2012",
+    "categories": [
+      "Classics",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0177.jpg",
+    "page_count": 112
+  },
+  {
+    "book_id": "seed-0178",
+    "title": "The Golden Star",
+    "authors": [
+      "Sofia Mensah",
+      "Ivan Ahmed"
+    ],
+    "description": "A tightly plotted romance tale set across three generations of one household.",
+    "published_date": "2010",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0178.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0179",
+    "title": "Beyond the Promise",
+    "authors": [
+      "Kenji Haddad"
+    ],
+    "description": "Part history, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1957",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0179.jpg",
+    "page_count": 829
+  },
+  {
+    "book_id": "seed-0180",
+    "title": "Echoes of Storm",
+    "authors": [
+      "Priya Lindqvist"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "1995-03-21",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0180.jpg",
+    "page_count": 775
+  },
+  {
+    "book_id": "seed-0181",
+    "title": "The Broken Ocean",
+    "authors": [
+      "Alex Silva",
+      "Omar Novak"
+    ],
+    "description": "This fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1943-08-08",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0181.jpg",
+    "page_count": 310
+  },
+  {
+    "book_id": "seed-0182",
+    "title": "The Hidden Mirror",
+    "authors": [
+      "Lucas Haddad"
+    ],
+    "description": "A tightly plotted history tale set across three generations of one household.",
+    "published_date": "1952",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0182.jpg",
+    "page_count": 418
+  },
+  {
+    "book_id": "seed-0183",
+    "title": "The Distant Garden",
+    "authors": [
+      "Amara Silva",
+      "Maria Torres"
+    ],
+    "description": null,
+    "published_date": null,
+    "categories": [
+      "Non-Fiction",
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0183.jpg",
+    "page_count": 154
+  },
+  {
+    "book_id": "seed-0184",
+    "title": "Beyond the Journey",
+    "authors": [
+      "Fatima Rossi"
+    ],
+    "description": "A story about thriller that follows one character's search for meaning against the odds.",
+    "published_date": "1935-08-08",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": null,
+    "page_count": 792
+  },
+  {
+    "book_id": "seed-0185",
+    "title": "Echoes of Promise",
+    "authors": [
+      "Kenji Ahmed"
+    ],
+    "description": "This history novel explores family, memory, and the choices that define a life.",
+    "published_date": "1959-06",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0185.jpg",
+    "page_count": 605
+  },
+  {
+    "book_id": "seed-0186",
+    "title": "The Long City",
+    "authors": [
+      "Maria Mensah",
+      "Grace Haddad"
+    ],
+    "description": "A tightly plotted adventure tale set across three generations of one household.",
+    "published_date": "2014",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0186.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0187",
+    "title": "The Silent Letter",
+    "authors": [
+      "Noah Okafor",
+      "Priya Silva"
+    ],
+    "description": "Part classics, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1963-08",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0187.jpg",
+    "page_count": 820
+  },
+  {
+    "book_id": "seed-0188",
+    "title": "The Distant Promise",
+    "authors": [
+      "Fatima Okafor",
+      "Grace Mensah"
+    ],
+    "description": "A story about mystery that follows one character's search for meaning against the odds.",
+    "published_date": "2002",
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0188.jpg",
+    "page_count": 616
+  },
+  {
+    "book_id": "seed-0189",
+    "title": "The Silent Mirror",
+    "authors": [
+      "Amara Novak"
+    ],
+    "description": null,
+    "published_date": "1939",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0189.jpg",
+    "page_count": 303
+  },
+  {
+    "book_id": "seed-0190",
+    "title": "The Forgotten City",
+    "authors": [
+      "Alex Kim"
+    ],
+    "description": "A tightly plotted poetry tale set across three generations of one household.",
+    "published_date": "1972",
+    "categories": [
+      "Poetry",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0190.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0191",
+    "title": "The Silent Ocean",
+    "authors": [
+      "Liam Lindqvist"
+    ],
+    "description": "Part history, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1933",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0191.jpg",
+    "page_count": 616
+  },
+  {
+    "book_id": "seed-0192",
+    "title": "The Last Kingdom",
+    "authors": [
+      "Sofia Torres"
+    ],
+    "description": "A story about non-fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1978-04-23",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0192.jpg",
+    "page_count": 311
+  },
+  {
+    "book_id": "seed-0193",
+    "title": "The Hidden Star",
+    "authors": [
+      "Omar Petrov"
+    ],
+    "description": null,
+    "published_date": "1921-03-03",
+    "categories": [
+      "Fiction",
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0193.jpg",
+    "page_count": 591
+  },
+  {
+    "book_id": "seed-0194",
+    "title": "Fragments of Mountain",
+    "authors": [
+      "Sofia Petrov"
+    ],
+    "description": "A tightly plotted adventure tale set across three generations of one household.",
+    "published_date": "1992-05",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": null,
+    "page_count": 127
+  },
+  {
+    "book_id": "seed-0195",
+    "title": "The Long Garden",
+    "authors": [
+      "Ivan Torres"
+    ],
+    "description": "Part poetry, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1938-07-03",
+    "categories": [
+      "Poetry",
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0195.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0196",
+    "title": "The Hidden Horizon",
+    "authors": [
+      "Sofia Petrov"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "2008-02-17",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0196.jpg",
+    "page_count": 843
+  },
+  {
+    "book_id": "seed-0197",
+    "title": "Whispers of River",
+    "authors": [
+      "Kenji Rossi"
+    ],
+    "description": "This horror novel explores family, memory, and the choices that define a life.",
+    "published_date": "1961",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0197.jpg",
+    "page_count": 729
+  },
+  {
+    "book_id": "seed-0198",
+    "title": "The Hidden Journey",
+    "authors": [
+      "Fatima Rossi",
+      "Elena Torres"
+    ],
+    "description": "A tightly plotted classics tale set across three generations of one household.",
+    "published_date": "1957",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0198.jpg",
+    "page_count": 810
+  },
+  {
+    "book_id": "seed-0199",
+    "title": "A Quiet Garden",
+    "authors": [
+      "James Kowalski"
+    ],
+    "description": "Part fiction, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1959-06",
+    "categories": [
+      "Fiction",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0199.jpg",
+    "page_count": 859
+  },
+  {
+    "book_id": "seed-0200",
+    "title": "The Hidden Garden",
+    "authors": [
+      "Maria Okafor"
+    ],
+    "description": "A story about biography that follows one character's search for meaning against the odds.",
+    "published_date": "1990",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0200.jpg",
+    "page_count": 691
+  },
+  {
+    "book_id": "seed-0201",
+    "title": "Echoes of Journey",
+    "authors": [
+      "Amara Kowalski"
+    ],
+    "description": "This thriller novel explores family, memory, and the choices that define a life.",
+    "published_date": "1951-09-06",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0201.jpg",
+    "page_count": 781
+  },
+  {
+    "book_id": "seed-0202",
+    "title": "The Broken Horizon",
+    "authors": [
+      "Noah Lindqvist"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "2020",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0202.jpg",
+    "page_count": 449
+  },
+  {
+    "book_id": "seed-0203",
+    "title": "The Hidden Kingdom",
+    "authors": [
+      "Sofia Kim",
+      "Priya Haddad"
+    ],
+    "description": "Part mystery, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2022-08",
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0203.jpg",
+    "page_count": 422
+  },
+  {
+    "book_id": "seed-0204",
+    "title": "The Broken Mirror",
+    "authors": [
+      "Noah Silva"
+    ],
+    "description": "A story about young adult that follows one character's search for meaning against the odds.",
+    "published_date": "2014-11-16",
+    "categories": [
+      "Young Adult",
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0204.jpg",
+    "page_count": 669
+  },
+  {
+    "book_id": "seed-0205",
+    "title": "The Golden Kingdom",
+    "authors": [
+      "Kenji Lindqvist"
+    ],
+    "description": "This horror novel explores family, memory, and the choices that define a life.",
+    "published_date": "2007-01-24",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0205.jpg",
+    "page_count": 552
+  },
+  {
+    "book_id": "seed-0206",
+    "title": "A Winter's Kingdom",
+    "authors": [
+      "Lucas Lindqvist",
+      "Amara Andersen"
+    ],
+    "description": "A tightly plotted non-fiction tale set across three generations of one household.",
+    "published_date": "1958",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0206.jpg",
+    "page_count": 338
+  },
+  {
+    "book_id": "seed-0207",
+    "title": "The Distant Horizon",
+    "authors": [
+      "Lucas Kowalski",
+      "Maria Haddad"
+    ],
+    "description": "Part biography, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1989",
+    "categories": [
+      "Biography",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0207.jpg",
+    "page_count": 889
+  },
+  {
+    "book_id": "seed-0208",
+    "title": "Whispers of Promise",
+    "authors": [
+      "Maria Mensah"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "2002-11-13",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0208.jpg",
+    "page_count": 850
+  },
+  {
+    "book_id": "seed-0209",
+    "title": "Whispers of Journey",
+    "authors": [
+      "Maria Carter",
+      "Maria Lindqvist"
+    ],
+    "description": "This history novel explores family, memory, and the choices that define a life.",
+    "published_date": "1967-08",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0209.jpg",
+    "page_count": 870
+  },
+  {
+    "book_id": "seed-0210",
+    "title": "The Distant Forest",
+    "authors": [
+      "Elena Carter"
+    ],
+    "description": "A tightly plotted fantasy tale set across three generations of one household.",
+    "published_date": "2013",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0210.jpg",
+    "page_count": 436
+  },
+  {
+    "book_id": "seed-0211",
+    "title": "The Hidden Storm",
+    "authors": [
+      "Lucas Rossi",
+      "Liam Haddad"
+    ],
+    "description": null,
+    "published_date": "1925-02-01",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0211.jpg",
+    "page_count": 431
+  },
+  {
+    "book_id": "seed-0212",
+    "title": "The Distant Garden",
+    "authors": [
+      "Ivan Andersen"
+    ],
+    "description": "A story about history that follows one character's search for meaning against the odds.",
+    "published_date": "1949-11",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0212.jpg",
+    "page_count": 268
+  },
+  {
+    "book_id": "seed-0213",
+    "title": "The Last Star",
+    "authors": [
+      "Kenji Carter",
+      "Grace Kim"
+    ],
+    "description": "This biography novel explores family, memory, and the choices that define a life.",
+    "published_date": "2016-02-19",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0213.jpg",
+    "page_count": 184
+  },
+  {
+    "book_id": "seed-0214",
+    "title": "The Golden Mirror",
+    "authors": [
+      "Elena Silva"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "1960-07-20",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0214.jpg",
+    "page_count": 481
+  },
+  {
+    "book_id": "seed-0215",
+    "title": "Echoes of Garden",
+    "authors": [
+      "Elena Petrov"
+    ],
+    "description": "Part self-help, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1995",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0215.jpg",
+    "page_count": 768
+  },
+  {
+    "book_id": "seed-0216",
+    "title": "The Last Storm",
+    "authors": [
+      "Priya Lindqvist"
+    ],
+    "description": "A story about mystery that follows one character's search for meaning against the odds.",
+    "published_date": "1993-07",
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0216.jpg",
+    "page_count": 270
+  },
+  {
+    "book_id": "seed-0217",
+    "title": "Shadows of Star",
+    "authors": [
+      "Liam Okafor"
+    ],
+    "description": "This thriller novel explores family, memory, and the choices that define a life.",
+    "published_date": "1965",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0217.jpg",
+    "page_count": 576
+  },
+  {
+    "book_id": "seed-0218",
+    "title": "The Last Kingdom",
+    "authors": [
+      "Liam Torres",
+      "Omar Haddad"
+    ],
+    "description": "A tightly plotted poetry tale set across three generations of one household.",
+    "published_date": "1992",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0218.jpg",
+    "page_count": 894
+  },
+  {
+    "book_id": "seed-0219",
+    "title": "The Golden Kingdom",
+    "authors": [
+      "Alex Lindqvist"
+    ],
+    "description": "Part history, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1983-09-04",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0219.jpg",
+    "page_count": 666
+  },
+  {
+    "book_id": "seed-0220",
+    "title": "A Quiet Letter",
+    "authors": [
+      "Liam Petrov"
+    ],
+    "description": "A story about fiction that follows one character's search for meaning against the odds.",
+    "published_date": "2003",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0220.jpg",
+    "page_count": 384
+  },
+  {
+    "book_id": "seed-0221",
+    "title": "Fragments of River",
+    "authors": [
+      "Noah Silva",
+      "Amara Petrov"
+    ],
+    "description": "This biography novel explores family, memory, and the choices that define a life.",
+    "published_date": "2014-12-12",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0221.jpg",
+    "page_count": 807
+  },
+  {
+    "book_id": "seed-0222",
+    "title": "Echoes of Star",
+    "authors": [
+      "James Kim",
+      "James Mensah"
+    ],
+    "description": "A tightly plotted non-fiction tale set across three generations of one household.",
+    "published_date": "1988",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": null,
+    "page_count": 411
+  },
+  {
+    "book_id": "seed-0223",
+    "title": "A Winter's Letter",
+    "authors": [
+      "Sofia Lindqvist"
+    ],
+    "description": "Part adventure, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1927-11",
+    "categories": [
+      "Adventure",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0223.jpg",
+    "page_count": 209
+  },
+  {
+    "book_id": "seed-0224",
+    "title": "A Winter's Mirror",
+    "authors": [
+      "Priya Okafor"
+    ],
+    "description": "A story about horror that follows one character's search for meaning against the odds.",
+    "published_date": "2000-11",
+    "categories": [
+      "Horror",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0224.jpg",
+    "page_count": 504
+  },
+  {
+    "book_id": "seed-0225",
+    "title": "The Broken City",
+    "authors": [
+      "Omar Mensah"
+    ],
+    "description": "This classics novel explores family, memory, and the choices that define a life.",
+    "published_date": "1982-10",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0225.jpg",
+    "page_count": 82
+  },
+  {
+    "book_id": "seed-0226",
+    "title": "Fragments of Journey",
+    "authors": [
+      "Grace Haddad"
+    ],
+    "description": "A tightly plotted poetry tale set across three generations of one household.",
+    "published_date": "1974",
+    "categories": [
+      "Poetry",
+      "Young Adult"
+    ],
+    "cover_url": null,
+    "page_count": 586
+  },
+  {
+    "book_id": "seed-0227",
+    "title": "The Hidden Storm",
+    "authors": [
+      "Elena Torres"
+    ],
+    "description": "Part mystery, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1925",
+    "categories": [
+      "Mystery",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0227.jpg",
+    "page_count": 721
+  },
+  {
+    "book_id": "seed-0228",
+    "title": "The Golden Mirror",
+    "authors": [
+      "Alex Nguyen",
+      "Ivan Petrov"
+    ],
+    "description": "A story about biography that follows one character's search for meaning against the odds.",
+    "published_date": "1936-05-06",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0228.jpg",
+    "page_count": 360
+  },
+  {
+    "book_id": "seed-0229",
+    "title": "A Quiet Star",
+    "authors": [
+      "Noah Nguyen"
+    ],
+    "description": "This poetry novel explores family, memory, and the choices that define a life.",
+    "published_date": "2009",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0229.jpg",
+    "page_count": 519
+  },
+  {
+    "book_id": "seed-0230",
+    "title": "The Distant Garden",
+    "authors": [
+      "Alex Rossi"
+    ],
+    "description": "A tightly plotted fantasy tale set across three generations of one household.",
+    "published_date": null,
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0230.jpg",
+    "page_count": 792
+  },
+  {
+    "book_id": "seed-0231",
+    "title": "Whispers of Mirror",
+    "authors": [
+      "Amara Kowalski"
+    ],
+    "description": null,
+    "published_date": "1960-05",
+    "categories": [
+      "Mystery",
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0231.jpg",
+    "page_count": 220
+  },
+  {
+    "book_id": "seed-0232",
+    "title": "The Broken Journey",
+    "authors": [
+      "Omar Novak"
+    ],
+    "description": "A story about fantasy that follows one character's search for meaning against the odds.",
+    "published_date": "2012",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": null,
+    "page_count": 723
+  },
+  {
+    "book_id": "seed-0233",
+    "title": "A Winter's Horizon",
+    "authors": [
+      "Sofia Novak",
+      "Fatima Petrov"
+    ],
+    "description": "This fantasy novel explores family, memory, and the choices that define a life.",
+    "published_date": "1964-06",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0233.jpg",
+    "page_count": 890
+  },
+  {
+    "book_id": "seed-0234",
+    "title": "The Last Kingdom",
+    "authors": [
+      "Omar Nguyen"
+    ],
+    "description": "A tightly plotted history tale set across three generations of one household.",
+    "published_date": "1923-05-07",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0234.jpg",
+    "page_count": 610
+  },
+  {
+    "book_id": "seed-0235",
+    "title": "Echoes of Ocean",
+    "authors": [
+      "Grace Kowalski"
+    ],
+    "description": null,
+    "published_date": "1934",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0235.jpg",
+    "page_count": 591
+  },
+  {
+    "book_id": "seed-0236",
+    "title": "The Distant Forest",
+    "authors": [
+      "Liam Ahmed"
+    ],
+    "description": "A story about horror that follows one character's search for meaning against the odds.",
+    "published_date": "1966-11-06",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0236.jpg",
+    "page_count": 861
+  },
+  {
+    "book_id": "seed-0237",
+    "title": "Shadows of Journey",
+    "authors": [
+      "Alex Kim"
+    ],
+    "description": "This science fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1984-11",
+    "categories": [
+      "Science Fiction"
+    ],
+    "cover_url": null,
+    "page_count": 809
+  },
+  {
+    "book_id": "seed-0238",
+    "title": "The Forgotten Journey",
+    "authors": [
+      "Kenji Andersen",
+      "Kenji Nguyen"
+    ],
+    "description": "A tightly plotted history tale set across three generations of one household.",
+    "published_date": "1946",
+    "categories": [
+      "History",
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0238.jpg",
+    "page_count": 629
+  },
+  {
+    "book_id": "seed-0239",
+    "title": "Whispers of Mountain",
+    "authors": [
+      "Noah Andersen"
+    ],
+    "description": "Part young adult, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1934-10",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0239.jpg",
+    "page_count": 703
+  },
+  {
+    "book_id": "seed-0240",
+    "title": "The Silent Letter",
+    "authors": [
+      "Maria Carter"
+    ],
+    "description": null,
+    "published_date": "2025-05-06",
+    "categories": [
+      "Mystery",
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0240.jpg",
+    "page_count": 460
+  },
+  {
+    "book_id": "seed-0241",
+    "title": "The Last Promise",
+    "authors": [
+      "Grace Ahmed"
+    ],
+    "description": "This fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1953-10-21",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0241.jpg",
+    "page_count": 158
+  },
+  {
+    "book_id": "seed-0242",
+    "title": "Shadows of City",
+    "authors": [
+      "Alex Haddad"
+    ],
+    "description": "A tightly plotted mystery tale set across three generations of one household.",
+    "published_date": "1934",
+    "categories": [
+      "Mystery",
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0242.jpg",
+    "page_count": 838
+  },
+  {
+    "book_id": "seed-0243",
+    "title": "The Forgotten River",
+    "authors": [
+      "Amara Petrov"
+    ],
+    "description": null,
+    "published_date": "1924-12-24",
+    "categories": [
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0243.jpg",
+    "page_count": 751
+  },
+  {
+    "book_id": "seed-0244",
+    "title": "The Broken Kingdom",
+    "authors": [
+      "Priya Kowalski"
+    ],
+    "description": "A story about horror that follows one character's search for meaning against the odds.",
+    "published_date": "1926",
+    "categories": [
+      "Horror",
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0244.jpg",
+    "page_count": 308
+  },
+  {
+    "book_id": "seed-0245",
+    "title": "The Golden Ocean",
+    "authors": [
+      "Kenji Nguyen"
+    ],
+    "description": "This non-fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1921-04",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0245.jpg",
+    "page_count": 378
+  },
+  {
+    "book_id": "seed-0246",
+    "title": "Echoes of Journey",
+    "authors": [
+      "Grace Kim"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "2013-04-05",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0246.jpg",
+    "page_count": 86
+  },
+  {
+    "book_id": "seed-0247",
+    "title": "The Long Mountain",
+    "authors": [
+      "Priya Torres"
+    ],
+    "description": "Part poetry, part meditation on loss, this book lingers long after the last page.",
+    "published_date": null,
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0247.jpg",
+    "page_count": 753
+  },
+  {
+    "book_id": "seed-0248",
+    "title": "The Broken Mirror",
+    "authors": [
+      "Maria Rossi"
+    ],
+    "description": "A story about romance that follows one character's search for meaning against the odds.",
+    "published_date": "1931",
+    "categories": [
+      "Romance",
+      "Classics"
+    ],
+    "cover_url": null,
+    "page_count": 317
+  },
+  {
+    "book_id": "seed-0249",
+    "title": "The Long Mirror",
+    "authors": [
+      "Grace Ahmed",
+      "Elena Haddad"
+    ],
+    "description": null,
+    "published_date": "1992",
+    "categories": [
+      "Fantasy",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0249.jpg",
+    "page_count": 525
+  },
+  {
+    "book_id": "seed-0250",
+    "title": "The Distant Horizon",
+    "authors": [
+      "Noah Lindqvist"
+    ],
+    "description": "A tightly plotted adventure tale set across three generations of one household.",
+    "published_date": "1954",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0250.jpg",
+    "page_count": 156
+  },
+  {
+    "book_id": "seed-0251",
+    "title": "Beyond the Horizon",
+    "authors": [
+      "James Nguyen"
+    ],
+    "description": "Part biography, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1946-05",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0251.jpg",
+    "page_count": 554
+  },
+  {
+    "book_id": "seed-0252",
+    "title": "The Hidden Mirror",
+    "authors": [
+      "Maria Okafor"
+    ],
+    "description": "A story about thriller that follows one character's search for meaning against the odds.",
+    "published_date": "1938",
+    "categories": [
+      "Thriller",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0252.jpg",
+    "page_count": 808
+  },
+  {
+    "book_id": "seed-0253",
+    "title": "Beyond the Storm",
+    "authors": [
+      "Liam Carter",
+      "Omar Lindqvist"
+    ],
+    "description": "This non-fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "2015-04-04",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": null,
+    "page_count": 553
+  },
+  {
+    "book_id": "seed-0254",
+    "title": "A Quiet Journey",
+    "authors": [
+      "Maria Carter"
+    ],
+    "description": "A tightly plotted non-fiction tale set across three generations of one household.",
+    "published_date": "2007-11-03",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0254.jpg",
+    "page_count": 676
+  },
+  {
+    "book_id": "seed-0255",
+    "title": "Echoes of Letter",
+    "authors": [
+      "Alex Nguyen"
+    ],
+    "description": "Part adventure, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2023-02",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0255.jpg",
+    "page_count": 123
+  },
+  {
+    "book_id": "seed-0256",
+    "title": "Shadows of River",
+    "authors": [
+      "Ivan Kim"
+    ],
+    "description": "A story about non-fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1965",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0256.jpg",
+    "page_count": 271
+  },
+  {
+    "book_id": "seed-0257",
+    "title": "The Hidden Letter",
+    "authors": [
+      "Ivan Okafor",
+      "Alex Kim"
+    ],
+    "description": "This self-help novel explores family, memory, and the choices that define a life.",
+    "published_date": "1931-07",
+    "categories": [
+      "Self-Help",
+      "Romance"
+    ],
+    "cover_url": "https://example.com/covers/seed-0257.jpg",
+    "page_count": 220
+  },
+  {
+    "book_id": "seed-0258",
+    "title": "The Broken Kingdom",
+    "authors": [
+      "Omar Mensah"
+    ],
+    "description": "A tightly plotted fiction tale set across three generations of one household.",
+    "published_date": "1982-10",
+    "categories": [
+      "Fiction",
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0258.jpg",
+    "page_count": 594
+  },
+  {
+    "book_id": "seed-0259",
+    "title": "Whispers of Mountain",
+    "authors": [
+      "James Carter"
+    ],
+    "description": "Part self-help, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1980-06-25",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0259.jpg",
+    "page_count": 678
+  },
+  {
+    "book_id": "seed-0260",
+    "title": "Beyond the Horizon",
+    "authors": [
+      "Priya Novak"
+    ],
+    "description": "A story about thriller that follows one character's search for meaning against the odds.",
+    "published_date": "1948-07-12",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0260.jpg",
+    "page_count": 257
+  },
+  {
+    "book_id": "seed-0261",
+    "title": "The Last Kingdom",
+    "authors": [
+      "Lucas Andersen"
+    ],
+    "description": null,
+    "published_date": "1992",
+    "categories": [
+      "Horror",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0261.jpg",
+    "page_count": 584
+  },
+  {
+    "book_id": "seed-0262",
+    "title": "The Forgotten Letter",
+    "authors": [
+      "Fatima Carter"
+    ],
+    "description": "A tightly plotted science fiction tale set across three generations of one household.",
+    "published_date": null,
+    "categories": [
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0262.jpg",
+    "page_count": 708
+  },
+  {
+    "book_id": "seed-0263",
+    "title": "Beyond the Journey",
+    "authors": [
+      "Elena Andersen"
+    ],
+    "description": "Part adventure, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2010",
+    "categories": [
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0263.jpg",
+    "page_count": 872
+  },
+  {
+    "book_id": "seed-0264",
+    "title": "A Quiet Mirror",
+    "authors": [
+      "Maria Silva"
+    ],
+    "description": "A story about poetry that follows one character's search for meaning against the odds.",
+    "published_date": "2013-11",
+    "categories": [
+      "Poetry",
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0264.jpg",
+    "page_count": 578
+  },
+  {
+    "book_id": "seed-0265",
+    "title": "The Distant Storm",
+    "authors": [
+      "Grace Torres"
+    ],
+    "description": "This adventure novel explores family, memory, and the choices that define a life.",
+    "published_date": "1959-12-10",
+    "categories": [
+      "Adventure",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0265.jpg",
+    "page_count": 210
+  },
+  {
+    "book_id": "seed-0266",
+    "title": "The Last Promise",
+    "authors": [
+      "Grace Kim"
+    ],
+    "description": "A tightly plotted non-fiction tale set across three generations of one household.",
+    "published_date": "2023-04-21",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0266.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0267",
+    "title": "Echoes of Garden",
+    "authors": [
+      "James Silva",
+      "Grace Nguyen"
+    ],
+    "description": "Part horror, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2010-11-24",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0267.jpg",
+    "page_count": 423
+  },
+  {
+    "book_id": "seed-0268",
+    "title": "Shadows of River",
+    "authors": [
+      "Priya Rossi"
+    ],
+    "description": "A story about fantasy that follows one character's search for meaning against the odds.",
+    "published_date": "2013-03",
+    "categories": [
+      "Fantasy",
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0268.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0269",
+    "title": "The Long Mountain",
+    "authors": [
+      "Ivan Kowalski",
+      "Elena Torres"
+    ],
+    "description": "This fantasy novel explores family, memory, and the choices that define a life.",
+    "published_date": "1948",
+    "categories": [
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0269.jpg",
+    "page_count": 542
+  },
+  {
+    "book_id": "seed-0270",
+    "title": "A Quiet Journey",
+    "authors": [
+      "Noah Carter"
+    ],
+    "description": "A tightly plotted thriller tale set across three generations of one household.",
+    "published_date": "2013",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": null,
+    "page_count": 640
+  },
+  {
+    "book_id": "seed-0271",
+    "title": "The Long Garden",
+    "authors": [
+      "Sofia Kim"
+    ],
+    "description": null,
+    "published_date": "1940",
+    "categories": [
+      "Young Adult"
+    ],
+    "cover_url": "https://example.com/covers/seed-0271.jpg",
+    "page_count": 183
+  },
+  {
+    "book_id": "seed-0272",
+    "title": "Whispers of Kingdom",
+    "authors": [
+      "Kenji Andersen"
+    ],
+    "description": "A story about young adult that follows one character's search for meaning against the odds.",
+    "published_date": "1970-09-27",
+    "categories": [
+      "Young Adult",
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0272.jpg",
+    "page_count": 582
+  },
+  {
+    "book_id": "seed-0273",
+    "title": "The Last River",
+    "authors": [
+      "Alex Kowalski"
+    ],
+    "description": "This thriller novel explores family, memory, and the choices that define a life.",
+    "published_date": "1946",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0273.jpg",
+    "page_count": 733
+  },
+  {
+    "book_id": "seed-0274",
+    "title": "The Hidden Garden",
+    "authors": [
+      "Amara Nguyen",
+      "Noah Mensah"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "1943-07",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0274.jpg",
+    "page_count": 458
+  },
+  {
+    "book_id": "seed-0275",
+    "title": "The Last City",
+    "authors": [
+      "Noah Haddad"
+    ],
+    "description": "Part thriller, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2005",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0275.jpg",
+    "page_count": 167
+  },
+  {
+    "book_id": "seed-0276",
+    "title": "The Distant Storm",
+    "authors": [
+      "Lucas Kim",
+      "Priya Torres"
+    ],
+    "description": "A story about non-fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1980-04-16",
+    "categories": [
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0276.jpg",
+    "page_count": 386
+  },
+  {
+    "book_id": "seed-0277",
+    "title": "A Quiet Mountain",
+    "authors": [
+      "Liam Kim"
+    ],
+    "description": "This fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1942",
+    "categories": [
+      "Fiction",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0277.jpg",
+    "page_count": 296
+  },
+  {
+    "book_id": "seed-0278",
+    "title": "The Golden Kingdom",
+    "authors": [
+      "Alex Kowalski"
+    ],
+    "description": "A tightly plotted poetry tale set across three generations of one household.",
+    "published_date": "1953-12",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0278.jpg",
+    "page_count": 148
+  },
+  {
+    "book_id": "seed-0279",
+    "title": "A Quiet Mountain",
+    "authors": [
+      "Liam Silva",
+      "Amara Lindqvist"
+    ],
+    "description": null,
+    "published_date": "1934-03",
+    "categories": [
+      "Biography",
+      "Non-Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0279.jpg",
+    "page_count": 231
+  },
+  {
+    "book_id": "seed-0280",
+    "title": "Echoes of Forest",
+    "authors": [
+      "Ivan Nguyen"
+    ],
+    "description": "A story about fiction that follows one character's search for meaning against the odds.",
+    "published_date": "1953-11",
+    "categories": [
+      "Fiction",
+      "Fantasy"
+    ],
+    "cover_url": "https://example.com/covers/seed-0280.jpg",
+    "page_count": 577
+  },
+  {
+    "book_id": "seed-0281",
+    "title": "Echoes of Forest",
+    "authors": [
+      "Alex Okafor",
+      "Noah Kowalski"
+    ],
+    "description": "This self-help novel explores family, memory, and the choices that define a life.",
+    "published_date": "1962-04-02",
+    "categories": [
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0281.jpg",
+    "page_count": null
+  },
+  {
+    "book_id": "seed-0282",
+    "title": "A Winter's City",
+    "authors": [
+      "Ivan Silva"
+    ],
+    "description": "A tightly plotted horror tale set across three generations of one household.",
+    "published_date": "2009-02-28",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0282.jpg",
+    "page_count": 313
+  },
+  {
+    "book_id": "seed-0283",
+    "title": "The Last Letter",
+    "authors": [
+      "Lucas Petrov",
+      "Elena Lindqvist"
+    ],
+    "description": "Part classics, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2014-09",
+    "categories": [
+      "Classics",
+      "Self-Help"
+    ],
+    "cover_url": "https://example.com/covers/seed-0283.jpg",
+    "page_count": 462
+  },
+  {
+    "book_id": "seed-0284",
+    "title": "Fragments of River",
+    "authors": [
+      "Maria Lindqvist"
+    ],
+    "description": "A story about history that follows one character's search for meaning against the odds.",
+    "published_date": null,
+    "categories": [
+      "History",
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0284.jpg",
+    "page_count": 277
+  },
+  {
+    "book_id": "seed-0285",
+    "title": "The Long Mirror",
+    "authors": [
+      "Amara Carter"
+    ],
+    "description": "This science fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "2025-09",
+    "categories": [
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0285.jpg",
+    "page_count": 486
+  },
+  {
+    "book_id": "seed-0286",
+    "title": "The Distant Road",
+    "authors": [
+      "Omar Carter"
+    ],
+    "description": "A tightly plotted horror tale set across three generations of one household.",
+    "published_date": "1990-06",
+    "categories": [
+      "Horror"
+    ],
+    "cover_url": "https://example.com/covers/seed-0286.jpg",
+    "page_count": 247
+  },
+  {
+    "book_id": "seed-0287",
+    "title": "Fragments of Road",
+    "authors": [
+      "Grace Petrov"
+    ],
+    "description": null,
+    "published_date": "1947",
+    "categories": [
+      "Fantasy",
+      "Thriller"
+    ],
+    "cover_url": null,
+    "page_count": 742
+  },
+  {
+    "book_id": "seed-0288",
+    "title": "Beyond the Star",
+    "authors": [
+      "Noah Novak"
+    ],
+    "description": null,
+    "published_date": null,
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0288.jpg",
+    "page_count": 215
+  },
+  {
+    "book_id": "seed-0289",
+    "title": "The Distant Horizon",
+    "authors": [
+      "Priya Lindqvist"
+    ],
+    "description": "This fiction novel explores family, memory, and the choices that define a life.",
+    "published_date": "1964-05",
+    "categories": [
+      "Fiction",
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0289.jpg",
+    "page_count": 303
+  },
+  {
+    "book_id": "seed-0290",
+    "title": "Shadows of Letter",
+    "authors": [
+      "Sofia Nguyen",
+      "Alex Torres"
+    ],
+    "description": "A tightly plotted non-fiction tale set across three generations of one household.",
+    "published_date": "1933-02",
+    "categories": [
+      "Non-Fiction",
+      "Adventure"
+    ],
+    "cover_url": "https://example.com/covers/seed-0290.jpg",
+    "page_count": 424
+  },
+  {
+    "book_id": "seed-0291",
+    "title": "The Hidden Star",
+    "authors": [
+      "Amara Lindqvist"
+    ],
+    "description": "Part poetry, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "2017",
+    "categories": [
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0291.jpg",
+    "page_count": 138
+  },
+  {
+    "book_id": "seed-0292",
+    "title": "The Golden Mirror",
+    "authors": [
+      "Omar Silva",
+      "Omar Okafor"
+    ],
+    "description": "A story about science fiction that follows one character's search for meaning against the odds.",
+    "published_date": "2014",
+    "categories": [
+      "Science Fiction",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0292.jpg",
+    "page_count": 677
+  },
+  {
+    "book_id": "seed-0293",
+    "title": "A Winter's Forest",
+    "authors": [
+      "Elena Andersen"
+    ],
+    "description": "This romance novel explores family, memory, and the choices that define a life.",
+    "published_date": "1984-03",
+    "categories": [
+      "Romance",
+      "Poetry"
+    ],
+    "cover_url": "https://example.com/covers/seed-0293.jpg",
+    "page_count": 753
+  },
+  {
+    "book_id": "seed-0294",
+    "title": "The Long Ocean",
+    "authors": [
+      "Noah Nguyen"
+    ],
+    "description": "A tightly plotted mystery tale set across three generations of one household.",
+    "published_date": "2007-11",
+    "categories": [
+      "Mystery"
+    ],
+    "cover_url": "https://example.com/covers/seed-0294.jpg",
+    "page_count": 171
+  },
+  {
+    "book_id": "seed-0295",
+    "title": "Beyond the Storm",
+    "authors": [
+      "Grace Petrov"
+    ],
+    "description": "Part classics, part meditation on loss, this book lingers long after the last page.",
+    "published_date": "1935-01",
+    "categories": [
+      "Classics"
+    ],
+    "cover_url": "https://example.com/covers/seed-0295.jpg",
+    "page_count": 729
+  },
+  {
+    "book_id": "seed-0296",
+    "title": "Echoes of Forest",
+    "authors": [
+      "Fatima Ahmed"
+    ],
+    "description": "A story about history that follows one character's search for meaning against the odds.",
+    "published_date": "1939",
+    "categories": [
+      "History"
+    ],
+    "cover_url": "https://example.com/covers/seed-0296.jpg",
+    "page_count": 285
+  },
+  {
+    "book_id": "seed-0297",
+    "title": "Whispers of Mountain",
+    "authors": [
+      "James Silva",
+      "Amara Andersen"
+    ],
+    "description": null,
+    "published_date": "1927",
+    "categories": [
+      "Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0297.jpg",
+    "page_count": 542
+  },
+  {
+    "book_id": "seed-0298",
+    "title": "The Hidden Kingdom",
+    "authors": [
+      "Sofia Mensah"
+    ],
+    "description": "A tightly plotted biography tale set across three generations of one household.",
+    "published_date": "1974-07",
+    "categories": [
+      "Biography"
+    ],
+    "cover_url": "https://example.com/covers/seed-0298.jpg",
+    "page_count": 568
+  },
+  {
+    "book_id": "seed-0299",
+    "title": "The Broken River",
+    "authors": [
+      "Liam Rossi"
+    ],
+    "description": "Part horror, part meditation on loss, this book lingers long after the last page.",
+    "published_date": null,
+    "categories": [
+      "Horror",
+      "Science Fiction"
+    ],
+    "cover_url": "https://example.com/covers/seed-0299.jpg",
+    "page_count": 84
+  },
+  {
+    "book_id": "seed-0300",
+    "title": "The Distant Promise",
+    "authors": [
+      "Priya Andersen"
+    ],
+    "description": "A story about thriller that follows one character's search for meaning against the odds.",
+    "published_date": "2025",
+    "categories": [
+      "Thriller"
+    ],
+    "cover_url": "https://example.com/covers/seed-0300.jpg",
+    "page_count": 385
+  }
+]

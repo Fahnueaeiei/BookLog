@@ -100,6 +100,28 @@ class Library:
         except KeyError:
             raise BookNotFoundError(book_id) from None
 
+    def update_entry(self, entry):
+        """Persist changes made to an entry (e.g. by ReadingTracker).
+
+        The entry must already be in the library (added through
+        add_book). Callers such as ReadingTracker get the entry from
+        get_entry(), change its fields in place, and pass it back
+        here to save those changes — so ReadingTracker never has to
+        depend on DataStore directly.
+
+        Args:
+            entry: The LibraryEntry to save, with its updated fields.
+
+        Raises:
+            BookNotFoundError: If entry.book.book_id is not in the
+                library.
+        """
+        if entry.book.book_id not in self._entries:
+            raise BookNotFoundError(entry.book.book_id)
+
+        self.data_store.save_entry(entry)
+        self._entries[entry.book.book_id] = entry
+
     # ------------------------------------------------------------------
     # Search
     # ------------------------------------------------------------------

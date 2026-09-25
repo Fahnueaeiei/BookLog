@@ -221,12 +221,29 @@ class CLI:
                 return
 
             field = SEARCH_FIELDS[choice - 1]
+            if not self.search_by_keyword(field):
+                return
+
+    def search_by_keyword(self, field):
+        """Prompt for a keyword under `field` until it finds results.
+
+        'Try again' (on an empty search or no results) re-prompts for a new
+        keyword under the same field, instead of returning to the
+        field-selection menu. 'Back' exits the whole search flow.
+
+        Returns:
+            True if results were shown and the user went back from them
+            (the field-selection menu should be shown again). False if the
+            user chose 'Back' on an empty search or no-results message
+            (the whole search flow should end).
+        """
+        while True:
             keyword = self.get_text_input(f"\nEnter {field} to search: ")
 
             if not keyword:
                 print("\n[!] Search text cannot be empty.")
                 if not self.ask_try_again():
-                    return
+                    return False
                 continue
 
             results = search_mock_books(field, keyword)
@@ -234,10 +251,11 @@ class CLI:
             if not results:
                 print(f"\n[!] No books found for {field} '{keyword}'.")
                 if not self.ask_try_again():
-                    return
+                    return False
                 continue
 
             self.show_search_results(results)
+            return True
 
     def show_search_results(self, results):
         """Show the search results and let the user open one."""

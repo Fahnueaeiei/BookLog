@@ -55,7 +55,7 @@ Each `SprintN/` folder is a runnable snapshot of the project at the end of that 
 | Sprint | Focus | Status | Changelog | Report |
 |---|---|---|---|---|
 | Sprint 1 | Plan + CLI front-end | Finished | [CHANGELOG](Sprint1/CHANGELOG.md) | [Report](Sprint1/Sprint1_Report.md) |
-| Sprint 2 | Back-end (business logic, SQLite, search/filter/sort, Google Books) | In progress  | [CHANGELOG](Sprint2/CHANGELOG.md) | [Report](Sprint2/Sprint2_Report.md) |
+| Sprint 2 | Back-end (business logic, SQLite, search/filter/sort, Google Books) | Finished | [CHANGELOG](Sprint2/CHANGELOG.md) | [Report](Sprint2/Sprint2_Report.md) |
 | Sprint 3 | Full-stack web app | Planned | [CHANGELOG](Sprint3/CHANGELOG.md) | [Report](Sprint3/Sprint3_Report.md) |
 | Final Sprint | Automated tests, CI/CD, AI feature | Planned | — | — |
 
@@ -78,9 +78,9 @@ pip install -r requirements.txt
 cd Sprint1
 python main.py
 
-# Sprint 2: back-end (CLI connected to the back-end)
+# Sprint 2: back-end verification (the user interface is Sprint 3)
 cd Sprint2
-python main.py
+pytest
 
 # Sprint 3: web app
 cd Sprint3

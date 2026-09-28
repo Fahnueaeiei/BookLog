@@ -1,6 +1,32 @@
+import sys
+from pathlib import Path
+
 import streamlit as st
 
-from sprint3.frontend.src.mock_data import mock_books
+
+# =========================================================
+# Import Service
+# =========================================================
+
+CURRENT_DIR = Path(__file__).resolve().parent
+SRC_DIR = CURRENT_DIR / "src"
+
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from service import (
+    search_books,
+    get_book_details,
+    get_library_books,
+    get_home_books,
+    add_to_library,
+    remove_from_library,
+    update_status,
+    update_progress,
+    update_rating,
+    update_note,
+    browse_books,  
+)
 
 
 # =========================================================
@@ -14,22 +40,32 @@ st.set_page_config(
 )
 
 
-
 # =========================================================
 # Custom CSS
 # =========================================================
 
 st.markdown(
     """
-   <style>
+    <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap');
 
-        html,
-        body,
-        .stApp,
-        .stApp * {
-            font-family: 'Lato', sans-serif;
-        }
+    html,
+    body,
+    .stApp,
+    .stApp *:not([data-testid="stIconMaterial"])
+    :not([class*="material-icons"])
+    :not([class*="material-symbols"]) {
+        font-family: 'Lato', sans-serif;
+    }
+
+    [data-testid="stIconMaterial"],
+    span[class*="material-icons"],
+    span[class*="material-symbols"] {
+        font-family: 'Material Symbols Rounded',
+        'Material Icons' !important;
+    }
+
 
     /* -------------------------------------------------
        App
@@ -52,87 +88,73 @@ st.markdown(
        Top Navigation
     ------------------------------------------------- */
 
-    .top-nav {
-        padding-top: 0.8rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #E5DED5;
-        margin-bottom: 2.2rem;
-    }
-
-    .nav-wrapper {
-        padding-top: 1rem;
-        padding-bottom: 0.3rem;
+    .st-key-topnav {
+        background: #FFFFFF;
+        padding: 0.45rem 0;
+        margin-bottom: 1.6rem;
+        box-shadow: 0 0 0 100vmax #FFFFFF;
+        clip-path: inset(0 -100vmax);
     }
 
     .logo {
-        font-size: 25px;
+        font-size: 27px;
         font-weight: 700;
-        color: #3F3933;
-        padding-top: 8px;
+        color: #382F29;
+        letter-spacing: -0.7px;
+        white-space: nowrap;
     }
 
-    .logo-subtitle {
-        font-size: 12px;
-        color: #8C8177;
-        margin-top: -3px;
+    div[class*="st-key-nav_"] button {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        color: #493D34 !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        padding: 0.35rem 0.2rem !important;
+        min-height: 40px !important;
+        justify-content: center !important;
+    }
+
+    div[class*="st-key-nav_"] button p {
+        white-space: nowrap !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+    }
+
+    div[class*="st-key-nav_"] button:hover {
+        background: transparent !important;
+        color: #8B735F !important;
     }
 
 
     /* -------------------------------------------------
-       Navigation Radio
+       Search
     ------------------------------------------------- */
 
-    div[data-testid="stRadio"] {
-        margin-top: 5px;
+    .st-key-topnav [data-baseweb="input"],
+    .st-key-topnav [data-baseweb="base-input"] {
+        background: #FFFFFF !important;
+        border-radius: 4px !important;
     }
 
-    div[data-testid="stRadio"] div[role="radiogroup"] {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 8px;
+    .st-key-topnav [data-testid="stTextInput"] [data-baseweb="input"] {
+        border: 1px solid #D6D1CB !important;
+        min-height: 40px !important;
     }
 
-    div[data-testid="stRadio"] div[role="radiogroup"] > label {
-        border-radius: 9px;
-        padding: 8px 16px;
-        margin: 0;
-        cursor: pointer;
-        background-color: transparent;
+    .st-key-topnav [data-testid="stTextInput"]
+    [data-baseweb="input"]:focus-within {
+        border-color: #A99B8E !important;
+        box-shadow: 0 0 0 1px #A99B8E !important;
     }
 
-    div[data-testid="stRadio"] div[role="radiogroup"] > label:hover {
-        background-color: #F1EBE3;
-    }
-
-    div[data-testid="stRadio"]
-    div[role="radiogroup"]
-    > label[data-checked="true"] {
-        background-color: #E5D8CB;
-    }
-
-    /* Remove radio bullet */
-    div[data-testid="stRadio"] input {
-        display: none !important;
-    }
-
-    div[data-testid="stRadio"]
-    div[role="radiogroup"]
-    > label
-    > div:first-child {
-        display: none !important;
-        width: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    div[data-testid="stRadio"]
-    div[role="radiogroup"]
-    > label p {
-        font-size: 14px;
-        font-weight: 600;
-        color: #554C44;
-        margin: 0;
+    .st-key-topnav input {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        color: #3F3933 !important;
+        font-size: 15px !important;
     }
 
 
@@ -324,6 +346,11 @@ st.markdown(
         margin-bottom: 13px;
     }
 
+    .detail-cover img {
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(80, 62, 48, 0.14);
+    }
+
 
     /* -------------------------------------------------
        Back Button
@@ -361,38 +388,30 @@ st.markdown(
         margin-bottom: 8px;
     }
 
-    .star-button .stButton > button {
-        background-color: transparent !important;
-        border: none !important;
+    div[class*="st-key-rating_star_"] {
+        width: auto !important;
+    }
+
+    div[class*="st-key-rating_star_"] button {
+        background: transparent !important;
+        justify-content: center !important;
+        border: 0 !important;
         box-shadow: none !important;
         color: #D2C7BB !important;
         font-size: 30px !important;
-        padding: 0 !important;
         line-height: 1 !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
     }
 
-    .star-button .stButton > button:hover {
-        background-color: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
+    div[class*="st-key-rating_star_"] button:hover {
+        background: transparent !important;
         color: #8B735F !important;
     }
 
-    .star-active .stButton > button {
-        background-color: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
+    div[class*="st-key-rating_star_active_"] button {
         color: #8B735F !important;
-        font-size: 30px !important;
-        padding: 0 !important;
-        line-height: 1 !important;
-    }
-
-    .star-active .stButton > button:hover {
-        background-color: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        color: #6F5A49 !important;
     }
 
 
@@ -406,7 +425,81 @@ st.markdown(
         margin-bottom: 20px;
     }
 
-</style>
+    .book-title {
+        font-size: 16px;
+        font-weight: 650;
+        color: #3F3933;
+        margin-top: 10px;
+
+        /* ความสูงเท่ากันทุกการ์ด */
+        height: 43px;
+
+        /* ตัดข้อความเกิน 2 บรรทัด */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+
+        /* แสดง ... */
+        text-overflow: ellipsis;
+
+        line-height: 1.35;
+    }
+
+
+    .book-author {
+        font-size: 13px;
+        color: #756C63;
+        margin-top: 4px;
+
+        /* ความสูงเท่ากัน */
+        height: 20px;
+
+        /* ถ้ายาวให้ ... */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+
+    .book-meta {
+        font-size: 12px;
+        color: #9A9086;
+        margin-top: 7px;
+        margin-bottom: 9px;
+
+        /* ความสูงเท่ากัน */
+        height: 18px;
+
+        /* ถ้ายาวให้ ... */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .library-meta {
+        height: 24px;
+        line-height: 24px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 13px;
+        color: #8C8177;
+    }
+
+    .library-meta-empty {
+        visibility: hidden;
+    }
+
+    .library-progress-text {
+        height: 24px;
+        line-height: 24px;
+        font-size: 13px;
+        color: #8C8177;
+    }
+
+    </style>
     """,
     unsafe_allow_html=True,
 )
@@ -428,83 +521,109 @@ if "search_query" not in st.session_state:
 if "search_results" not in st.session_state:
     st.session_state.search_results = []
 
-if "library" not in st.session_state:
-    st.session_state.library = []
-
-if "book_data" not in st.session_state:
-    st.session_state.book_data = {}
-
 if "detail_source" not in st.session_state:
     st.session_state.detail_source = "Home"
+
+if "nav_search_input" not in st.session_state:
+    st.session_state.nav_search_input = ""
 
 
 # =========================================================
 # Helper Functions
 # =========================================================
 
-def get_book_user_data(book_id):
-    """Return user-specific data for a book."""
+def get_library_book(book_id):
+    """Get one book from the real Sprint 2 library."""
+    library_books = get_library_books()
 
-    if book_id not in st.session_state.book_data:
-        st.session_state.book_data[book_id] = {
-            "status": "Want to Read",
-            "progress": 0,
-            "rating": 0,
-            "note": "",
-        }
+    for book in library_books:
+        if book["id"] == book_id:
+            return book
 
-    return st.session_state.book_data[book_id]
+    return None
 
 
 def is_in_library(book_id):
-    """Check whether a book is already in My Library."""
-
-    return any(
-        book["id"] == book_id
-        for book in st.session_state.library
-    )
+    """Check whether a book exists in the real library."""
+    return get_library_book(book_id) is not None
 
 
 def open_book(book, source="Home"):
-    """Open Book Detail and remember the source page."""
+    """Open Book Detail."""
+    try:
+        detailed_book = get_book_details(book["id"])
+    except Exception:
+        detailed_book = book
 
-    st.session_state.selected_book = book
+    st.session_state.selected_book = detailed_book
     st.session_state.detail_source = source
     st.session_state.page = "Book Detail"
-
     st.rerun()
 
 
 def render_book_card(book, key_prefix, source):
-    """Render a standard book card."""
+    """Render a book card using real backend data."""
 
-    # Fixed-height cover area
-    st.markdown(
-        f"""
-        <div class="book-cover-wrapper">
-            <img src="{book["cover"]}" alt="{book["title"]}">
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    cover = book.get("cover", "")
+    title = book.get("title", "Untitled")
+    author = book.get("author", "Unknown Author")
+    category = book.get("category", "Uncategorized")
+    year = book.get("year", "Unknown")
 
+    # -----------------------------------------------------
+    # Book Cover
+    # -----------------------------------------------------
+    if cover:
+        st.markdown(
+            f"""
+            <div class="book-cover-wrapper">
+                <img src="{cover}" alt="{title}">
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    else:
+        st.markdown(
+            """
+            <div class="book-cover-wrapper">
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    height:270px;
+                    color:#8C8177;
+                    font-size:14px;
+                ">
+                    No Cover
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    # -----------------------------------------------------
+    # Book Information
+    # -----------------------------------------------------
     st.markdown(
         f"""
         <div class="book-title">
-            {book["title"]}
+            {title}
         </div>
 
         <div class="book-author">
-            {book["author"]}
+            {author}
         </div>
 
         <div class="book-meta">
-            {book["category"]} · {book["year"]}
+            {category} · {year}
         </div>
         """,
         unsafe_allow_html=True,
     )
 
+    # -----------------------------------------------------
+    # View Details
+    # -----------------------------------------------------
     if st.button(
         "View Details",
         key=f"{key_prefix}_{book['id']}",
@@ -513,107 +632,150 @@ def render_book_card(book, key_prefix, source):
         open_book(book, source)
 
 
+def render_book_grid(books, key_prefix, source="Home"):
+    """Render books in horizontal cards."""
+
+    grid = st.container(
+        horizontal=True,
+        gap="medium",
+    )
+
+    with grid:
+        for index, book in enumerate(books):
+            with st.container(width=180):
+                render_book_card(
+                    book,
+                    f"{key_prefix}_{index}",
+                    source,
+                )
+
+
+def clear_search():
+    """Clear search state."""
+
+    st.session_state.search_query = ""
+    st.session_state.search_results = []
+    st.session_state.nav_search_input = ""
+
+
+def run_nav_search():
+    """Run search from the top navigation."""
+
+    text = st.session_state.get(
+        "nav_search_input",
+        "",
+    ).strip()
+
+    st.session_state.search_query = text
+
+    if text:
+        try:
+            st.session_state.search_results = search_books(text)
+        except Exception as e:
+            st.session_state.search_results = []
+            st.session_state.search_error = str(e)
+    else:
+        st.session_state.search_results = []
+
+    st.session_state.page = "Home"
+    st.session_state.selected_book = None
+
+
 # =========================================================
 # Top Navigation
 # =========================================================
 
-st.markdown(
-    '<div class="nav-wrapper">',
-    unsafe_allow_html=True,
-)
+with st.container(key="topnav"):
 
-nav_left, nav_right = st.columns([2.5, 4])
-
-with nav_left:
-    st.markdown(
-        """
-        <div class="logo">📚 BookLog</div>
-        <div class="logo-subtitle">
-            Your personal reading space
-        </div>
-        """,
-        unsafe_allow_html=True,
+    nav_logo, nav_home, nav_books, nav_browse, nav_search = st.columns(
+        [2.0, 0.75, 0.95, 0.9, 3.4],
+        gap="small",
+        vertical_alignment="center",
     )
 
-with nav_right:
-    current_nav = st.session_state.page
+    # -------------------------------------------------
+    # Logo
+    # -------------------------------------------------
 
-    if current_nav == "Book Detail":
-        current_nav = st.session_state.get(
-            "detail_source",
-            "Home",
+    with nav_logo:
+        st.markdown(
+            '<div class="logo">📚 BookLog</div>',
+            unsafe_allow_html=True,
         )
 
-    selected_nav = st.radio(
-        "Navigation",
-        ["Home", "Library"],
-        index=["Home", "Library"].index(current_nav),
-        horizontal=True,
-        label_visibility="collapsed",
-    )
+    # -------------------------------------------------
+    # Home
+    # -------------------------------------------------
 
-    if selected_nav != current_nav:
-        st.session_state.page = selected_nav
-        st.session_state.selected_book = None
-        st.rerun()
+    with nav_home:
+        if st.button(
+            "Home",
+            key="nav_home",
+            width="stretch",
+        ):
+            st.session_state.page = "Home"
+            st.session_state.selected_book = None
+            clear_search()
+            st.rerun()
 
-st.markdown(
-    """
-    </div>
+    # -------------------------------------------------
+    # My Books
+    # -------------------------------------------------
 
-    <div class="top-nav"></div>
-    """,
-    unsafe_allow_html=True,
-)
+    with nav_books:
+        if st.button(
+            "My Books",
+            key="nav_books",
+            width="stretch",
+        ):
+            st.session_state.page = "Library"
+            st.session_state.selected_book = None
+            clear_search()
+            st.rerun()
 
+    # -------------------------------------------------
+    # Browse
+    # -------------------------------------------------
+
+    with nav_browse:
+        if st.button(
+            "Browse",
+            key="nav_browse",
+            width="stretch",
+        ):
+            st.session_state.page = "Browse"
+            st.session_state.selected_book = None
+            clear_search()
+            st.rerun()
+
+    # -------------------------------------------------
+    # Search
+    # -------------------------------------------------
+
+    with nav_search:
+        try:
+            st.text_input(
+                "Search",
+                key="nav_search_input",
+                placeholder="Search books",
+                label_visibility="collapsed",
+                icon=":material/search:",
+                on_change=run_nav_search,
+            )
+        except TypeError:
+            st.text_input(
+                "Search",
+                key="nav_search_input",
+                placeholder="Search books",
+                label_visibility="collapsed",
+                on_change=run_nav_search,
+            )
 
 # =========================================================
 # HOME
 # =========================================================
 
 if st.session_state.page == "Home":
-
-    # -----------------------------------------------------
-    # Search
-    # -----------------------------------------------------
-
-    search_col, button_col = st.columns([5, 1])
-
-    with search_col:
-        search_query = st.text_input(
-            "Search Books",
-            value=st.session_state.search_query,
-            placeholder="Search by title, author, or genre...",
-            label_visibility="collapsed",
-        )
-
-    with button_col:
-        search_clicked = st.button(
-            "Search",
-            width="stretch",
-        )
-
-    if search_clicked:
-        st.session_state.search_query = search_query.strip()
-
-        if search_query.strip():
-            query = search_query.lower().strip()
-
-            results = [
-                book
-                for book in mock_books
-                if (
-                    query in book["title"].lower()
-                    or query in book["author"].lower()
-                    or query in book["category"].lower()
-                )
-            ]
-
-            st.session_state.search_results = results
-
-        else:
-            st.session_state.search_results = []
-
 
     # -----------------------------------------------------
     # Greeting
@@ -626,8 +788,7 @@ if st.session_state.page == "Home":
         </div>
 
         <div class="greeting-text">
-            Explore popular books, discover something new,
-            and keep track of your reading journey.
+            Search for books and keep track of your reading journey.
         </div>
         """,
         unsafe_allow_html=True,
@@ -645,22 +806,13 @@ if st.session_state.page == "Home":
             unsafe_allow_html=True,
         )
 
-        results = st.session_state.search_results
-
-        columns = st.columns(5)
-
-        for index, book in enumerate(results):
-
-            with columns[index % 5]:
-
-                render_book_card(
-                    book,
-                    f"search_{index}",
-                    "Home",
-                )
+        render_book_grid(
+            st.session_state.search_results,
+            "search",
+            "Home",
+        )
 
         st.markdown("---")
-
 
     elif (
         st.session_state.get("search_query")
@@ -668,8 +820,7 @@ if st.session_state.page == "Home":
     ):
 
         st.info(
-            f'No books found for '
-            f'"{st.session_state.search_query}".'
+            f'No books found for "{st.session_state.search_query}".'
         )
 
 
@@ -677,11 +828,12 @@ if st.session_state.page == "Home":
     # Continue Reading
     # -----------------------------------------------------
 
+    library_books = get_library_books()
+
     reading_books = [
         book
-        for book in st.session_state.library
-        if get_book_user_data(book["id"])["status"]
-        == "Reading"
+        for book in library_books
+        if book["status"] == "Reading"
     ]
 
     if reading_books:
@@ -707,22 +859,41 @@ if st.session_state.page == "Home":
 
         with reading_container:
 
-            for index, book in enumerate(reading_books):
+            for book in reading_books[:5]:
 
                 with st.container(width=180):
 
-                    # Fixed-size cover
-                    st.markdown(
-                        f"""
-                        <div class="book-cover-wrapper">
-                            <img
-                                src="{book["cover"]}"
-                                alt="{book["title"]}"
-                            >
-                        </div>
-                        """,
-                        unsafe_allow_html=True,
-                    )
+                    cover = book.get("cover", "")
+
+                    if cover:
+                        st.markdown(
+                            f"""
+                            <div class="book-cover-wrapper">
+                                <img
+                                    src="{cover}"
+                                    alt="{book["title"]}"
+                                >
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+                    else:
+                        st.markdown(
+                            """
+                            <div class="book-cover-wrapper">
+                                <div style="
+                                    display:flex;
+                                    align-items:center;
+                                    justify-content:center;
+                                    height:270px;
+                                    color:#8C8177;
+                                ">
+                                    No Cover
+                                </div>
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
 
                     st.markdown(
                         f"""
@@ -737,26 +908,16 @@ if st.session_state.page == "Home":
                         unsafe_allow_html=True,
                     )
 
-                    data = get_book_user_data(
-                        book["id"]
-                    )
+                    progress = book["progress"]
 
                     st.progress(
-                        data["progress"] / 100
-                    )
-
-                    st.markdown(
-                        f"""
-                        <div class="reading-progress-text">
-                            {data["progress"]}% completed
-                        </div>
-                        """,
-                        unsafe_allow_html=True,
+                        progress / 100,
+                        text=f"{progress}% complete",
                     )
 
                     if st.button(
-                        "Continue",
-                        key=f"continue_{index}_{book['id']}",
+                        "Continue Reading",
+                        key=f"continue_{book['id']}",
                         width="stretch",
                     ):
                         open_book(
@@ -765,120 +926,22 @@ if st.session_state.page == "Home":
                         )
 
 
-    # -----------------------------------------------------
-    # Hot Hits
-    # -----------------------------------------------------
+        home_books = get_home_books()
 
-    st.markdown(
-        '<div class="section-title">Hot Hits</div>',
-        unsafe_allow_html=True,
-    )
+        st.subheader("Discover Books")
 
-    st.markdown(
-        """
-        <div class="section-subtitle">
-            Popular books worth checking out.
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+        if home_books:
+            cols = st.columns(5)
 
-    hot_books = [
-        book
-        for book in mock_books
-        if book.get("hot", False)
-    ]
-
-    hot_container = st.container(
-        horizontal=True,
-        gap="medium",
-    )
-
-    with hot_container:
-
-        for index, book in enumerate(hot_books):
-
-            with st.container(width=180):
-
-                # Fixed-size cover
-                st.markdown(
-                    f"""
-                    <div class="book-cover-wrapper">
-                        <img
-                            src="{book["cover"]}"
-                            alt="{book["title"]}"
-                        >
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
-
-                st.markdown(
-                    f"""
-                    <div class="book-title">
-                        {book["title"]}
-                    </div>
-
-                    <div class="book-author">
-                        {book["author"]}
-                    </div>
-
-                    <div class="book-meta">
-                        {book["category"]} · {book["year"]}
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
-
-                if st.button(
-                    "View Details",
-                    key=f"hot_{index}_{book['id']}",
-                    width="stretch",
-                ):
-                    open_book(
+            for i, book in enumerate(home_books):
+                with cols[i % 5]:
+                    render_book_card(
                         book,
+                        f"home_{i}",
                         "Home",
                     )
-
-
-    # -----------------------------------------------------
-    # Recommended
-    # -----------------------------------------------------
-
-    st.markdown(
-        '<div class="section-title">Recommended for You</div>',
-        unsafe_allow_html=True,
-    )
-
-    st.markdown(
-        """
-        <div class="section-subtitle">
-            A few books you might enjoy.
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    recommended_books = [
-        book
-        for book in mock_books
-        if book.get("recommended", False)
-    ]
-
-    recommended_columns = st.columns(5)
-
-    for index, book in enumerate(
-        recommended_books[:10]
-    ):
-
-        with recommended_columns[index % 5]:
-
-            render_book_card(
-                book,
-                f"recommended_{index}",
-                "Home",
-            )
-
+        else:
+            st.info("No books available.")
 
 # =========================================================
 # BOOK DETAIL
@@ -887,6 +950,7 @@ if st.session_state.page == "Home":
 elif st.session_state.page == "Book Detail":
 
     book = st.session_state.selected_book
+
 
     # -----------------------------------------------------
     # Back Button
@@ -902,7 +966,6 @@ elif st.session_state.page == "Book Detail":
         type="secondary",
     ):
 
-        # Return to the exact page that opened this detail
         previous_page = st.session_state.get(
             "detail_source",
             "Home",
@@ -910,7 +973,6 @@ elif st.session_state.page == "Book Detail":
 
         st.session_state.page = previous_page
         st.session_state.selected_book = None
-
         st.rerun()
 
     st.markdown(
@@ -921,15 +983,19 @@ elif st.session_state.page == "Book Detail":
 
     if book is None:
 
-        st.warning(
-            "No book selected."
-        )
+        st.warning("No book selected.")
 
     else:
 
-        user_data = get_book_user_data(
+        # -------------------------------------------------
+        # Get current library data
+        # -------------------------------------------------
+
+        user_data = get_library_book(
             book["id"]
         )
+
+        in_library = user_data is not None
 
 
         # -------------------------------------------------
@@ -937,7 +1003,7 @@ elif st.session_state.page == "Book Detail":
         # -------------------------------------------------
 
         left, right = st.columns(
-            [1, 2.2],
+            [0.72, 2.28],
             gap="large",
         )
 
@@ -948,9 +1014,27 @@ elif st.session_state.page == "Book Detail":
 
         with left:
 
-            st.image(
-                book["cover"],
-                width="stretch",
+            st.markdown(
+                '<div class="detail-cover">',
+                unsafe_allow_html=True,
+            )
+
+            if book.get("cover"):
+
+                st.image(
+                    book["cover"],
+                    width=260,
+                )
+
+            else:
+
+                st.info(
+                    "No cover available."
+                )
+
+            st.markdown(
+                "</div>",
+                unsafe_allow_html=True,
             )
 
 
@@ -999,24 +1083,40 @@ elif st.session_state.page == "Book Detail":
                     unsafe_allow_html=True,
                 )
 
-
             with info_right:
 
                 st.markdown(
-                    f'<div class="detail-value">'
-                    f'{book["category"]}</div>',
+                    f"""
+                    <div class="detail-value">
+                        {book["category"]}
+                    </div>
+                    """,
                     unsafe_allow_html=True,
                 )
 
                 st.markdown(
-                    f'<div class="detail-value">'
-                    f'{book["year"]}</div>',
+                    f"""
+                    <div class="detail-value">
+                        {book["year"]}
+                    </div>
+                    """,
                     unsafe_allow_html=True,
                 )
 
+                total_pages = book.get("pages", 0)
+
+                page_text = (
+                    f"{total_pages} pages"
+                    if total_pages
+                    else "Unknown"
+                )
+
                 st.markdown(
-                    f'<div class="detail-value">'
-                    f'{book["pages"]} pages</div>',
+                    f"""
+                    <div class="detail-value">
+                        {page_text}
+                    </div>
+                    """,
                     unsafe_allow_html=True,
                 )
 
@@ -1026,9 +1126,11 @@ elif st.session_state.page == "Book Detail":
             # -------------------------------------------------
 
             st.markdown(
-                '<div class="about-title">'
-                'About this book'
-                '</div>',
+                """
+                <div class="about-title">
+                    About this book
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
 
@@ -1048,18 +1150,53 @@ elif st.session_state.page == "Book Detail":
             # Library Action
             # -------------------------------------------------
 
-            if is_in_library(book["id"]):
+            if not in_library:
 
                 if st.button(
-                    "Remove from My Library",
+                    "＋ Add to Library",
+                    key=f"add_{book['id']}",
                     width="stretch",
                 ):
 
-                    st.session_state.library = [
-                        item
-                        for item in st.session_state.library
-                        if item["id"] != book["id"]
-                    ]
+                    try:
+
+                        add_to_library(book)
+
+                        st.success(
+                            "Book added to your library."
+                        )
+
+                        st.rerun()
+
+                    except Exception as e:
+
+                        st.error(
+                            f"Could not add book: {e}"
+                        )
+
+                st.info(
+                    "Add this book to your library to start "
+                    "tracking your reading."
+                )
+
+                st.stop()
+
+
+            # -------------------------------------------------
+            # Remove from Library
+            # -------------------------------------------------
+
+            if st.button(
+                "Remove from Library",
+                key=f"remove_{book['id']}",
+                width="stretch",
+            ):
+
+                try:
+
+                    remove_from_library(
+                        book["id"]
+                    )
 
                     st.success(
                         "Book removed from your library."
@@ -1067,22 +1204,11 @@ elif st.session_state.page == "Book Detail":
 
                     st.rerun()
 
-            else:
+                except Exception as e:
 
-                if st.button(
-                    "＋ Add to My Library",
-                    width="stretch",
-                ):
-
-                    st.session_state.library.append(
-                        book
+                    st.error(
+                        f"Could not remove book: {e}"
                     )
-
-                    st.success(
-                        "Book added to your library."
-                    )
-
-                    st.rerun()
 
 
             # -------------------------------------------------
@@ -1090,9 +1216,11 @@ elif st.session_state.page == "Book Detail":
             # -------------------------------------------------
 
             st.markdown(
-                '<div class="section-title">'
-                'Reading Status'
-                '</div>',
+                """
+                <div class="section-title">
+                    Reading Status
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
 
@@ -1104,18 +1232,32 @@ elif st.session_state.page == "Book Detail":
 
             current_status = user_data["status"]
 
-            selected_status = st.radio(
+            selected_status = st.segmented_control(
                 "Reading Status",
                 status_options,
-                index=status_options.index(
-                    current_status
-                ),
-                horizontal=True,
+                default=current_status,
                 label_visibility="collapsed",
                 key=f"status_{book['id']}",
             )
 
-            user_data["status"] = selected_status
+            if selected_status:
+
+                if selected_status != current_status:
+
+                    try:
+
+                        update_status(
+                            book["id"],
+                            selected_status,
+                        )
+
+                        st.rerun()
+
+                    except Exception as e:
+
+                        st.error(
+                            f"Could not update status: {e}"
+                        )
 
 
             # -------------------------------------------------
@@ -1123,37 +1265,97 @@ elif st.session_state.page == "Book Detail":
             # -------------------------------------------------
 
             st.markdown(
-                '<div class="rating-title">'
-                'Reading Progress'
-                '</div>',
+                """
+                <div class="rating-title">
+                    Reading Progress
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
 
-            if selected_status == "Want to Read":
 
-                progress = 0
+            # Unknown page count
+            if not total_pages:
 
-            elif selected_status == "Completed":
+                st.info(
+                    "Page count is unavailable for this book."
+                )
 
-                progress = 100
+                progress = user_data["progress"]
+
+                st.progress(
+                    progress / 100,
+                    text=f"{progress}% complete",
+                )
+
 
             else:
 
-                progress = st.slider(
-                    "Progress",
-                    min_value=0,
-                    max_value=100,
-                    value=user_data["progress"],
-                    step=5,
-                    format="%d%%",
-                    key=f"progress_{book['id']}",
+                current_pages = round(
+                    user_data["progress"]
+                    * total_pages
+                    / 100
                 )
 
-            user_data["progress"] = progress
+                if selected_status == "Want to Read":
 
-            st.progress(
-                progress / 100
-            )
+                    current_pages = 0
+
+                elif selected_status == "Completed":
+
+                    current_pages = total_pages
+
+                else:
+
+                    current_pages = st.slider(
+                        "Pages read",
+                        min_value=0,
+                        max_value=total_pages,
+                        value=current_pages,
+                        step=1,
+                        label_visibility="collapsed",
+                        key=f"progress_{book['id']}",
+                    )
+
+
+                progress = round(
+                    current_pages
+                    / total_pages
+                    * 100
+                )
+
+
+                # Update only when the value changed
+                old_pages = round(
+                    user_data["progress"]
+                    * total_pages
+                    / 100
+                )
+
+                if current_pages != old_pages:
+
+                    try:
+
+                        update_progress(
+                            book["id"],
+                            current_pages,
+                        )
+
+                    except Exception as e:
+
+                        st.error(
+                            f"Could not update progress: {e}"
+                        )
+
+
+                st.progress(
+                    progress / 100,
+                    text=(
+                        f"{current_pages} of "
+                        f"{total_pages} pages · "
+                        f"{progress}%"
+                    ),
+                )
 
 
             # -------------------------------------------------
@@ -1161,53 +1363,66 @@ elif st.session_state.page == "Book Detail":
             # -------------------------------------------------
 
             st.markdown(
-                '<div class="rating-title">'
-                'Your Rating'
-                '</div>',
+                """
+                <div class="rating-title">
+                    Your Rating
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
 
             current_rating = user_data["rating"]
 
-            star_cols = st.columns(5)
+            star_columns = st.columns(
+                [0.35] * 5 + [4],
+                gap="small",
+            )[:5]
 
-            for index, col in enumerate(
-                star_cols,
+            for value, column in enumerate(
+                star_columns,
                 start=1,
             ):
 
-                with col:
+                active = value <= current_rating
 
-                    star = (
-                        "★"
-                        if index <= current_rating
-                        else "☆"
-                    )
+                star = (
+                    "★"
+                    if active
+                    else "☆"
+                )
 
-                    if index <= current_rating:
-                        st.markdown(
-                            '<div class="star-active">',
-                            unsafe_allow_html=True,
-                        )
-                    else:
-                        st.markdown(
-                            '<div class="star-button">',
-                            unsafe_allow_html=True,
-                        )
+                key_prefix = (
+                    "rating_star_active"
+                    if active
+                    else "rating_star"
+                )
+
+                with column:
 
                     if st.button(
                         star,
-                        key=f"rating_star_{book['id']}_{index}",
-                        width="stretch",
+                        key=(
+                            f"{key_prefix}_"
+                            f"{book['id']}_"
+                            f"{value}"
+                        ),
+                        type="tertiary",
                     ):
 
-                        user_data["rating"] = index
-                        st.rerun()
+                        try:
 
-                    st.markdown(
-                        "</div>",
-                        unsafe_allow_html=True,
-                    )
+                            update_rating(
+                                book["id"],
+                                value,
+                            )
+
+                            st.rerun()
+
+                        except Exception as e:
+
+                            st.error(
+                                f"Could not update rating: {e}"
+                            )
 
             if current_rating > 0:
 
@@ -1228,24 +1443,37 @@ elif st.session_state.page == "Book Detail":
             # -------------------------------------------------
 
             st.markdown(
-                '<div class="rating-title">'
-                'Personal Note'
-                '</div>',
+                """
+                <div class="rating-title">
+                    Personal Note
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
 
             note = st.text_area(
                 "Personal Note",
                 value=user_data["note"],
-                placeholder=(
-                    "Write something about this book..."
-                ),
+                placeholder="Write something about this book...",
                 height=110,
                 key=f"note_{book['id']}",
                 label_visibility="collapsed",
             )
 
-            user_data["note"] = note
+            if note != user_data["note"]:
+
+                try:
+
+                    update_note(
+                        book["id"],
+                        note,
+                    )
+
+                except Exception as e:
+
+                    st.error(
+                        f"Could not save note: {e}"
+                    )
 
             st.caption(
                 "Your note is private and only used "
@@ -1259,7 +1487,7 @@ elif st.session_state.page == "Book Detail":
 
 elif st.session_state.page == "Library":
 
-    st.title("My Library")
+    st.title("My Books")
 
     st.markdown(
         """
@@ -1270,14 +1498,12 @@ elif st.session_state.page == "Library":
         unsafe_allow_html=True,
     )
 
-
     # -----------------------------------------------------
-    # Library Summary
+    # Load Library
     # -----------------------------------------------------
 
-    total_books = len(
-        st.session_state.library
-    )
+    library_books = get_library_books()
+    total_books = len(library_books)
 
     st.markdown(
         f"""
@@ -1290,18 +1516,16 @@ elif st.session_state.page == "Library":
         unsafe_allow_html=True,
     )
 
-
     # -----------------------------------------------------
     # Empty Library
     # -----------------------------------------------------
 
-    if not st.session_state.library:
+    if not library_books:
 
         st.info(
             "Your library is empty. "
-            "Explore books on Home and add something to your library."
+            "Search for books on Home and add something to your library."
         )
-
 
     else:
 
@@ -1318,18 +1542,15 @@ elif st.session_state.page == "Library":
             ]
         )
 
-
-        # -------------------------------------------------
-        # All
-        # -------------------------------------------------
+        # =================================================
+        # ALL
+        # =================================================
 
         with tab_all:
 
-            books = st.session_state.library
-
             columns = st.columns(5)
 
-            for index, book in enumerate(books):
+            for index, book in enumerate(library_books):
 
                 with columns[index % 5]:
 
@@ -1339,42 +1560,54 @@ elif st.session_state.page == "Library":
                         "Library",
                     )
 
-                    data = get_book_user_data(
-                        book["id"]
+                    # Status
+                    st.markdown(
+                        f"""
+                        <div class="library-meta">
+                            {book["status"]} · {book["progress"]}%
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
                     )
 
-                    st.caption(
-                        f'{data["status"]} · '
-                        f'{data["progress"]}%'
-                    )
+                    # Rating
+                    if book["rating"] > 0:
 
-                    if data["rating"] > 0:
-
-                        st.caption(
-                            f'Your rating: '
-                            f'{"★" * data["rating"]}'
+                        st.markdown(
+                            f"""
+                            <div class="library-meta">
+                                Your rating: {"★" * book["rating"]}
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
                         )
 
+                    else:
 
-        # -------------------------------------------------
-        # Want to Read
-        # -------------------------------------------------
+                        st.markdown(
+                            """
+                            <div class="library-meta library-meta-empty">
+                                &nbsp;
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+
+        # =================================================
+        # WANT TO READ
+        # =================================================
 
         with tab_want:
 
             books = [
                 book
-                for book in st.session_state.library
-                if get_book_user_data(
-                    book["id"]
-                )["status"] == "Want to Read"
+                for book in library_books
+                if book["status"] == "Want to Read"
             ]
 
             if not books:
 
-                st.info(
-                    "No books in Want to Read."
-                )
+                st.info("No books in Want to Read.")
 
             else:
 
@@ -1390,26 +1623,40 @@ elif st.session_state.page == "Library":
                             "Library",
                         )
 
+                        # Fixed meta area
+                        st.markdown(
+                            """
+                            <div class="library-meta library-meta-empty">
+                                &nbsp;
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
 
-        # -------------------------------------------------
-        # Reading
-        # -------------------------------------------------
+                        st.markdown(
+                            """
+                            <div class="library-meta library-meta-empty">
+                                &nbsp;
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+
+        # =================================================
+        # READING
+        # =================================================
 
         with tab_reading:
 
             books = [
                 book
-                for book in st.session_state.library
-                if get_book_user_data(
-                    book["id"]
-                )["status"] == "Reading"
+                for book in library_books
+                if book["status"] == "Reading"
             ]
 
             if not books:
 
-                st.info(
-                    "No books currently being read."
-                )
+                st.info("No books currently being read.")
 
             else:
 
@@ -1425,38 +1672,45 @@ elif st.session_state.page == "Library":
                             "Library",
                         )
 
-                        data = get_book_user_data(
-                            book["id"]
+                        # Status
+                        st.markdown(
+                            f"""
+                            <div class="library-meta">
+                                Reading · {book["progress"]}%
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
                         )
 
+                        # Progress
                         st.progress(
-                            data["progress"] / 100
+                            min(max(book["progress"], 0), 100) / 100
                         )
 
-                        st.caption(
-                            f'{data["progress"]}% completed'
+                        st.markdown(
+                            f"""
+                            <div class="library-progress-text">
+                                {book["progress"]}% completed
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
                         )
 
-
-        # -------------------------------------------------
-        # Completed
-        # -------------------------------------------------
+        # =================================================
+        # COMPLETED
+        # =================================================
 
         with tab_completed:
 
             books = [
                 book
-                for book in st.session_state.library
-                if get_book_user_data(
-                    book["id"]
-                )["status"] == "Completed"
+                for book in library_books
+                if book["status"] == "Completed"
             ]
 
             if not books:
 
-                st.info(
-                    "No completed books yet."
-                )
+                st.info("No completed books yet.")
 
             else:
 
@@ -1472,13 +1726,86 @@ elif st.session_state.page == "Library":
                             "Library",
                         )
 
-                        data = get_book_user_data(
-                            book["id"]
+                        # Status
+                        st.markdown(
+                            """
+                            <div class="library-meta">
+                                Completed · 100%
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
                         )
 
-                        if data["rating"] > 0:
+                        # Rating
+                        if book["rating"] > 0:
 
-                            st.caption(
-                                f'Your rating: '
-                                f'{"★" * data["rating"]}'
+                            st.markdown(
+                                f"""
+                                <div class="library-meta">
+                                    Your rating: {"★" * book["rating"]}
+                                </div>
+                                """,
+                                unsafe_allow_html=True,
                             )
+
+                        else:
+
+                            st.markdown(
+                                """
+                                <div class="library-meta library-meta-empty">
+                                    &nbsp;
+                                </div>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+
+
+# =================================================
+# BROW
+# =================================================
+
+elif st.session_state.page == "Browse":
+
+    st.title("Browse")
+
+    st.markdown(
+        """
+        <p class="description">
+            Explore books by category and discover something new.
+        </p>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    genres = [
+        "Fiction",
+        "Romance",
+        "Mystery",
+        "Fantasy",
+        "Science",
+        "History",
+        "Business",
+    ]
+
+    selected_genre = st.selectbox(
+        "Choose a category",
+        genres,
+    )
+
+    books = browse_books(selected_genre)
+
+    if not books:
+        st.info("No books found in this category.")
+
+    else:
+        columns = st.columns(5)
+
+        for index, book in enumerate(books):
+
+            with columns[index % 5]:
+
+                render_book_card(
+                    book,
+                    f"browse_{selected_genre}_{index}",
+                    "Browse",
+                )

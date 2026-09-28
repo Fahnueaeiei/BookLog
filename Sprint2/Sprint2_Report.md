@@ -8,7 +8,7 @@
 | Team | Phattharawadee Songsrirod, Sujeephon Poobanchuen |
 | Roles | Both members: Coder and Debugger |
 | Repository | https://github.com/Fahnueaeiei/BookLog |
-| Pull Request | Pending - `sprint-2` will be opened against `main` after documentation review |
+| Pull Request | https://github.com/Fahnueaeiei/BookLog/pull/2 |
 
 ---
 
@@ -34,7 +34,7 @@ and sort algorithms for reuse by the Sprint 3 Streamlit application.
 - [x] Added automated pytest coverage for core logic and `DataStore`.
 - [x] Ran `ruff` with no findings.
 - [x] Wrote this report and `CHANGELOG.md` version 0.2.0.
-- [ ] Open the Sprint 2 Pull Request after committing the documentation.
+- [x] Opened the Sprint 2 Pull Request after committing the documentation.
 
 ## 3. Work Completed
 
@@ -194,7 +194,7 @@ Taken from `PLAN.md`, section 10.3.
 - [x] `PLAN.md` has finalized UML and SQLite schema headings.
 - [x] This report includes QA information and retrospective; the
   changelog has version 0.2.0.
-- [ ] Documentation has not yet been delivered through a Sprint 2 Pull
+- [x] Documentation has been delivered through a Sprint 2 Pull
   Request.
 
 **Overall status:** The Sprint 2 back-end is complete. Commit the

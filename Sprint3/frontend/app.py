@@ -1761,7 +1761,7 @@ elif st.session_state.page == "Library":
 
 
 # =================================================
-# BROW
+# BROWSE
 # =================================================
 
 elif st.session_state.page == "Browse":

@@ -155,7 +155,7 @@ Sprint2/data/booklog.db
 
 The API configuration is loaded from the Sprint 2 `.env` file, allowing Sprint 3 to use the same back-end services and persistent library data.
 
-## 4. Error Handling and User Feedback
+## 5. Error Handling and User Feedback
 
 The Streamlit interface handles common user-facing situations with clear feedback messages.
 
@@ -174,7 +174,103 @@ Back-end exceptions continue to be handled by the Sprint 2 custom exception syst
 
 ---
 
-## 5. Definition of Done - Sprint 3
+## 6. Testing
+
+**Test suite:** `test_sprint3_full.py`
+**Total test cases:** 61
+**Result:** 59 Passed, 1 Failed, 1 XFailed
+
+| ID    | Test item                         | Input / Test condition                           | Expected result                                     | Actual result                                                            | Status     |
+| ----- | --------------------------------- | ------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------------------ | ---------- |
+| TC-01 | Add book: DB & UI consistency     | Add valid book                                   | Book exists in DB and UI                            | Book existed in DB and UI                                                | PASSED     |
+| TC-02 | Status consistency: Want to Read  | Set status to `Want to Read`                     | UI and DB show matching status                      | UI and DB matched                                                        | PASSED     |
+| TC-03 | Status consistency: Reading       | Set status to `Reading`                          | UI and DB show matching status                      | UI and DB matched                                                        | PASSED     |
+| TC-04 | Status consistency: Completed     | Set status to `Completed`                        | UI and DB show matching status                      | UI and DB matched                                                        | PASSED     |
+| TC-05 | Progress DB/UI consistency        | Set 100 pages of 200                             | DB stores 100 pages; UI shows 50%                   | DB stored 100; UI showed 50%                                             | PASSED     |
+| TC-06 | Completed progress                | Set status to Completed                          | UI shows 100%; DB stores full page count            | UI showed 100%; DB stored 200 pages                                      | PASSED     |
+| TC-07 | Rating set and clear              | Set rating 4, then 0                             | Rating is stored and can be cleared                 | Rating stored and cleared correctly                                      | PASSED     |
+| TC-08 | Note roundtrip                    | Save `"hello"`                                   | Note is stored and returned unchanged               | Note matched DB and UI                                                   | PASSED     |
+| TC-09 | Remove book                       | Remove existing book                             | Book removed from DB and UI                         | Book removed from both                                                   | PASSED     |
+| TC-10 | Persistence after restart         | Save status, rating and note; create new session | Data remains available                              | Data persisted correctly                                                 | PASSED     |
+| TC-11 | Two-session consistency           | Session A sets rating 4; Session B reads it      | Session B sees latest value                         | Session B saw the latest value correctly                                 | PASSED     |
+| TC-12 | Invalid progress: -1              | Progress = `-1`                                  | `InvalidProgressError`                              | Exception raised; value unchanged                                        | PASSED     |
+| TC-13 | Invalid progress: over page count | Progress = `201`                                 | `InvalidProgressError`                              | Exception raised; value unchanged                                        | PASSED     |
+| TC-14 | Invalid progress: extreme value   | Progress = `1000000000`                          | `InvalidProgressError`                              | Exception raised; value unchanged                                        | PASSED     |
+| TC-15 | Invalid progress: wrong type      | Progress = `"abc"`                               | `InvalidProgressError`                              | Exception raised; value unchanged                                        | PASSED     |
+| TC-16 | Invalid progress: None            | Progress = `None`                                | `InvalidProgressError`                              | Exception raised; value unchanged                                        | PASSED     |
+| TC-17 | Invalid progress: float           | Progress = `100.5`                               | `InvalidProgressError`                              | Exception raised; value unchanged                                        | PASSED     |
+| TC-18 | Progress without page count       | Book has no page count; set progress 10          | `InvalidProgressError`                              | Exception raised; progress remained 0                                    | PASSED     |
+| TC-19 | Progress boundary: 0              | 0 pages of 200                                   | UI shows 0%                                         | UI showed 0%                                                             | PASSED     |
+| TC-20 | Progress boundary: 100            | 100 pages of 200                                 | UI shows 50%                                        | UI showed 50%                                                            | PASSED     |
+| TC-21 | Progress boundary: 200            | 200 pages of 200                                 | UI shows 100%                                       | UI showed 100%                                                           | PASSED     |
+| TC-22 | Valid rating: 1                   | Rating = 1                                       | Accepted                                            | Accepted                                                                 | PASSED     |
+| TC-23 | Valid rating: 2                   | Rating = 2                                       | Accepted                                            | Accepted                                                                 | PASSED     |
+| TC-24 | Valid rating: 3                   | Rating = 3                                       | Accepted                                            | Accepted                                                                 | PASSED     |
+| TC-25 | Valid rating: 4                   | Rating = 4                                       | Accepted                                            | Accepted                                                                 | PASSED     |
+| TC-26 | Valid rating: 5                   | Rating = 5                                       | Accepted                                            | Accepted                                                                 | PASSED     |
+| TC-27 | Invalid rating: -1                | Rating = `-1`                                    | `InvalidRatingError` or `ValueError`                | Expected validation exception raised                                     | PASSED     |
+| TC-28 | Invalid rating: 6                 | Rating = `6`                                     | `InvalidRatingError` or `ValueError`                | Exception raised                                                         | PASSED     |
+| TC-29 | Invalid rating: 4.5               | Rating = `4.5`                                   | `InvalidRatingError` or `ValueError`                | Exception raised                                                         | PASSED     |
+| TC-30 | Invalid rating: string            | Rating = `"3"`                                   | `InvalidRatingError` or `ValueError`                | Expected validation exception raised                                     | PASSED     |
+| TC-31 | Invalid rating: None              | Rating = `None`                                  | `InvalidRatingError` or `ValueError`                | Expected validation exception raised                                     | PASSED     |
+| TC-32 | Empty note                        | Note = `""`                                      | Empty note is stored correctly                      | Stored correctly                                                         | PASSED     |
+| TC-33 | Long note                         | 5,000-character note                             | Note is stored exactly                              | Stored correctly                                                         | PASSED     |
+| TC-34 | Unicode note                      | Thai text + emoji                                | Note is stored exactly                              | Stored correctly                                                         | PASSED     |
+| TC-35 | Script-like note                  | `<script>alert(1)</script>`                      | Note is stored as text                              | Stored correctly                                                         | PASSED     |
+| TC-36 | Multiline note                    | `line1\nline2`                                   | Line breaks are preserved                           | Preserved correctly                                                      | PASSED     |
+| TC-37 | Invalid status: Bogus             | Status = `Bogus`                                 | `ValueError`                                        | `ValueError` raised                                                      | PASSED     |
+| TC-38 | Invalid status: None              | Status = `None`                                  | `ValueError`                                        | `ValueError` raised                                                      | PASSED     |
+| TC-39 | Invalid status: lowercase         | Status = `reading`                               | `ValueError`                                        | `ValueError` raised                                                      | PASSED     |
+| TC-40 | Invalid status: empty             | Status = `""`                                    | `ValueError`                                        | `ValueError` raised                                                      | PASSED     |
+| TC-41 | Invalid status: wrong type        | Status = `3`                                     | `ValueError`                                        | `ValueError` raised                                                      | PASSED     |
+| TC-42 | Duplicate book                    | Add same book twice                              | `DuplicateBookError`                                | Exception raised                                                         | PASSED     |
+| TC-43 | Remove unknown book               | Remove non-existing ID                           | `BookNotFoundError`                                 | Exception raised                                                         | PASSED     |
+| TC-44 | Update unknown status book        | Unknown ID + status                              | `BookNotFoundError`                                 | Exception raised                                                         | PASSED     |
+| TC-45 | Update unknown progress book      | Unknown ID + progress                            | `BookNotFoundError`                                 | Exception raised                                                         | PASSED     |
+| TC-46 | Update unknown rating book        | Unknown ID + rating                              | `BookNotFoundError`                                 | Exception raised                                                         | PASSED     |
+| TC-47 | Update unknown note book          | Unknown ID + note                                | `BookNotFoundError`                                 | Exception raised                                                         | PASSED     |
+| TC-48 | Empty library                     | No books in library                              | Return empty list                                   | Returned `[]`                                                            | PASSED     |
+| TC-49 | Empty search                      | Search = `""`                                    | `ValueError`                                        | Exception raised                                                         | PASSED     |
+| TC-50 | Whitespace search                 | Search = `"   "`                                 | `ValueError`                                        | Exception raised                                                         | PASSED     |
+| TC-51 | None search                       | Search = `None`                                  | `ValueError`                                        | Exception raised                                                         | PASSED     |
+| TC-52 | Wrong-type search                 | Search = `123`                                   | `ValueError`                                        | Exception raised                                                         | PASSED     |
+| TC-53 | Missing DB file                   | DB file does not exist                           | DB is created and usable                            | DB created successfully                                                  | PASSED     |
+| TC-54 | Empty DB file                     | Existing empty DB file                           | DB becomes usable                                   | DB was usable                                                            | PASSED     |
+| TC-55 | Missing parent folder             | DB parent directory does not exist               | Parent folder and DB should be created              | Parent folder was not created                                            | **XFAIL**  |
+| TC-56 | Corrupt DB                        | Invalid/corrupt DB contents                      | Error is handled using custom exception             | Custom exception handling worked                                         | PASSED     |
+| TC-57 | Read-only DB                      | DB file set to read-only; update note            | `DatabaseError`                                     | `DatabaseError` raised                                                   | PASSED     |
+| TC-58 | Dropped table                     | Drop `library_entries` table                     | Error is handled, not raw SQLite error              | Custom exception handling worked                                         | PASSED     |
+| TC-59 | DB deleted while running          | Delete DB after initialization                   | Error is handled, not raw SQLite error              | Raw Windows `PermissionError` occurred while deleting the locked DB file | **FAILED** |
+| TC-60 | Large library                     | Add 200 books                                    | All books returned, unique IDs, retrieval < 1 sec   | 200 books retrieved successfully within limit                            | PASSED     |
+| TC-61 | Status filter counts              | Add 9 books across 3 statuses                    | Each status has 3 books; total matches library size | Counts were 3/3/3 and total matched                                      | PASSED     |
+
+### Summary
+
+| Result    |  Count |
+| --------- | -----: |
+| PASSED    |     59 |
+| FAILED    |      1 |
+| XFAILED   |      1 |
+| **TOTAL** | **61** |
+
+### Failed Test
+
+The only failed test was **TC-59: DB deleted while running**.
+
+1. **DB deletion while running (TC-59)**
+   The test attempted to delete the SQLite database file while it was still being used by an active database connection. On Windows, the file was locked by the running process, resulting in a raw `PermissionError: [WinError 32]` before the test could reach the application's database-error handling logic.
+
+### Expected Failure
+
+**TC-55: Missing parent folder** was intentionally marked **XFAIL** because the current `DataStore` implementation does not automatically create a missing parent directory for the database file.
+
+### Overall Test Assessment
+
+The Sprint 3 test suite achieved **59 passing tests out of 61**, with one expected failure and one environment/platform-related failure. Core functionality including CRUD operations, UI–database consistency, persistence, progress tracking, rating and status validation, notes, search validation, exception handling, and large-library retrieval passed the tests. The remaining failed case concerns SQLite file locking behavior on Windows when attempting to delete an active database file.
+
+---
+
+## 7. Definition of Done - Sprint 3
 
 * [x] Streamlit front-end is implemented.
 * [x] Home page is implemented.
@@ -199,7 +295,7 @@ Back-end exceptions continue to be handled by the Sprint 2 custom exception syst
 
 ---
 
-## 6. Retrospective
+## 8. Retrospective
 
 ### Wow!
 
@@ -225,7 +321,7 @@ Back-end exceptions continue to be handled by the Sprint 2 custom exception syst
 
 ---
 
-## 7. Sprint 3 Handoff
+## 9. Sprint 3 Handoff
 
 Sprint 3 delivers the Streamlit presentation layer and integrates it with the reusable Sprint 2 back-end.
 

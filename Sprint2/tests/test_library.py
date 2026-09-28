@@ -168,6 +168,22 @@ class TestSort:
         )
         assert [e.book.book_id for e in sorted_entries] == ["b3", "b1", "b2"]
 
+    def test_descending_sort_keeps_missing_values_last(
+        self, library, sample_book_factory
+    ):
+        library.add_book(sample_book_factory("b1", published_date="2010"))
+        library.add_book(sample_book_factory("b2", published_date=None))
+        library.add_book(sample_book_factory("b3", published_date="2000"))
+
+        sorted_entries = library.sort_entries(
+            library.get_entries(), key="published_year", reverse=True
+        )
+        assert [entry.book.book_id for entry in sorted_entries] == [
+            "b1",
+            "b3",
+            "b2",
+        ]
+
     def test_sort_does_not_mutate_input_list(self, library, sample_book_factory):
         library.add_book(sample_book_factory("b1", title="B"))
         library.add_book(sample_book_factory("b2", title="A"))

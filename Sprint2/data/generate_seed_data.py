@@ -50,14 +50,22 @@ LAST_NAMES = [
 ]
 
 DESCRIPTION_TEMPLATES = [
-    "A story about {genre_lower} that follows one character's search "
-    "for meaning against the odds.",
-    "This {genre_lower} novel explores family, memory, and the choices "
-    "that define a life.",
-    "A tightly plotted {genre_lower} tale set across three generations "
-    "of one household.",
-    "Part {genre_lower}, part meditation on loss, this book lingers "
-    "long after the last page.",
+    (
+        "A story about {genre_lower} that follows one character's search "
+        "for meaning against the odds."
+    ),
+    (
+        "This {genre_lower} novel explores family, memory, and the choices "
+        "that define a life."
+    ),
+    (
+        "A tightly plotted {genre_lower} tale set across three generations "
+        "of one household."
+    ),
+    (
+        "Part {genre_lower}, part meditation on loss, this book lingers "
+        "long after the last page."
+    ),
 ]
 
 

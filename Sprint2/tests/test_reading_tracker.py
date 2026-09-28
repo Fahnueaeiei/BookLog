@@ -75,6 +75,14 @@ class TestUpdateProgress:
         entry = tracker.update_progress("b1", 99999)
         assert entry.pages_read == 99999
 
+    @pytest.mark.parametrize("pages_read", [True, 10.5, "10"])
+    def test_non_integer_progress_raises(
+        self, library, tracker, sample_book_factory, pages_read
+    ):
+        library.add_book(sample_book_factory("b1", page_count=300))
+        with pytest.raises(InvalidProgressError):
+            tracker.update_progress("b1", pages_read)
+
     def test_update_progress_missing_book_raises(self, tracker):
         with pytest.raises(BookNotFoundError):
             tracker.update_progress("missing", 10)

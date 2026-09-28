@@ -9,7 +9,6 @@ to DataStore; display belongs to the CLI / web app.
 import re
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Optional
 
 # Matches "YYYY", "YYYY-MM", or "YYYY-MM-DD" and captures the year.
 _YEAR_PATTERN = re.compile(r"^(\d{4})")
@@ -56,11 +55,11 @@ class Book:
     book_id: str
     title: str = field(compare=False)
     authors: list = field(default_factory=list, compare=False)
-    description: Optional[str] = field(default=None, compare=False)
-    published_date: Optional[str] = field(default=None, compare=False)
+    description: str | None = field(default=None, compare=False)
+    published_date: str | None = field(default=None, compare=False)
     categories: list = field(default_factory=list, compare=False)
-    cover_url: Optional[str] = field(default=None, compare=False)
-    page_count: Optional[int] = field(default=None, compare=False)
+    cover_url: str | None = field(default=None, compare=False)
+    page_count: int | None = field(default=None, compare=False)
 
     @property
     def published_year(self):
@@ -93,7 +92,7 @@ class LibraryEntry:
     book: Book
     status: ReadingStatus
     pages_read: int = 0
-    rating: Optional[int] = None
+    rating: int | None = None
     notes: str = ""
     added_at: str = ""
 

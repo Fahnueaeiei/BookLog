@@ -73,6 +73,20 @@ class TestSearch:
         with pytest.raises(ValueError):
             finder.search("isbn", "12345")
 
+    @pytest.mark.parametrize("keyword", ["", "   ", None])
+    def test_search_empty_or_non_string_keyword_raises_value_error(
+        self, finder, keyword
+    ):
+        with pytest.raises(ValueError):
+            finder.search("title", keyword)
+
+    @pytest.mark.parametrize("max_results", [0, 41, 1.5, True])
+    def test_search_invalid_max_results_raises_value_error(
+        self, finder, max_results
+    ):
+        with pytest.raises(ValueError):
+            finder.search("title", "anything", max_results=max_results)
+
     def test_search_uses_correct_prefix_per_field(self, finder, monkeypatch):
         seen_queries = []
 
@@ -98,6 +112,13 @@ class TestGetDetails:
         book = finder.get_details("abc123")
         assert book.book_id == "abc123"
         assert book.page_count == 304
+
+    @pytest.mark.parametrize("book_id", ["", "   ", None])
+    def test_get_details_empty_or_non_string_id_raises_value_error(
+        self, finder, book_id
+    ):
+        with pytest.raises(ValueError):
+            finder.get_details(book_id)
 
 
 class TestParseVolumeDefaults:
@@ -147,6 +168,13 @@ class TestErrorHandling:
             requests,
             "get",
             lambda *a, **k: FakeResponse(raise_json_error=True),
+        )
+        with pytest.raises(APIError):
+            finder.search("title", "anything")
+
+    def test_unusable_json_shape_raises_api_error(self, finder, monkeypatch):
+        monkeypatch.setattr(
+            requests, "get", lambda *a, **k: FakeResponse(json_data=[])
         )
         with pytest.raises(APIError):
             finder.search("title", "anything")

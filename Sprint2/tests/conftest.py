@@ -65,15 +65,15 @@ def sample_book_factory():
     """
 
     def _make(book_id, **overrides):
-        defaults = dict(
-            title=f"Book {book_id}",
-            authors=["Some Author"],
-            description="A book.",
-            published_date="2020",
-            categories=["Fiction"],
-            cover_url=None,
-            page_count=200,
-        )
+        defaults = {
+            "title": f"Book {book_id}",
+            "authors": ["Some Author"],
+            "description": "A book.",
+            "published_date": "2020",
+            "categories": ["Fiction"],
+            "cover_url": None,
+            "page_count": 200,
+        }
         defaults.update(overrides)
         return Book(book_id=book_id, **defaults)
 

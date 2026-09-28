@@ -67,15 +67,26 @@ class BookFinder:
             A list of Book objects. Empty if nothing matches.
 
         Raises:
-            ValueError: If field is not "title", "author", or "genre".
+            ValueError: If field, keyword, or max_results is invalid.
             APIError: If the API cannot be reached or returns a
                 response that cannot be used.
         """
         if field not in FIELD_PREFIXES:
             raise ValueError(f"Unknown search field: {field}")
+        if not isinstance(keyword, str) or not keyword.strip():
+            raise ValueError("Search keyword cannot be empty.")
+        if (
+            not isinstance(max_results, int)
+            or isinstance(max_results, bool)
+            or not 1 <= max_results <= 40
+        ):
+            raise ValueError("max_results must be a whole number from 1 to 40.")
 
-        query = f"{FIELD_PREFIXES[field]}:{keyword}"
+        query = f"{FIELD_PREFIXES[field]}:{keyword.strip()}"
         data = self._get(BASE_URL, {"q": query, "maxResults": max_results})
+
+        if not isinstance(data, dict):
+            raise APIError("Google Books API returned an unusable response.")
 
         items = data.get("items") or []
         return [self._parse_volume(item) for item in items]
@@ -93,7 +104,12 @@ class BookFinder:
             APIError: If the API cannot be reached, the book is not
                 found, or the response cannot be used.
         """
+        if not isinstance(book_id, str) or not book_id.strip():
+            raise ValueError("book_id cannot be empty.")
+
         item = self._get(f"{BASE_URL}/{book_id}")
+        if not isinstance(item, dict):
+            raise APIError("Google Books API returned an unusable response.")
         return self._parse_volume(item)
 
     # ------------------------------------------------------------------

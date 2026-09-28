@@ -74,6 +74,12 @@ class ReadingTracker:
         entry = self.library.get_entry(book_id)
         page_count = entry.book.page_count
 
+        is_whole_number = isinstance(pages_read, int) and not isinstance(
+            pages_read, bool
+        )
+        if not is_whole_number:
+            raise InvalidProgressError(pages_read, page_count)
+
         too_small = pages_read < 0
         too_big = page_count is not None and pages_read > page_count
         if too_small or too_big:

@@ -147,7 +147,7 @@ Data Access Layer       DataStore (SQLite)  ·  Google Books API (used by BookFi
 | Streamlit app | Presentation | Web pages that call the same business logic (Sprint 3) |
 | Custom exceptions | Business Logic | `BookLibraryError` (base), `BookNotFoundError`, `DuplicateBookError`, `InvalidRatingError`, `InvalidProgressError`, `APIError`, `DatabaseError` |
 
-### UML Class Diagram (draft — finalized in Sprint 2)
+### UML Class Diagram (finalized in Sprint 2)
 
 ```mermaid
 classDiagram
@@ -218,7 +218,7 @@ classDiagram
 
 ---
 
-## 6. Data Model (SQLite — draft, finalized in Sprint 2)
+## 6. Data Model (SQLite — finalized in Sprint 2)
 
 ```sql
 CREATE TABLE books (
@@ -285,7 +285,6 @@ book-library-manager/
 ├── Sprint2/                   # back-end
 │   ├── CHANGELOG.md
 │   ├── Sprint2_Report.md
-│   ├── main.py
 │   ├── data/seed_books.json   # test dataset for the algorithm demo
 │   ├── src/
 │   │   ├── models.py
@@ -337,6 +336,10 @@ Planned main menu:
 
 ### Sprint 2 — Back-End
 **Goal:** Build the business logic and data access layers.
+
+**Status:** Completed. The back-end provides SQLite persistence,
+Google Books integration, local search/filter/sort, reading tracking,
+automated tests, and a recorded 1,000-entry performance benchmark.
 
 Tasks:
 - Create the models (`Book`, `LibraryEntry`, `ReadingStatus`) and the custom exceptions.

@@ -8,7 +8,7 @@
 | Team | Phattharawadee Songsrirod, Sujeephon Poobanchuen |
 | Roles | Both members: Coder and Debugger |
 | Repository | https://github.com/Fahnueaeiei/BookLog |
-| Pull Request | https://github.com/Fahnueaeiei/BookLog/pull/2 |
+| Pull Request | https://github.com/Fahnueaeiei/BookLog/pull/3 |
 
 ---
 

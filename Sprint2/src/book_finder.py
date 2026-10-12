@@ -1,4 +1,3 @@
-
 """Google Books API client (Data Access Layer) for BookLog (Sprint 2).
 
 BookFinder is the only place in the application that talks to the
@@ -129,6 +128,10 @@ class BookFinder:
 
         if self.api_key:
             request_params["key"] = self.api_key
+
+        # Cloud servers often have IPs Google cannot geolocate (HTTP 403
+        # "unknownLocation"). Passing a country code avoids that.
+        request_params.setdefault("country", "US")
 
         response = None
 

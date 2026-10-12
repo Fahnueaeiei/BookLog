@@ -12,7 +12,6 @@ try:
     )
 except Exception:
     pass
-
 # =========================================================
 # Import Service
 # =========================================================
@@ -56,463 +55,331 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=DM+Sans:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap');
 
-    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap');
+    :root {
+        --paper: #F6F0E6;      /* ครีม */
+        --card: #FFFBF4;       /* ครีมอ่อน */
+        --ink: #3B2F2A;        /* น้ำตาลเข้มเกือบดำ */
+        --muted: #7A6A5E;      /* น้ำตาลเทา */
+        --green: #6B4F3B;      /* น้ำตาลหลัก (ใช้กับ Nav และปุ่ม) */
+        --green-soft: #E9DDCB; /* เบจ */
+        --mustard: #C9A27A;    /* น้ำตาลอ่อนสำหรับไฮไลต์ */
+        --serif: 'Fraunces', 'Noto Sans Thai', serif;
+        --sans: 'DM Sans', 'Noto Sans Thai', sans-serif;
+    }
 
-    html,
-    body,
-    .stApp,
+    html, body, .stApp,
     .stApp *:not([data-testid="stIconMaterial"])
     :not([class*="material-icons"])
     :not([class*="material-symbols"]) {
-        font-family: 'Lato', sans-serif;
+        font-family: var(--sans);
     }
-
     [data-testid="stIconMaterial"],
     span[class*="material-icons"],
     span[class*="material-symbols"] {
-        font-family: 'Material Symbols Rounded',
-        'Material Icons' !important;
+        font-family: 'Material Symbols Rounded', 'Material Icons' !important;
     }
 
-
-    /* -------------------------------------------------
-       App
-    ------------------------------------------------- */
-
-    .stApp {
-        background-color: #FAF8F4;
-    }
-
+    .stApp { background: var(--paper); color: var(--ink); }
     .block-container {
-        max-width: 1200px;
-        padding-top: 1.5rem;
-        padding-bottom: 4rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        max-width: 1240px;
+        padding: 1.2rem 2rem 4rem 2rem;
     }
+    h1, h2, h3, .logo, .hero-title, .section-title, .detail-title,
+    .genre-title, .about-title {
+        font-family: var(--serif) !important;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+    }
+    h1 { font-size: 40px !important; font-weight: 800 !important; }
 
-
-    /* -------------------------------------------------
-       Top Navigation
-    ------------------------------------------------- */
-
+    /* ---------- Top Navigation ---------- */
     .st-key-topnav {
-        background: #FFFFFF;
-        padding: 0.45rem 0;
-        margin-bottom: 1.6rem;
-        box-shadow: 0 0 0 100vmax #FFFFFF;
+        background: var(--green);
+        padding: 0.5rem 0;
+        margin-bottom: 1.8rem;
+        box-shadow: 0 0 0 100vmax var(--green);
         clip-path: inset(0 -100vmax);
     }
-
     .logo {
-        font-size: 27px;
-        font-weight: 700;
-        color: #382F29;
-        letter-spacing: -0.7px;
+        font-size: 28px; font-weight: 800; color: #FFFFFF !important;
         white-space: nowrap;
     }
+    .logo b { color: var(--mustard); }
 
     div[class*="st-key-nav_"] button {
         background: transparent !important;
         border: none !important;
+        border-bottom: 2px solid transparent !important;
+        border-radius: 0 !important;
         box-shadow: none !important;
-        color: #493D34 !important;
+        color: #E6EEE9 !important;
         font-size: 16px !important;
         font-weight: 500 !important;
-        padding: 0.35rem 0.2rem !important;
         min-height: 40px !important;
-        justify-content: center !important;
+        padding: 0.35rem 0.2rem !important;
+        transition: border-color .2s, color .2s;
     }
-
     div[class*="st-key-nav_"] button p {
+        color: inherit !important; font-size: 16px !important;
         white-space: nowrap !important;
-        font-size: 16px !important;
-        font-weight: 500 !important;
     }
-
     div[class*="st-key-nav_"] button:hover {
         background: transparent !important;
-        color: #8B735F !important;
+        color: #FFFFFF !important;
+        border-bottom-color: var(--mustard) !important;
     }
 
+    /* Browse dropdown (popover) */
+    [data-testid="stPopoverBody"] {
+        background: var(--card) !important;
+        border: 1px solid var(--green-soft) !important;
+        border-radius: 14px !important;
+        box-shadow: 0 18px 40px rgba(31, 42, 39, .22) !important;
+        padding: .6rem !important;
+        min-width: 230px;
+    }
+    div[class*="st-key-pop_genre_"] button {
+        background: transparent !important;
+        color: var(--ink) !important;
+        border: none !important;
+        justify-content: flex-start !important;
+        border-radius: 8px !important;
+        padding: .5rem .75rem !important;
+        font-weight: 500 !important;
+        transition: background .15s, padding-left .15s;
+    }
+    div[class*="st-key-pop_genre_"] button:hover {
+        background: var(--green-soft) !important;
+        color: var(--green) !important;
+        padding-left: 1.05rem !important;
+    }
 
-    /* -------------------------------------------------
-       Search
-    ------------------------------------------------- */
-
+    /* Search */
     .st-key-topnav [data-baseweb="input"],
     .st-key-topnav [data-baseweb="base-input"] {
         background: #FFFFFF !important;
-        border-radius: 4px !important;
+        border-radius: 999px !important;
     }
-
     .st-key-topnav [data-testid="stTextInput"] [data-baseweb="input"] {
-        border: 1px solid #D6D1CB !important;
-        min-height: 40px !important;
+        border: none !important; min-height: 40px !important;
     }
-
-    .st-key-topnav [data-testid="stTextInput"]
-    [data-baseweb="input"]:focus-within {
-        border-color: #A99B8E !important;
-        box-shadow: 0 0 0 1px #A99B8E !important;
-    }
-
     .st-key-topnav input {
-        border: none !important;
-        box-shadow: none !important;
-        background: transparent !important;
-        color: #3F3933 !important;
+        background: transparent !important; color: var(--ink) !important;
         font-size: 15px !important;
     }
 
-
-    /* -------------------------------------------------
-       Main Headings
-    ------------------------------------------------- */
-
-    h1 {
-        color: #3F3933;
-        font-size: 36px !important;
-        margin-bottom: 8px;
-    }
-
-    h2,
-    h3 {
-        color: #3F3933;
-    }
-
-
-    /* -------------------------------------------------
-       Description
-    ------------------------------------------------- */
-
-    .description {
-        color: #756C63;
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-
-    /* -------------------------------------------------
-       General Buttons
-    ------------------------------------------------- */
-
-    .stButton > button {
-        border-radius: 9px;
-        border: none;
-        background-color: #8B735F;
-        color: #FFFFFF;
-        font-weight: 600;
-        padding: 0.5rem 1.2rem;
-    }
-
-    .stButton > button:hover {
-        background-color: #6F5A49;
-        color: #FFFFFF;
-    }
-
-
-    /* -------------------------------------------------
-       Section Titles
-    ------------------------------------------------- */
-
-    .section-title {
-        font-size: 22px;
-        font-weight: 650;
-        color: #3F3933;
-        margin-top: 34px;
-        margin-bottom: 15px;
-    }
-
-    .section-subtitle {
-        color: #8A8076;
-        font-size: 14px;
-        margin-top: -8px;
-        margin-bottom: 16px;
-    }
-
-
-    /* -------------------------------------------------
-       Home Greeting
-    ------------------------------------------------- */
-
-    .greeting {
-        margin-top: 26px;
-        margin-bottom: 8px;
-        font-size: 27px;
-        font-weight: 650;
-        color: #3F3933;
-    }
-
-    .greeting-text {
-        font-size: 15px;
-        color: #756C63;
-        margin-bottom: 28px;
-    }
-
-
-    /* -------------------------------------------------
-       Book Cards
-    ------------------------------------------------- */
-
-    .book-card {
-        width: 100%;
-    }
-
-    .book-cover-wrapper {
-        width: 100%;
-        height: 270px;
+    /* ---------- Hero ---------- */
+    .hero {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 2rem;
+        align-items: center;
+        background: var(--card);
+        border-radius: 22px;
+        padding: 2.6rem 3rem;
+        margin-bottom: 2.4rem;
+        border: 1px solid var(--green-soft);
         overflow: hidden;
-        border-radius: 8px;
-        background-color: #EAE2D8;
     }
+    .hero-title {
+        font-size: 50px; line-height: 1.08; font-weight: 800; margin: 0 0 .9rem 0;
+    }
+    .hero-text {
+        color: var(--muted); font-size: 17px; line-height: 1.65; max-width: 460px;
+    }
+    .shelf {
+        display: flex; align-items: flex-end; justify-content: center;
+        gap: 6px; height: 210px;
+        border-bottom: 6px solid var(--green);
+    }
+    .spine {
+        width: 44px; border-radius: 4px 4px 0 0;
+        transform-origin: bottom center;
+        box-shadow: inset -6px 0 0 rgba(0,0,0,.12);
+        animation: rise .9s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .spine:nth-child(1) { height: 150px; background: #23463C; animation-delay: .05s; }
+    .spine:nth-child(2) { height: 190px; background: #E0A526; animation-delay: .15s; }
+    .spine:nth-child(3) { height: 165px; background: #7A9E8E; animation-delay: .25s; }
+    .spine:nth-child(4) { height: 200px; background: #1F2A27; animation-delay: .35s; }
+    .spine:nth-child(5) { height: 140px; background: #B9553A; animation-delay: .45s; }
+    .spine:nth-child(6) { height: 178px; background: #C9D8CF; animation-delay: .55s; }
+    .spine.lean { transform: rotate(9deg); margin-left: 14px; }
+    @keyframes rise {
+        from { transform: translateY(40px); opacity: 0; }
+        to   { opacity: 1; }
+    }
+    @media (max-width: 800px) {
+        .hero { grid-template-columns: 1fr; padding: 1.6rem; }
+        .hero-title { font-size: 36px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .spine { animation: none; } }
 
+    /* ---------- Section titles ---------- */
+    .section-title {
+        display: flex; align-items: center; gap: 1rem;
+        font-size: 28px; font-weight: 700;
+        margin: 2.4rem 0 .4rem 0;
+    }
+    .section-title::after {
+        content: ""; flex: 1; height: 2px; background: var(--green-soft);
+    }
+    .section-subtitle { color: var(--muted); font-size: 15px; margin-bottom: 1.1rem; }
+    .description { color: var(--muted); font-size: 16px; line-height: 1.6; }
+
+    /* ---------- Genre header (Browse) ---------- */
+    .genre-hero {
+        background: var(--green); color: #fff;
+        border-radius: 22px; padding: 2.4rem 3rem; margin-bottom: 2rem;
+        position: relative; overflow: hidden;
+    }
+    .genre-hero::after {
+        content: attr(data-icon); position: absolute; right: 2.5rem; top: 50%;
+        transform: translateY(-50%) rotate(-8deg);
+        font-size: 120px; opacity: .22;
+    }
+    .genre-title { color: #fff !important; font-size: 46px; font-weight: 800; margin: 0 0 .4rem 0; }
+    .genre-desc { color: #CFE0D6; font-size: 17px; max-width: 560px; line-height: 1.6; }
+
+    /* ---------- Buttons ---------- */
+    .stButton > button {
+        border-radius: 10px; border: none;
+        background: var(--green); color: #FFFFFF;
+        font-weight: 600; padding: .5rem 1.2rem;
+        transition: background .2s, transform .15s;
+    }
+    .stButton > button:hover { background: #17332B; color: #fff; transform: translateY(-1px); }
+
+    /* ---------- Book cards ---------- */
+    .book-cover-wrapper {
+        width: 100%; height: 270px; overflow: hidden;
+        border-radius: 4px 10px 10px 4px;
+        background: var(--green-soft);
+        border-left: 5px solid var(--green);
+        box-shadow: 0 10px 22px rgba(31, 42, 39, .18);
+        position: relative;
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .book-cover-wrapper::after {
+        content: ""; position: absolute; top: 0; right: 14px;
+        width: 14px; height: 0; background: var(--mustard);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+        transition: height .25s ease;
+    }
+    .book-cover-wrapper:hover {
+        transform: translateY(-6px) rotate(-1deg);
+        box-shadow: 0 18px 30px rgba(31, 42, 39, .28);
+    }
+    .book-cover-wrapper:hover::after { height: 38px; }
     .book-cover-wrapper img {
-        width: 100%;
-        height: 270px;
-        object-fit: cover;
-        display: block;
+        width: 100%; height: 270px; object-fit: cover; display: block;
     }
-
     .book-title {
-        font-size: 16px;
-        font-weight: 650;
-        color: #3F3933;
-        margin-top: 10px;
-        line-height: 1.35;
-        min-height: 43px;
+        font-family: var(--serif); font-size: 17px; font-weight: 700;
+        color: var(--ink); margin-top: 14px; line-height: 1.3; height: 44px;
+        overflow: hidden; display: -webkit-box;
+        -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2;
     }
-
     .book-author {
-        font-size: 13px;
-        color: #756C63;
-        margin-top: 4px;
-        min-height: 20px;
+        font-size: 14px; color: var(--muted); margin-top: 4px; height: 20px;
+        overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
     }
-
     .book-meta {
-        font-size: 12px;
-        color: #9A9086;
-        margin-top: 7px;
-        margin-bottom: 9px;
-        min-height: 18px;
+        font-size: 12px; color: #8D9993; margin: 6px 0 9px 0; height: 18px;
+        overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
     }
-
-
-    /* -------------------------------------------------
-       Continue Reading
-    ------------------------------------------------- */
-
-    .reading-progress-text {
-        font-size: 12px;
-        color: #756C63;
-        margin-top: 5px;
+    .library-meta {
+        height: 24px; line-height: 24px; font-size: 13px; color: var(--muted);
+        overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
     }
+    .library-meta-empty { visibility: hidden; }
+    .library-progress-text { height: 24px; line-height: 24px; font-size: 13px; color: var(--muted); }
+    .library-count { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+    .reading-progress-text { font-size: 12px; color: var(--muted); margin-top: 5px; }
 
-
-    /* -------------------------------------------------
-       Book Detail
-    ------------------------------------------------- */
-
-    .detail-title {
-        font-size: 34px;
-        font-weight: 700;
-        color: #3F3933;
-        line-height: 1.25;
-        margin-bottom: 6px;
-    }
-
-    .detail-author {
-        font-size: 17px;
-        color: #756C63;
-        margin-bottom: 20px;
-    }
-
-    .about-title {
-        font-size: 20px;
-        font-weight: 650;
-        color: #3F3933;
-        margin-top: 25px;
-        margin-bottom: 8px;
-    }
-
-    .about-text {
-        font-size: 15px;
-        color: #655D56;
-        line-height: 1.7;
-    }
-
-    .detail-label {
-        font-size: 13px;
-        color: #9A9086;
-        margin-bottom: 3px;
-    }
-
-    .detail-value {
-        font-size: 15px;
-        color: #514A44;
-        margin-bottom: 13px;
-    }
-
-    .detail-cover img {
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(80, 62, 48, 0.14);
-    }
-
-
-    /* -------------------------------------------------
-       Back Button
-    ------------------------------------------------- */
-
-    .back-button {
-        margin-bottom: 20px;
-    }
+    /* ---------- Book Detail (เดิม ปรับสี) ---------- */
+    .detail-title { font-size: 40px; font-weight: 800; line-height: 1.15; margin-bottom: 6px; }
+    .detail-author { font-size: 18px; color: var(--muted); margin-bottom: 20px; }
+    .about-title { font-size: 22px; font-weight: 700; margin: 25px 0 8px 0; }
+    .about-text { font-size: 15px; color: #4A5752; line-height: 1.75; }
+    .detail-label { font-size: 13px; color: #8D9993; margin-bottom: 3px; }
+    .detail-value { font-size: 15px; color: var(--ink); margin-bottom: 13px; }
+    .detail-cover img { border-radius: 6px 12px 12px 6px; box-shadow: 0 14px 30px rgba(31,42,39,.25); }
+    .rating-title { font-size: 15px; font-weight: 700; color: var(--ink); margin: 20px 0 8px 0; }
 
     .back-button .stButton > button {
-        background-color: transparent;
-        color: #756C63;
-        border: none;
-        padding: 0;
-        font-size: 25px;
-        font-weight: 400;
-        width: auto;
+        background: transparent; color: var(--muted);
+        padding: 0; font-size: 25px; width: auto;
     }
+    .back-button .stButton > button:hover { background: transparent; color: var(--ink); }
 
-    .back-button .stButton > button:hover {
-        background-color: transparent;
-        color: #3F3933;
-    }
-
-
-    /* -------------------------------------------------
-       Rating
-    ------------------------------------------------- */
-
-    .rating-title {
-        font-size: 15px;
-        font-weight: 600;
-        color: #554C44;
-        margin-top: 20px;
-        margin-bottom: 8px;
-    }
-
-    div[class*="st-key-rating_star_"] {
-        width: auto !important;
-    }
-
+    div[class*="st-key-rating_star_"] { width: auto !important; }
     div[class*="st-key-rating_star_"] button {
-        background: transparent !important;
-        justify-content: center !important;
-        border: 0 !important;
-        box-shadow: none !important;
-        color: #D2C7BB !important;
-        font-size: 30px !important;
-        line-height: 1 !important;
-        min-height: 0 !important;
-        padding: 0 !important;
-        width: auto !important;
+        background: transparent !important; border: 0 !important; box-shadow: none !important;
+        color: #C4CFC9 !important; font-size: 30px !important; line-height: 1 !important;
+        min-height: 0 !important; padding: 0 !important; width: auto !important;
     }
+    div[class*="st-key-rating_star_"] button:hover { color: var(--mustard) !important; }
+    div[class*="st-key-rating_star_active_"] button { color: var(--mustard) !important; }
 
-    div[class*="st-key-rating_star_"] button:hover {
-        background: transparent !important;
-        color: #8B735F !important;
-    }
+    /* ---------- Layout กว้างขึ้น + ไม่ให้ชิดขอบบน ---------- */
+header[data-testid="stHeader"] { display: none; }
 
-    div[class*="st-key-rating_star_active_"] button {
-        color: #8B735F !important;
-    }
+.block-container {
+    max-width: 1360px !important;
+    padding-top: 0 !important;
+}
 
+/* ---------- Top Navigation ---------- */
+.st-key-topnav {
+    background: var(--green) !important;
+    padding: 1.3rem 0 !important;      /* สูงขึ้น ตัวหนังสือไม่ชิดบน */
+    margin-top: 0 !important;
+    margin-bottom: 2.4rem !important;
+    box-shadow: 0 0 0 100vmax var(--green), 0 6px 18px rgba(59, 47, 42, .18) !important;
+}
+.st-key-topnav [data-testid="stHorizontalBlock"] {
+    min-height: 56px;
+    gap: 1.2rem !important;
+}
+.logo { font-size: 30px !important; }
 
-    /* -------------------------------------------------
-       Library
-    ------------------------------------------------- */
+div[class*="st-key-nav_"] button {
+    color: #F3E9DA !important;
+    font-size: 17px !important;
+    min-height: 48px !important;
+    padding: .6rem .9rem !important;
+}
+div[class*="st-key-nav_"] button p { font-size: 17px !important; }
+.st-key-topnav [data-testid="stTextInput"] [data-baseweb="input"] {
+    min-height: 46px !important;
+    background: var(--card) !important;
+}
 
-    .library-count {
-        font-size: 14px;
-        color: #8A8076;
-        margin-bottom: 20px;
-    }
+/* ---------- สีที่ฝังไว้ในโค้ดเดิม ---------- */
+.stButton > button:hover { background: #4E3829 !important; }
+.genre-desc { color: #EADCC8 !important; }
+.hero-text, .about-text { color: #6A5B50 !important; }
+.book-meta, .detail-label { color: #A09082 !important; }
+.book-cover-wrapper { box-shadow: 0 10px 22px rgba(59, 47, 42, .18) !important; }
+.book-cover-wrapper:hover { box-shadow: 0 18px 30px rgba(59, 47, 42, .28) !important; }
+.detail-cover img { box-shadow: 0 14px 30px rgba(59, 47, 42, .25) !important; }
+[data-testid="stPopoverBody"] { box-shadow: 0 18px 40px rgba(59, 47, 42, .22) !important; }
+div[class*="st-key-rating_star_"] button { color: #D8CBBA !important; }
 
-    .book-title {
-        font-size: 16px;
-        font-weight: 650;
-        color: #3F3933;
-        margin-top: 10px;
-
-        /* ความสูงเท่ากันทุกการ์ด */
-        height: 43px;
-
-        /* ตัดข้อความเกิน 2 บรรทัด */
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-
-        /* แสดง ... */
-        text-overflow: ellipsis;
-
-        line-height: 1.35;
-    }
-
-
-    .book-author {
-        font-size: 13px;
-        color: #756C63;
-        margin-top: 4px;
-
-        /* ความสูงเท่ากัน */
-        height: 20px;
-
-        /* ถ้ายาวให้ ... */
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-
-    .book-meta {
-        font-size: 12px;
-        color: #9A9086;
-        margin-top: 7px;
-        margin-bottom: 9px;
-
-        /* ความสูงเท่ากัน */
-        height: 18px;
-
-        /* ถ้ายาวให้ ... */
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    .library-meta {
-        height: 24px;
-        line-height: 24px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        font-size: 13px;
-        color: #8C8177;
-    }
-
-    .library-meta-empty {
-        visibility: hidden;
-    }
-
-    .library-progress-text {
-        height: 24px;
-        line-height: 24px;
-        font-size: 13px;
-        color: #8C8177;
-    }
-
+/* สันหนังสือใน Hero โทนน้ำตาล */
+.spine:nth-child(1) { background: #6B4F3B !important; }
+.spine:nth-child(2) { background: #C9A27A !important; }
+.spine:nth-child(3) { background: #A98467 !important; }
+.spine:nth-child(4) { background: #3B2F2A !important; }
+.spine:nth-child(5) { background: #8C5A3C !important; }
+.spine:nth-child(6) { background: #E3D3BC !important; }
     </style>
     """,
     unsafe_allow_html=True,
 )
-
 
 # =========================================================
 # Session State
@@ -721,6 +588,18 @@ def run_nav_search():
     st.session_state.page = "Home"
     st.session_state.selected_book = None
 
+GENRES = {
+    "Fiction":  ("📖", "เรื่องเล่าที่พาไปไกลกว่าชีวิตประจำวัน ทั้งนิยายร่วมสมัยและวรรณกรรมคลาสสิก"),
+    "Romance":  ("💌", "เรื่องราวความรักทุกรสชาติ ตั้งแต่หวานละมุนจนถึงเจ็บแต่คุ้ม"),
+    "Mystery":  ("🔍", "ปริศนา คดีลึกลับ และตอนจบที่คุณเดาไม่ถูก"),
+    "Fantasy":  ("🐉", "โลกเวทมนตร์ ตำนาน และการผจญภัยที่ไม่มีอยู่จริง"),
+    "Science":  ("🔬", "ความรู้วิทยาศาสตร์ที่อ่านสนุกและเข้าใจง่าย"),
+    "History":  ("🏛️", "เรื่องราวในอดีตที่อธิบายว่าทำไมโลกถึงเป็นแบบทุกวันนี้"),
+    "Business": ("💼", "แนวคิดการทำงาน การเงิน และการสร้างธุรกิจ"),
+}
+
+if "selected_genre" not in st.session_state:
+    st.session_state.selected_genre = "Fiction"
 
 # =========================================================
 # Top Navigation
@@ -729,69 +608,46 @@ def run_nav_search():
 with st.container(key="topnav"):
 
     nav_logo, nav_home, nav_books, nav_browse, nav_search = st.columns(
-        [2.0, 0.75, 0.95, 0.9, 3.4],
+        [2.2, 0.95, 1.15, 1.05, 3.2],
         gap="small",
         vertical_alignment="center",
     )
 
-    # -------------------------------------------------
-    # Logo
-    # -------------------------------------------------
-
     with nav_logo:
         st.markdown(
-            '<div class="logo">📚 BookLog</div>',
+            '<div class="logo">📚 Book<b>Log</b></div>',
             unsafe_allow_html=True,
         )
 
-    # -------------------------------------------------
-    # Home
-    # -------------------------------------------------
-
     with nav_home:
-        if st.button(
-            "Home",
-            key="nav_home",
-            width="stretch",
-        ):
+        if st.button("Home", key="nav_home", width="stretch"):
             st.session_state.page = "Home"
             st.session_state.selected_book = None
             clear_search()
             st.rerun()
 
-    # -------------------------------------------------
-    # My Books
-    # -------------------------------------------------
-
     with nav_books:
-        if st.button(
-            "My Books",
-            key="nav_books",
-            width="stretch",
-        ):
+        if st.button("My Books", key="nav_books", width="stretch"):
             st.session_state.page = "Library"
             st.session_state.selected_book = None
             clear_search()
             st.rerun()
 
-    # -------------------------------------------------
-    # Browse
-    # -------------------------------------------------
-
+    # Browse = dropdown เลือกประเภท
     with nav_browse:
-        if st.button(
-            "Browse",
-            key="nav_browse",
-            width="stretch",
-        ):
-            st.session_state.page = "Browse"
-            st.session_state.selected_book = None
-            clear_search()
-            st.rerun()
-
-    # -------------------------------------------------
-    # Search
-    # -------------------------------------------------
+        with st.container(key="nav_browse"):
+            with st.popover("Browse", width="stretch"):
+                for genre, (icon, _) in GENRES.items():
+                    if st.button(
+                        f"{icon}  {genre}",
+                        key=f"pop_genre_{genre}",
+                        width="stretch",
+                    ):
+                        st.session_state.selected_genre = genre
+                        st.session_state.page = "Browse"
+                        st.session_state.selected_book = None
+                        clear_search()
+                        st.rerun()
 
     with nav_search:
         try:
@@ -824,17 +680,26 @@ if st.session_state.page == "Home":
 
     st.markdown(
         """
-        <div class="greeting">
-            Find a book worth reading.
-        </div>
-
-        <div class="greeting-text">
-            Search for books and keep track of your reading journey.
+        <div class="hero">
+            <div>
+                <h1 class="hero-title">หนังสือเล่มต่อไป<br>รออยู่บนชั้นนี้</h1>
+                <div class="hero-text">
+                    ค้นหาหนังสือ เก็บไว้ในคลังของคุณ
+                    และบันทึกว่าอ่านถึงหน้าไหนแล้ว
+                </div>
+            </div>
+            <div class="shelf">
+                <div class="spine"></div>
+                <div class="spine"></div>
+                <div class="spine"></div>
+                <div class="spine"></div>
+                <div class="spine"></div>
+                <div class="spine lean"></div>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
     )
-
 
     # -----------------------------------------------------
     # Search Results
@@ -859,6 +724,7 @@ if st.session_state.page == "Home":
         st.session_state.get("search_query")
         and not st.session_state.get("search_results")
     ):
+
         if st.session_state.get("search_error"):
             st.warning(
                 "Could not search right now. "
@@ -866,7 +732,6 @@ if st.session_state.page == "Home":
             )
             with st.expander("Error details"):
                 st.code(st.session_state.search_error)
-
         else:
             st.info(
                 f'No books found for "{st.session_state.search_query}".'
@@ -987,7 +852,10 @@ if st.session_state.page == "Home":
     except Exception:
         home_books = []
 
-    st.subheader("Discover Books")
+    st.markdown(
+        '<div class="section-title">Discover Books</div>',
+        unsafe_allow_html=True,
+    )
 
     if home_books:
         cols = st.columns(5)
@@ -1846,55 +1714,44 @@ elif st.session_state.page == "Library":
 
 elif st.session_state.page == "Browse":
 
-    st.title("Browse")
+    genre = st.session_state.selected_genre
+    icon, desc = GENRES[genre]
 
     st.markdown(
-        """
-        <p class="description">
-            Explore books by category and discover something new.
-        </p>
+        f"""
+        <div class="genre-hero" data-icon="{icon}">
+            <h1 class="genre-title">{genre}</h1>
+            <div class="genre-desc">{desc}</div>
+        </div>
         """,
         unsafe_allow_html=True,
     )
 
-    genres = [
-        "Fiction",
-        "Romance",
-        "Mystery",
-        "Fantasy",
-        "Science",
-        "History",
-        "Business",
-    ]
-
-    selected_genre = st.selectbox(
-        "Choose a category",
-        genres,
-    )
-
     books = None
-
     try:
-        books = cached_browse_books(selected_genre)
+        books = cached_browse_books(genre)
     except Exception:
         books = None
 
     if books is None:
         st.warning(
-            "Could not load books right now. "
-            "Google Books may be busy, so please try again in a moment."
+            "โหลดหนังสือไม่สำเร็จ Google Books อาจกำลังหนาแน่น "
+            "ลองอีกครั้งในอีกสักครู่"
         )
         st.button("Try again", key="browse_retry")
 
     else:
+        st.markdown(
+            f'<div class="library-count">{len(books)} books in {genre}</div>',
+            unsafe_allow_html=True,
+        )
+
         columns = st.columns(5)
 
         for index, book in enumerate(books):
-
             with columns[index % 5]:
-
                 render_book_card(
                     book,
-                    f"browse_{selected_genre}_{index}",
+                    f"browse_{genre}_{index}",
                     "Browse",
                 )

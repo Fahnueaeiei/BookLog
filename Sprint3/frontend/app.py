@@ -1,10 +1,17 @@
+import os
 import sys
 from pathlib import Path
 
 import streamlit as st
 
-API_KEY = st.secrets["GOOGLE_BOOKS_API_KEY"]
-
+# On Streamlit Cloud the key comes from Secrets; locally it comes from .env.
+try:
+    os.environ.setdefault(
+        "GOOGLE_BOOKS_API_KEY",
+        st.secrets["GOOGLE_BOOKS_API_KEY"],
+    )
+except Exception:
+    pass
 
 # =========================================================
 # Import Service

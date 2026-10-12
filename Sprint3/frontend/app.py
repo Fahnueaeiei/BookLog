@@ -532,6 +532,31 @@ if "nav_search_input" not in st.session_state:
 # Helper Functions
 # =========================================================
 
+@st.cache_data(ttl=600, show_spinner=False)
+def cached_home_books():
+    """Home recommendations, cached for 10 minutes.
+
+    Errors and empty results raise, so they are never cached and the
+    next page load tries Google Books again.
+    """
+    books = get_home_books()
+    if not books:
+        raise ValueError("No books returned")
+    return books
+
+
+@st.cache_data(ttl=600, show_spinner=False)
+def cached_browse_books(genre):
+    """Browse results for one genre, cached for 10 minutes.
+
+    Errors and empty results raise, so they are never cached.
+    """
+    books = browse_books(genre)
+    if not books:
+        raise ValueError("No books returned")
+    return books
+
+
 def get_library_book(book_id):
     """Get one book from the real Sprint 2 library."""
     library_books = get_library_books()
@@ -548,8 +573,13 @@ def is_in_library(book_id):
     return get_library_book(book_id) is not None
 
 
-def open_book(book, source="Home"):
-    """Open Book Detail."""
+def open_book(book, source="Home", full=False):
+    """Open Book Detail.
+
+    full=True shows the full reading-tracker view for a book that is in
+    the library (My Books and Continue Reading). Otherwise a book that
+    is already in the library just shows "Added to Library".
+    """
     try:
         detailed_book = get_book_details(book["id"])
     except Exception:
@@ -557,6 +587,7 @@ def open_book(book, source="Home"):
 
     st.session_state.selected_book = detailed_book
     st.session_state.detail_source = source
+    st.session_state.detail_full = full or source == "Library"
     st.session_state.page = "Book Detail"
     st.rerun()
 
@@ -667,6 +698,7 @@ def run_nav_search():
     ).strip()
 
     st.session_state.search_query = text
+    st.session_state.search_error = ""
 
     if text:
         try:
@@ -819,9 +851,15 @@ if st.session_state.page == "Home":
         and not st.session_state.get("search_results")
     ):
 
-        st.info(
-            f'No books found for "{st.session_state.search_query}".'
-        )
+        if st.session_state.get("search_error"):
+            st.warning(
+                "Could not search right now. "
+                "Google Books may be busy, so please try again in a moment."
+            )
+        else:
+            st.info(
+                f'No books found for "{st.session_state.search_query}".'
+            )
 
 
     # -----------------------------------------------------
@@ -923,25 +961,39 @@ if st.session_state.page == "Home":
                         open_book(
                             book,
                             "Home",
+                            full=True,
                         )
 
 
-        home_books = get_home_books()
+    # -----------------------------------------------------
+    # Discover Books (always shown)
+    # -----------------------------------------------------
 
-        st.subheader("Discover Books")
+    home_books = []
 
-        if home_books:
-            cols = st.columns(5)
+    try:
+        home_books = cached_home_books()
+    except Exception:
+        home_books = []
 
-            for i, book in enumerate(home_books):
-                with cols[i % 5]:
-                    render_book_card(
-                        book,
-                        f"home_{i}",
-                        "Home",
-                    )
-        else:
-            st.info("No books available.")
+    st.subheader("Discover Books")
+
+    if home_books:
+        cols = st.columns(5)
+
+        for i, book in enumerate(home_books):
+            with cols[i % 5]:
+                render_book_card(
+                    book,
+                    f"home_{i}",
+                    "Home",
+                )
+    else:
+        st.warning(
+            "Could not load books right now. "
+            "Google Books may be busy, so please try again in a moment."
+        )
+        st.button("Try again", key="home_retry")
 
 # =========================================================
 # BOOK DETAIL
@@ -1177,6 +1229,23 @@ elif st.session_state.page == "Book Detail":
                 st.info(
                     "Add this book to your library to start "
                     "tracking your reading."
+                )
+
+                st.stop()
+
+
+            # -------------------------------------------------
+            # Opened from search / Browse / Discover: just show
+            # that the book is added (no tracking controls)
+            # -------------------------------------------------
+
+            if not st.session_state.get("detail_full", False):
+
+                st.button(
+                    "✓ Added to Library",
+                    key=f"added_{book['id']}",
+                    width="stretch",
+                    disabled=True,
                 )
 
                 st.stop()
@@ -1792,10 +1861,19 @@ elif st.session_state.page == "Browse":
         genres,
     )
 
-    books = browse_books(selected_genre)
+    books = None
 
-    if not books:
-        st.info("No books found in this category.")
+    try:
+        books = cached_browse_books(selected_genre)
+    except Exception:
+        books = None
+
+    if books is None:
+        st.warning(
+            "Could not load books right now. "
+            "Google Books may be busy, so please try again in a moment."
+        )
+        st.button("Try again", key="browse_retry")
 
     else:
         columns = st.columns(5)

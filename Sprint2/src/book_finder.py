@@ -7,6 +7,7 @@ and the UI never have to deal with requests or raw JSON.
 """
 
 import os
+import time
 
 import requests
 from dotenv import load_dotenv
@@ -89,6 +90,20 @@ class BookFinder:
             raise APIError("Google Books API returned an unusable response.")
 
         items = data.get("items") or []
+
+        # Fallback: if the filtered query (intitle:/inauthor:/subject:)
+        # returns nothing, search the plain keyword instead.
+        if not items:
+            data = self._get(
+                BASE_URL,
+                {"q": keyword.strip(), "maxResults": max_results},
+            )
+            if not isinstance(data, dict):
+                raise APIError(
+                    "Google Books API returned an unusable response."
+                )
+            items = data.get("items") or []
+
         return [self._parse_volume(item) for item in items]
 
     def get_details(self, book_id):
@@ -118,6 +133,9 @@ class BookFinder:
     def _get(self, url, params=None):
         """Make a GET request and return the parsed JSON body.
 
+        Retries up to 3 times (waiting 1s, 2s, 4s) when Google returns
+        a temporary server error (500, 502, 503, 504) or times out.
+
         Raises:
             APIError: For a timeout, a connection problem, an HTTP
                 error status, or a response body that is not valid
@@ -127,28 +145,40 @@ class BookFinder:
         if self.api_key:
             params["key"] = self.api_key
 
-        try:
-            response = requests.get(url, params=params, timeout=self.timeout)
-            response.raise_for_status()
-        except requests.Timeout as error:
-            raise APIError(
-                "Google Books API did not respond in time.", cause=error
-            ) from error
-        except requests.ConnectionError as error:
-            raise APIError(
-                "Could not connect to Google Books API. Check your "
-                "network connection.",
-                cause=error,
-            ) from error
-        except requests.HTTPError as error:
-            raise APIError(
-                f"Google Books API returned an error: {error}",
-                cause=error,
-            ) from error
-        except requests.RequestException as error:
-            raise APIError(
-                f"Google Books API request failed: {error}", cause=error
-            ) from error
+        response = None
+        for attempt in range(4):
+            try:
+                response = requests.get(
+                    url, params=params, timeout=self.timeout
+                )
+                if response.status_code in (500, 502, 503, 504) and attempt < 3:
+                    time.sleep(2 ** attempt)
+                    continue
+                response.raise_for_status()
+                break
+            except requests.Timeout as error:
+                if attempt < 3:
+                    time.sleep(2 ** attempt)
+                    continue
+                raise APIError(
+                    "Google Books API did not respond in time.", cause=error
+                ) from error
+            except requests.ConnectionError as error:
+                raise APIError(
+                    "Could not connect to Google Books API. Check your "
+                    "network connection.",
+                    cause=error,
+                ) from error
+            except requests.HTTPError as error:
+                raise APIError(
+                    "Google Books API returned an error: HTTP "
+                    f"{error.response.status_code}",
+                    cause=error,
+                ) from error
+            except requests.RequestException as error:
+                raise APIError(
+                    "Google Books API request failed.", cause=error
+                ) from error
 
         try:
             return response.json()

@@ -3,6 +3,8 @@ from pathlib import Path
 
 import streamlit as st
 
+API_KEY = st.secrets["GOOGLE_BOOKS_API_KEY"]
+
 
 # =========================================================
 # Import Service
@@ -850,12 +852,14 @@ if st.session_state.page == "Home":
         st.session_state.get("search_query")
         and not st.session_state.get("search_results")
     ):
-
         if st.session_state.get("search_error"):
             st.warning(
                 "Could not search right now. "
-                "Google Books may be busy, so please try again in a moment."
+                "Please check the error details below."
             )
+            with st.expander("Error details"):
+                st.code(st.session_state.search_error)
+
         else:
             st.info(
                 f'No books found for "{st.session_state.search_query}".'

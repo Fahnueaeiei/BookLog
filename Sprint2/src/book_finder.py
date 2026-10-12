@@ -1,9 +1,9 @@
+
 """Google Books API client (Data Access Layer) for BookLog (Sprint 2).
 
 BookFinder is the only place in the application that talks to the
-Google Books API. It turns API responses into Book objects and turns
-network/API problems into a single APIError, so the business logic
-and the UI never have to deal with requests or raw JSON.
+Google Books API. It converts API responses into Book objects and
+translates network/API problems into APIError exceptions.
 """
 
 import os
@@ -15,174 +15,197 @@ from dotenv import load_dotenv
 from src.exceptions import APIError
 from src.models import Book
 
-# Loads variables from a .env file in the project root (if one exists)
-# into the environment, so GOOGLE_BOOKS_API_KEY does not need to be
-# exported manually every time a new terminal session is opened. Has
-# no effect, and raises no error, if no .env file is present.
+
+# Load environment variables from a .env file if available.
 load_dotenv()
 
 BASE_URL = "https://www.googleapis.com/books/v1/volumes"
 
-# Maps BookLog's search fields to the Google Books query prefixes.
-# Same field names as Sprint 1's mock search (title, author, genre),
-# so the CLI does not need to change when it switches to BookFinder.
+# Map BookLog search fields to Google Books query prefixes.
 FIELD_PREFIXES = {
     "title": "intitle",
     "author": "inauthor",
     "genre": "subject",
 }
 
+RETRYABLE_STATUS_CODES = {500, 502, 503, 504}
+MAX_ATTEMPTS = 4
+
 
 class BookFinder:
-    """Searches Google Books and builds Book objects from the results.
-
-    Attributes:
-        api_key: Google Books API key, or None to call the API without
-            one (works, but with a lower rate limit).
-        timeout: Seconds to wait for a response before giving up.
-    """
+    """Search Google Books and convert results into Book objects."""
 
     def __init__(self, api_key=None, timeout=10):
-        """Create a BookFinder.
+        """Initialize the API client.
 
         Args:
-            api_key: API key to use. If None, falls back to the
-                GOOGLE_BOOKS_API_KEY environment variable, and if that
-                is not set either, requests are sent without a key.
-            timeout: Seconds to wait for a response before raising
-                APIError.
+            api_key: Optional Google Books API key. If omitted, the
+                GOOGLE_BOOKS_API_KEY environment variable is used.
+            timeout: Request timeout in seconds.
         """
         self.api_key = api_key or os.environ.get("GOOGLE_BOOKS_API_KEY")
         self.timeout = timeout
 
     def search(self, field, keyword, max_results=20):
-        """Search Google Books by title, author, or genre.
-
-        Args:
-            field: One of "title", "author", or "genre".
-            keyword: Text to search for.
-            max_results: Maximum number of results to return (1-40,
-                per the Google Books API's own limit).
+        """Search books by title, author, or genre.
 
         Returns:
-            A list of Book objects. Empty if nothing matches.
+            A list of Book objects. Returns an empty list if no
+            results are found.
 
         Raises:
-            ValueError: If field, keyword, or max_results is invalid.
-            APIError: If the API cannot be reached or returns a
-                response that cannot be used.
+            ValueError: If the search arguments are invalid.
+            APIError: If the API request or response fails.
         """
         if field not in FIELD_PREFIXES:
             raise ValueError(f"Unknown search field: {field}")
+
         if not isinstance(keyword, str) or not keyword.strip():
             raise ValueError("Search keyword cannot be empty.")
+
         if (
             not isinstance(max_results, int)
             or isinstance(max_results, bool)
             or not 1 <= max_results <= 40
         ):
-            raise ValueError("max_results must be a whole number from 1 to 40.")
+            raise ValueError(
+                "max_results must be a whole number from 1 to 40."
+            )
 
-        query = f"{FIELD_PREFIXES[field]}:{keyword.strip()}"
-        data = self._get(BASE_URL, {"q": query, "maxResults": max_results})
+        keyword = keyword.strip()
+        query = f"{FIELD_PREFIXES[field]}:{keyword}"
+
+        data = self._get(
+            BASE_URL,
+            {"q": query, "maxResults": max_results},
+        )
 
         if not isinstance(data, dict):
             raise APIError("Google Books API returned an unusable response.")
 
         items = data.get("items") or []
 
-        # Fallback: if the filtered query (intitle:/inauthor:/subject:)
-        # returns nothing, search the plain keyword instead.
+        # Retry the search with a plain keyword if the filtered search
+        # returns no results.
         if not items:
             data = self._get(
                 BASE_URL,
-                {"q": keyword.strip(), "maxResults": max_results},
+                {"q": keyword, "maxResults": max_results},
             )
+
             if not isinstance(data, dict):
                 raise APIError(
                     "Google Books API returned an unusable response."
                 )
+
             items = data.get("items") or []
 
         return [self._parse_volume(item) for item in items]
 
     def get_details(self, book_id):
-        """Fetch the full details of one book by its Google Books ID.
-
-        Args:
-            book_id: Google Books volume ID.
-
-        Returns:
-            A Book object.
-
-        Raises:
-            APIError: If the API cannot be reached, the book is not
-                found, or the response cannot be used.
-        """
+        """Fetch details for a book by its Google Books volume ID."""
         if not isinstance(book_id, str) or not book_id.strip():
             raise ValueError("book_id cannot be empty.")
 
-        item = self._get(f"{BASE_URL}/{book_id}")
+        url = f"{BASE_URL}/{book_id.strip()}"
+        item = self._get(url)
+
         if not isinstance(item, dict):
             raise APIError("Google Books API returned an unusable response.")
+
         return self._parse_volume(item)
 
-    # ------------------------------------------------------------------
-    # Internal helpers
-    # ------------------------------------------------------------------
     def _get(self, url, params=None):
-        """Make a GET request and return the parsed JSON body.
+        """Send a GET request and return the parsed JSON response.
 
-        Retries up to 3 times (waiting 1s, 2s, 4s) when Google returns
-        a temporary server error (500, 502, 503, 504) or times out.
+        Retries up to three times after the initial request when a
+        timeout or temporary server error occurs. Delays are 1, 2,
+        and 4 seconds.
 
         Raises:
-            APIError: For a timeout, a connection problem, an HTTP
-                error status, or a response body that is not valid
-                JSON.
+            APIError: If the request fails or the response is invalid.
         """
-        params = dict(params or {})
+        request_params = dict(params or {})
+
         if self.api_key:
-            params["key"] = self.api_key
+            request_params["key"] = self.api_key
 
         response = None
-        for attempt in range(4):
+
+        for attempt in range(MAX_ATTEMPTS):
             try:
                 response = requests.get(
-                    url, params=params, timeout=self.timeout
+                    url,
+                    params=request_params,
+                    timeout=self.timeout,
                 )
-                if response.status_code in (500, 502, 503, 504) and attempt < 3:
+
+                if (
+                    response.status_code in RETRYABLE_STATUS_CODES
+                    and attempt < MAX_ATTEMPTS - 1
+                ):
                     time.sleep(2 ** attempt)
                     continue
+
                 response.raise_for_status()
                 break
+
             except requests.Timeout as error:
-                if attempt < 3:
+                if attempt < MAX_ATTEMPTS - 1:
                     time.sleep(2 ** attempt)
                     continue
+
                 raise APIError(
-                    "Google Books API did not respond in time.", cause=error
+                    "Google Books API did not respond in time.",
+                    cause=error,
                 ) from error
+
             except requests.ConnectionError as error:
                 raise APIError(
                     "Could not connect to Google Books API. Check your "
                     "network connection.",
                     cause=error,
                 ) from error
+
             except requests.HTTPError as error:
+                status_code = error.response.status_code
+                error_message = ""
+                error_reason = ""
+
+                try:
+                    error_body = error.response.json()
+                    api_error = error_body.get("error", {})
+                    error_message = api_error.get("message", "")
+
+                    errors = api_error.get("errors") or []
+                    if errors and isinstance(errors[0], dict):
+                        error_reason = errors[0].get("reason", "")
+
+                except (ValueError, AttributeError, IndexError):
+                    pass
+
+                details = f"HTTP {status_code}"
+
+                if error_reason:
+                    details += f" ({error_reason})"
+
+                if error_message:
+                    details += f": {error_message}"
+
                 raise APIError(
-                    "Google Books API returned an error: HTTP "
-                    f"{error.response.status_code}",
+                    f"Google Books API returned an error: {details}",
                     cause=error,
                 ) from error
+
             except requests.RequestException as error:
                 raise APIError(
-                    "Google Books API request failed.", cause=error
+                    f"Google Books API request failed: {error}",
+                    cause=error,
                 ) from error
 
         try:
             return response.json()
-        except ValueError as error:
+        except (ValueError, AttributeError) as error:
             raise APIError(
                 "Google Books API returned a response that could not "
                 "be read.",
@@ -191,12 +214,7 @@ class BookFinder:
 
     @staticmethod
     def _parse_volume(item):
-        """Turn one Google Books API "volume" item into a Book.
-
-        Missing fields become None (or an empty list for authors and
-        categories) rather than raising an error, so a book with
-        incomplete data still displays with the CLI's placeholders.
-        """
+        """Convert a Google Books API volume item into a Book object."""
         info = item.get("volumeInfo", {}) or {}
         image_links = info.get("imageLinks") or {}
 

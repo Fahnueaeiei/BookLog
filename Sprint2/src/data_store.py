@@ -18,6 +18,9 @@ from datetime import datetime, timezone
 from src.exceptions import DatabaseError
 from src.models import Book, LibraryEntry, ReadingStatus
 
+from contextlib import contextmanager
+
+
 _CREATE_BOOKS_TABLE = """
 CREATE TABLE IF NOT EXISTS books (
     book_id        TEXT PRIMARY KEY,
@@ -88,7 +91,7 @@ class DataStore:
         if os.path.exists(self.db_path) and not self._is_valid_database():
             self._backup_corrupted_database()
 
-        with self._connect() as connection:
+        with self._connection() as connection:
             connection.execute(_CREATE_BOOKS_TABLE)
             connection.execute(_CREATE_LIBRARY_ENTRIES_TABLE)
 
@@ -120,6 +123,20 @@ class DataStore:
         connection.execute("PRAGMA foreign_keys = ON;")
         connection.row_factory = sqlite3.Row
         return connection
+    
+    @contextmanager
+    def _connection(self):
+        """Open a database connection and always close it."""
+        connection = self._connect()
+        try:
+            yield connection
+            connection.commit()
+        except Exception:
+            connection.rollback()
+            raise
+        finally:
+            connection.close()
+
 
     # ------------------------------------------------------------------
     # Books
@@ -127,7 +144,7 @@ class DataStore:
     def save_book(self, book):
         """Insert a book, or replace it if book_id already exists."""
         try:
-            with self._connect() as connection:
+            with self._connection() as connection:
                 connection.execute(
                     """
                     INSERT INTO books (
@@ -172,7 +189,7 @@ class DataStore:
         self.save_book(entry.book)
 
         try:
-            with self._connect() as connection:
+            with self._connection() as connection:
                 connection.execute(
                     """
                     INSERT INTO library_entries (
@@ -208,7 +225,7 @@ class DataStore:
         later). Only the library_entries row is removed.
         """
         try:
-            with self._connect() as connection:
+            with self._connection() as connection:
                 cursor = connection.execute(
                     "DELETE FROM library_entries WHERE book_id = ?;",
                     (book_id,),
@@ -235,7 +252,7 @@ class DataStore:
             JOIN books b ON b.book_id = e.book_id;
         """
         try:
-            with self._connect() as connection:
+            with self._connection() as connection:
                 rows = connection.execute(query).fetchall()
         except sqlite3.Error as error:
             raise DatabaseError(

@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 
@@ -12,7 +13,8 @@ from dotenv import load_dotenv
 
 load_dotenv(SPRINT2_PATH / ".env")
 
-DB_PATH = SPRINT2_PATH / "data" / "booklog.db"
+DB_PATH = Path(os.getenv("BOOKLOG_DB_PATH", SPRINT2_PATH / "data" / "booklog.db"))
+DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 # Import Sprint 2
 from src.book_finder import BookFinder

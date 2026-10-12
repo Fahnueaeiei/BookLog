@@ -75,18 +75,51 @@ def search_books(keyword):
     ]
 
 
-def get_home_books():
-    """Get books to display on Home page."""
-    books = book_finder.search(
-        "genre",
-        "fiction",
-        max_results=10,
-    )
 
-    return [
-        book_to_dict(book)
-        for book in books
+def get_home_books():
+    """Get a diverse selection of popular-interest books for Home."""
+    search_queries = [
+        ("title", "Harry Potter"),
+        ("title", "The Lord of the Rings"),
+        ("title", "The Hunger Games"),
+        ("title", "Atomic Habits"),
+        ("title", "The Psychology of Money"),
+        ("title", "The Little Prince"),
+        ("genre", "romance"),
+        ("genre", "mystery"),
+        ("genre", "fantasy"),
+        ("genre", "self-help"),
     ]
+
+    home_books = []
+    seen_ids = set()
+
+    for field, keyword in search_queries:
+        books = book_finder.search(
+            field,
+            keyword,
+            max_results=5,
+        )
+
+        for book in books:
+            book_data = book_to_dict(book)
+
+            # Avoid showing the same book more than once.
+            book_id = book_data.get("id")
+
+            if book_id and book_id in seen_ids:
+                continue
+
+            if book_id:
+                seen_ids.add(book_id)
+
+            home_books.append(book_data)
+
+            if len(home_books) >= 10:
+                return home_books
+
+    return home_books
+
 
 
 # ============================================================
